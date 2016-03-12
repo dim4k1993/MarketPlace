@@ -12,6 +12,7 @@
 <body>
 	<form method="post">
 		<table align="center">
+			<h2 align="center"> Регистрация</h2>
 			<tr>
 				<th>Имя:</th>
 				<td><input name="name" type="text" /></td>

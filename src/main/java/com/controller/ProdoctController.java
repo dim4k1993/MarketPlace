@@ -19,11 +19,12 @@ public class ProdoctController {
     @Autowired
     ProductService productService;
 
+//відображення сторінки
     @RequestMapping("/addProduct")
     public String showProdoct() {
         return "addProduct";
     }
-
+//додавання продукту
     @RequestMapping(value="/addProduct", method = RequestMethod.POST)
     public String saveProdoct (@RequestParam String name, @RequestParam String price, @RequestParam  String text, @RequestParam String stanProducta,
                                     @RequestParam String nameUser, @RequestParam String email, @RequestParam String telephonNamber, @RequestParam String skype){

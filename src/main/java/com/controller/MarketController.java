@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class MarketController {
 
-
+// почадкова сторінка
 	@RequestMapping("/")
 	public String ShowPage() {
 		return "marketPlace";
