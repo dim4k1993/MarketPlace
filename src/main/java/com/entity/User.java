@@ -29,6 +29,9 @@ public class User {
 
     private  String skype;
 
+    private  int adminStatus;
+
+
     //вказує, що поле нижче є відображенням зв`зку один до багатьох
     //з цієї сторони зв`язку, тобто в анотації OneToMany, завжди необхідно описати додаткові параметри
     //cascade опціональний параметр, який вказує на поведінку БД в випадку видалення, оновлення, створення елементів
@@ -123,5 +126,9 @@ public class User {
     public void setSkype(String skype) {
         this.skype = skype;
     }
+
+    public int getAdminStatus() {return adminStatus;}
+
+    public void setAdminStatus(int adminStatus) {this.adminStatus = adminStatus;}
 
 }

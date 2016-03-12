@@ -15,7 +15,7 @@ public class UserService {
 	
 	@Autowired
 	private UserRepository userRepository;
-	
+
 	
 	public void userRegistration(String name,String lastName,String email,String parol,String telephon_namber){
 		User user = new User();
@@ -26,8 +26,6 @@ public class UserService {
 		user.setTelephon_namber(telephon_namber);
 		userRepository.save(user);
 	}
-
-
 
 		public Iterable<User> getAll(){
 		return userRepository.findAll();
