@@ -29,9 +29,19 @@ public class ProdoctController {
     public String saveProdoct (@RequestParam String name, @RequestParam String price, @RequestParam  String text, @RequestParam String stanProducta,
                                     @RequestParam String nameUser, @RequestParam String email, @RequestParam String telephonNamber, @RequestParam String skype){
 
+        if (name.equals("") || price.equals("") || text.equals("") ||
+                stanProducta.equals("") || nameUser.equals("")||email.equals("")||telephonNamber.equals("")) {
+            return "redirect:/addProduct";
+        }
+        try {
             double priceD = Double.parseDouble(price);
+
+
             productService.addProduct(name,priceD,text,stanProducta,
                      nameUser, email,telephonNamber,skype);
+        }catch (NumberFormatException e){
+            System.out.println(e);
+        }
         return "redirect:/";
     }
 

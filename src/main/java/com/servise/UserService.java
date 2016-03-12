@@ -15,8 +15,8 @@ public class UserService {
 	
 	@Autowired
 	private UserRepository userRepository;
-	private int idForUserLogin;
-	public Map<String, String> mapUser = new HashMap<String, String>();
+	/*private int idForUserLogin;
+	public Map<String, String> mapUser = new HashMap<String, String>();*/
 
 	// додає юзера
 	public void userRegistration(String name,String lastName,String email,String parol,String telephon_namber){
