@@ -13,22 +13,22 @@
 <form method="post">
     <table align="center">
         <tr>
-            <h1 align="center" style="color: red; font-family: Arial;" >Неправильний пароль або логін</h1>
+            <h1 align="center" style="color: red;" >Неправильний пароль або логін</h1>
         </tr>
 
         <tr>
-            <th style="color: red; font-family: Arial">E-Mail:</th>
-            <td><input name = "emailUser" type="text" /></td>
+            <th>Email:</th>
+            <td><input name = "email" type="text" /></td>
         </tr>
         <tr>
-            <th style="color: red; font-family: Arial">Password:</th>
-            <td><input name = "password" type="password"/></td>
+            <th>Пароль:</th>
+            <td><input name = "parol" type="password"/></td>
         </tr>
         <tr>
             <td align="right"><input type="submit" value="Войти"/></td>
         </tr>
         <tr>
-            <td align="right" style="text-align: left"><a href="Register" style="text-align: center">Register</a></td>
+            <td align="right" style="text-align: left"><a href="registration" style="text-align: center">Register</a></td>
         </tr>
     </table>
 </form>

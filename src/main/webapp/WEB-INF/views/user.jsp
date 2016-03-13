@@ -31,12 +31,5 @@
 	</table>
 </form>
 
-<table>
-	<c:forEach var="user" items="${users}"><tr>
-		<td>${user.getLastName()}</td>
-		<td><c:url value="/user/${user.id}" var = "url"/> <a href="${url}">dalete</a> </td>
-	</tr></c:forEach>
-</table>
-
 </body>
 </html>

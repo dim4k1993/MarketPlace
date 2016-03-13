@@ -13,9 +13,15 @@
 <form method="post">
     <table align="center">
         <tr>
-            <h1 align="center">Админка</h1>
+            <h2 align="center">Админка</h2>
         </tr>
     </table>
+    <table>
+        <td> <a href="adminDeleteUser">Удалить юзера</a></td>
+    </table>
+    <tr>
+        <a href="/user">exit</a>
+    </tr>
 </form>
 
 </body>

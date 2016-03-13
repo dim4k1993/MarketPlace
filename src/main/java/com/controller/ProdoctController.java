@@ -24,6 +24,7 @@ public class ProdoctController {
     public String showProdoct() {
         return "addProduct";
     }
+
 //додавання продукту
     @RequestMapping(value="/addProduct", method = RequestMethod.POST)
     public String saveProdoct (@RequestParam String name, @RequestParam String price, @RequestParam  String text, @RequestParam String stanProducta,

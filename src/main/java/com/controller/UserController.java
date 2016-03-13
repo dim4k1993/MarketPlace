@@ -19,24 +19,40 @@ public class UserController {
 	@Autowired
 	UserService userService;
 
+	//відображення сторінки юзера
+	@RequestMapping("/user")
+	public String ShowUserPage() {
+		return "user";
+	}
 
-/*	@RequestMapping(value = "/user", method = RequestMethod.POST)
-	public String comparisonUser (@RequestParam String password, @RequestParam String emailUser, Model model) {
-		if (userService.comparisonUser(password,emailUser) == 0){
-			model.addAttribute("nameMap", userService.mapUser.get("name"));
-			model.addAttribute("lastNameMap", userService.mapUser.get("lastName"));
-			model.addAttribute("telephonNamberMap", userService.mapUser.get("telephon_namber"));
-			model.addAttribute("skypeMap", userService.mapUser.get("skype"));
-			return "userAccount";
-		}else if (userService.comparisonUser(password,emailUser) == 1){
-			return "adminPage";
-		}else if (userService.comparisonUser(password,emailUser) == 9) {
-			return "errorPage";
+	@RequestMapping(value = "/user", method = RequestMethod.POST)
+	public String comparisonUser (@RequestParam String parol, @RequestParam String email)throws IOException  {
+		userService.mapUser.clear();
+		if (userService.comparisonUser(parol,email) == 0){
+			return "redirect:/userAccount";
+		}
+		if (userService.comparisonUser(parol, email) == 1){
+			return "redirect:/adminPage";
 		}
 		return "errorPage";
-	}*/
+	}
 
-//відображення сторінки
+	@RequestMapping(value = "/userAccount")
+	public String ShowUserInfo ( Model model ) {
+		model.addAttribute("firstNameMap", userService.mapUser.get("firstName"));
+		model.addAttribute("lastNameMap", userService.mapUser.get("lastName"));
+		model.addAttribute("emailMap",userService.mapUser.get("email"));
+		model.addAttribute("telephon_namberMap",userService.mapUser.get("telephon_namber"));
+		model.addAttribute("skypeMap",userService.mapUser.get("skype"));
+		return "userAccount";
+	}
+
+	@RequestMapping(value = "/userAccount", method = RequestMethod.POST)
+	public String comparisonUser (@RequestParam String email, @RequestParam String parol, Model model) {
+		return "userAccount";
+	}
+
+//відображення сторінки регістріції
 	@RequestMapping("/registration")
 	public String ShowRegistration() {
 		return "registration";
@@ -57,19 +73,6 @@ public class UserController {
 		}
 		return "redirect:/registration";
 	}
-
-// виводить всіх юзерів
-	@RequestMapping("/user")
-	public String ShowUser(Model model) {
-		model.addAttribute("users",userService.getAll());
-		return "user";
-	}
-// удаляє вибраного юзера
-		@RequestMapping("/user/{id}")
-		public String daleteUser (@PathVariable String id){
-			userService.daleteUser(id);
-			return "redirect:/user";
-		}
 
 	}
 

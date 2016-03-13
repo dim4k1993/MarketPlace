@@ -15,10 +15,10 @@ public class UserService {
 	
 	@Autowired
 	private UserRepository userRepository;
-	/*private int idForUserLogin;
-	public Map<String, String> mapUser = new HashMap<String, String>();*/
+	private int idForUserLogin;
+	public Map<String, String> mapUser = new HashMap<String, String>();
 
-	// додає юзера
+	//Метод додавання юзерів
 	public void userRegistration(String name,String lastName,String email,String parol,String telephon_namber){
 		User user = new User();
 		user.setName(name);
@@ -29,31 +29,38 @@ public class UserService {
 		userRepository.save(user);
 	}
 
-	/*public void updateUser(String Email, String password){
-		User user1 ;
-		user1 = userRepository.findUserByEmailAndPassword(Email, password);
+	//метод зміни статусу
+/*	public void updateUser() {
+		User user1;
+		user1 = userRepository.findUserByEmailAndPassword("dimaszelenyuk@gmail.com", "11021993");
+		user1.setAdminStatus(1);
 		userRepository.save(user1);
-	}
+	}*/
 
 
 	//Метод перевірки на наявність емайла і пароля і заповнення мапи
-	public int comparisonUser(String password, String Email) {
+	public int comparisonUser(String parol, String email) {
+
 		try {
-			idForUserLogin = userRepository.findUserByEmailAndPassword(Email, password).getId();
+			idForUserLogin = userRepository.findUserByEmailAndPassword(email, parol).getId();
 			if (userRepository.findOne(idForUserLogin).getAdminStatus() == 0) {
-				mapUser.put("name", userRepository.findOne(idForUserLogin).getName());
+				mapUser.put("firstName", userRepository.findOne(idForUserLogin).getName());
 				mapUser.put("lastName", userRepository.findOne(idForUserLogin).getLastName());
+				mapUser.put("email", userRepository.findOne(idForUserLogin).getEmail());
 				try {
-					mapUser.put("telephonNamber", Integer.toString(Integer.parseInt(userRepository.findOne(idForUserLogin).getTelephon_namber())));
-					mapUser.put("skype", Integer.toString(Integer.parseInt(userRepository.findOne(idForUserLogin).getSkype())));
+					mapUser.put("telephon_namber",(userRepository.findOne(idForUserLogin).getTelephon_namber()));
+					mapUser.put("skype",userRepository.findOne(idForUserLogin).getSkype());
+
 				} catch (NullPointerException e) {}
 				return 0;
-			}else {
+			}else if (userRepository.findOne(idForUserLogin).getAdminStatus() == 1) {
 				return 1;
 			}
 		}catch (NullPointerException e){
-			return 9;}
-	}*/
+			return 9;
+		}
+		return 9;
+	}
 
 	// виводить всіх юзерів
 		public Iterable<User> getAll(){

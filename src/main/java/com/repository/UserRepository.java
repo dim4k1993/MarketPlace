@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 public interface UserRepository extends CrudRepository<User,Integer> {
 
-   /* @Query(value = "select u from User u where u.email = ?1 and u.password = ?2")
-    User findUserByEmailAndPassword (@RequestParam String emailUser, @RequestParam String password);*/
+    @Query(value = "select u from User u where u.email = ?1 and u.parol = ?2")
+    User findUserByEmailAndPassword (@RequestParam String email, @RequestParam String parol);
+
+    @Query(value = "select u from User u where u.email = ?1")
+    User findUserByEmail (@RequestParam String email);
 }
