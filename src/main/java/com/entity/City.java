@@ -51,7 +51,6 @@ public class City {
         this.users = users;
     }
 
-    public void setRegion() {
+    public void setRegion() {}
 
-    }
 }

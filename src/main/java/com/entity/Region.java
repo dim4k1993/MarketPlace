@@ -13,10 +13,6 @@ public class Region {
 
     private String name;
 
-    @ManyToOne
-    @JoinColumn
-    private Obl obl;
-
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "region")
     private List<City>city;
 
@@ -34,14 +30,6 @@ public class Region {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Obl getObl() {
-        return obl;
-    }
-
-    public void setObl(Obl obl) {
-        this.obl = obl;
     }
 
     public List<City> getCity() {

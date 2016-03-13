@@ -17,6 +17,7 @@
 	<tr><a href="user">Мой профиль</a></tr>
 	<tr><a href="addProduct">Подать объявление </a></tr>
 
+
 </form>
 </body>
 

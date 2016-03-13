@@ -28,16 +28,16 @@ public class UserService {
 		user.setTelephon_namber(telephon_namber);
 		userRepository.save(user);
 	}
-/*
+
 
 	//метод зміни статусу
-		public void updateUser() {
+/*		public void updateUser() {
 		User user1;
 		user1 = userRepository.findUserByEmailAndPassword("dimaszelenyuk@gmail.com", "11021993");
 		user1.setAdminStatus(1);
 		userRepository.save(user1);
-	}
-*/
+	}*/
+
 
 //бачить юзера по id
 /*	public void comparisonUserVisit(int id){
