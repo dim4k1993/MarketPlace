@@ -8,8 +8,8 @@ public class Messenger {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
     private String Messenger;
+
     @ManyToOne
     @JoinColumn
     private User userSentMessenger;
@@ -17,6 +17,30 @@ public class Messenger {
     @ManyToOne
     @JoinColumn
     private User userReceivedMessenger;
+
+    @ManyToOne
+    @JoinColumn
+    private Product productSentMessenger;
+
+    @ManyToOne
+    @JoinColumn
+    private Product productReceivedMessenger;
+
+    public Product getProductSentMessenger() {
+        return productSentMessenger;
+    }
+
+    public void setProductSentMessenger(Product productSentMessenger) {
+        this.productSentMessenger = productSentMessenger;
+    }
+
+    public Product getProductReceivedMessenger() {
+        return productReceivedMessenger;
+    }
+
+    public void setProductReceivedMessenger(Product productReceivedMessenger) {
+        this.productReceivedMessenger = productReceivedMessenger;
+    }
 
     public int getId() {
         return id;
