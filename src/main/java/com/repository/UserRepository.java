@@ -13,6 +13,6 @@ public interface UserRepository extends CrudRepository<User,Integer> {
 
 
     //дає id юзерові
- /*   @Query(value = "select u from User u where u.id = ?1")
+  /*  @Query(value = "select u from User u where u.id = ?1")
     User findUserById (int emailUser);*/
 }

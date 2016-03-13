@@ -41,7 +41,6 @@ public class ProdoctController {
             productService.addProduct(name,priceD,text,stanProducta,
                      nameUser, email,telephonNamber,skype);
         }catch (NumberFormatException e){
-            System.out.println(e);
         }
         return "redirect:/";
     }

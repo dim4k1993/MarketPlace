@@ -36,6 +36,9 @@
 
         </tr>
     </table>
+    <table>
+    <tr><a href="addProduct">Подать объявление </a></tr>
+    </table>
     <tr>
         <a href="/user">exit</a>
     </tr>
