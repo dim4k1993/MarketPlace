@@ -27,12 +27,12 @@
 			</tr>
 			<tr>
 				<th>Пароль:</th>
-				<td><input name="parol" type="text" />
+				<td><input name="parol" type="password" />
 				<td>
 			</tr>
 			<tr>
 				<th> Повторите пороль :</th>
-				<td><input name="povtorParol" type="text" />
+				<td><input name="povtorParol" type="password" />
 				<td>
 			</tr>
 				<th>Номер телефона:</th>

@@ -1,5 +1,6 @@
 package com.controller;
 
+import com.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +19,8 @@ public class UserController {
 	
 	@Autowired
 	UserService userService;
+	@Autowired
+	UserRepository userRepository;
 
 	//відображення сторінки юзера
 	@RequestMapping("/user")
@@ -32,9 +35,9 @@ public class UserController {
 			return "redirect:/userAccount";
 		}
 		if (userService.comparisonUser(parol, email) == 1){
-			return "redirect:/adminPage";
+			return "redirect:/adminAccount";
 		}
-		return "errorPage";
+		return "errorPasswordOrLoginPage";
 	}
 
 	@RequestMapping(value = "/userAccount")
@@ -47,10 +50,18 @@ public class UserController {
 		return "userAccount";
 	}
 
-	@RequestMapping(value = "/userAccount", method = RequestMethod.POST)
-	public String comparisonUser (@RequestParam String email, @RequestParam String parol, Model model) {
-		return "userAccount";
+
+/*
+	//дає id юзерові
+	@RequestMapping(value = "/user/id{id}", method = RequestMethod.GET)
+	public String ShowUserVisit (@PathVariable("id") int email) {
+		userService.mapUser.clear();
+		userService.comparisonUserVisit(email);
+		return "redirect:/userAccount/id{id}";
 	}
+*/
+
+
 
 //відображення сторінки регістріції
 	@RequestMapping("/registration")

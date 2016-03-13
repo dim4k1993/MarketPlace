@@ -28,13 +28,25 @@ public class UserService {
 		user.setTelephon_namber(telephon_namber);
 		userRepository.save(user);
 	}
+/*
 
 	//метод зміни статусу
-/*	public void updateUser() {
+		public void updateUser() {
 		User user1;
 		user1 = userRepository.findUserByEmailAndPassword("dimaszelenyuk@gmail.com", "11021993");
 		user1.setAdminStatus(1);
 		userRepository.save(user1);
+	}
+*/
+
+//бачить юзера по id
+/*	public void comparisonUserVisit(int id){
+		idForUserLogin=  userRepository.findUserById(id).getId();
+		mapUser.put("firstName", userRepository.findOne(idForUserLogin).getName());
+		mapUser.put("lastName", userRepository.findOne(idForUserLogin).getLastName());
+		mapUser.put("email", userRepository.findOne(idForUserLogin).getEmail());
+		mapUser.put("telephon_namber", userRepository.findOne(idForUserLogin).getTelephon_namber());
+
 	}*/
 
 
@@ -61,6 +73,7 @@ public class UserService {
 		}
 		return 9;
 	}
+
 
 	// виводить всіх юзерів
 		public Iterable<User> getAll(){

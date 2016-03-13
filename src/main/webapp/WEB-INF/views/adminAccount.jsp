@@ -1,9 +1,6 @@
-<%@ page import="java.sql.ResultSet" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,16 +11,19 @@
 </head>
 <body>
 <form method="post">
-    <h>Удалить юзера:</h>
-
-    <table>
-        <c:forEach var="user" items="${users}"><tr>
-            <td>${user.getLastName()}</td>
-            <td><--</td>
-            <td><c:url value="/adminDeleteUser/${user.id}" var = "url"/> <a href="${url}">Удалить</a> </td>
-        </tr></c:forEach>
+    <table align="center">
+        <tr>
+            <h2 align="center">Админка</h2>
+        </tr>
     </table>
-
+    <table>
+        <td> <a href="adminDeleteUser">Удалить юзеров</a></td>
+        <td> <a href="adminShowUser">Посмотреть юзеров</a></td>
+    </table>
+    <tr>
+        <a href="/user">exit</a>
+    </tr>
 </form>
+
 </body>
 </html>
