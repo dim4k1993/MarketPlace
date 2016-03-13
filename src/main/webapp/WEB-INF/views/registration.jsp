@@ -23,16 +23,17 @@
 			</tr>
 			<tr>
 				<th>Email-адрес:</th>
-				<td><input name="email" type="text" /></td>
+				<td><input  pattern = "^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$" name = "email" type="text"/></td>
 			</tr>
 			<tr>
 				<th>Пароль:</th>
-				<td><input name="parol" type="password" />
+				<td><input pattern = "^[a-zA-Z0-9]+$" name = "parol" type="password"/></td>
+
 				<td>
 			</tr>
 			<tr>
 				<th> Повторите пороль :</th>
-				<td><input name="povtorParol" type="password" />
+				<td><input pattern = "^[a-zA-Z0-9]+$" name = "povtorParol" type="password"/></td>
 				<td>
 			</tr>
 				<th>Номер телефона:</th>

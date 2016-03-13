@@ -26,12 +26,15 @@ public class ProductService {
         productRepository.save(product);
     }
 
-  /*  public Iterable<Product> getAll(){
+
+    public Iterable<Product> getAll(){
         return productRepository.findAll();
     }
 
-    public void daleteProduct(String id){
+    public void deleteProduct(String id){
         productRepository.delete(Integer.parseInt(id));
-    }*/
+    }
+
+
 
 }

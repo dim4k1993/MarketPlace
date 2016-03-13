@@ -1,5 +1,6 @@
 package com.controller;
 
+import com.servise.ProductService;
 import com.servise.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,8 @@ public class AdminChangeController {
 
     @Autowired
     UserService userService;
+    @Autowired
+    ProductService productService;
 
     // виводить всіх юзерів в адмінці
     @RequestMapping("/adminDeleteUser")
@@ -22,21 +25,23 @@ public class AdminChangeController {
     }
     // удаляє вибраного юзера в адмінці
     @RequestMapping("/adminDeleteUser/{id}")
-    public String daleteUserPage (@PathVariable String id){
-        userService.daleteUser(id);
+    public String deleteUserPage (@PathVariable String id){
+        userService.deleteUser(id);
         return "redirect:/adminDeleteUser";
     }
 
 
-
-    // виводить всіх юзерів в адмінці
-    @RequestMapping("/adminShowUser")
-    public String ShowAllUser(Model model) {
-        model.addAttribute("users",userService.getAll());
-        return "adminShowUser";
+    // виводить всі продукти в адмінці
+   @RequestMapping("/adminDeleteProduct")
+    public String ShowProduct(Model model) {
+       model.addAttribute("products",productService.getAll());
+        return "adminDeleteProduct";
     }
-
-
-
+    //удаляє вибраний продукт в адмінці
+    @RequestMapping("/adminDeleteProduct/{id}")
+    public String deleteProduct (@PathVariable String id){
+        productService.deleteProduct(id);
+        return "redirect:/adminDeleteProduct";
+    }
 
 }

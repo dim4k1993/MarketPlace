@@ -46,17 +46,5 @@ public class ProdoctController {
         return "redirect:/";
     }
 
-
-  /*  @RequestMapping("/user")
-    public String ShowProduct(Model model) {
-        model.addAttribute("products",productService.getAll());
-        return "user";
-    }
-
-    @RequestMapping("/user/{id}")
-    public String daleteProdoct (@PathVariable String id){
-        productService.daleteProduct(id);
-        return "redirect:/user";
-    }*/
 }
 

@@ -81,7 +81,7 @@ public class UserService {
 	}
 
 	// удаляє вибраного юзера
-	public void daleteUser(String id){
+	public void deleteUser(String id){
 		userRepository.delete(Integer.parseInt(id));
 	}
 }

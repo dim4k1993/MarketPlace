@@ -18,7 +18,9 @@
     </table>
     <table>
         <td> <a href="adminDeleteUser">Удалить юзеров</a></td>
-        <td> <a href="adminShowUser">Посмотреть юзеров</a></td>
+        <td></td>
+        <td> <a href="adminDeleteProduct">Удалить продукти</a></td>
+
     </table>
     <tr>
         <a href="/user">exit</a>

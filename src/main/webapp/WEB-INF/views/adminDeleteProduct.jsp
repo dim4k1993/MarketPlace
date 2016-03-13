@@ -14,13 +14,13 @@
 </head>
 <body>
 <form method="post">
-    <h>Посмотреть юзера:</h>
+    <h>Удалить продукт:</h>
 
     <table>
-        <c:forEach var="user" items="${users}"><tr>
-            <td>${user.getLastName()}</td>
+        <c:forEach var="product" items="${products}"><tr>
+            <td>${product.getName()}</td>
             <td><--</td>
-            <td><c:url value="/userAccount/id${user.id}" var = "url"/>  <a href="${url}" >Посмотреть</a>  </td>
+            <td><c:url value="/adminDeleteProduct/${product.id}" var = "url"/> <a href="${url}">Удалить</a> </td>
         </tr></c:forEach>
     </table>
 
