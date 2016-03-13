@@ -19,8 +19,7 @@
     <table>
         <c:forEach var="user" items="${users}"><tr>
             <td>${user.getLastName()}</td>
-            <td><c:url value="/userAccount/${user.email}" var = "url"/>  <a href="${url}" >Show</a>  </td>
-            <td>||</td>
+            <td><--</td>
             <td><c:url value="/adminDeleteUser/${user.id}" var = "url"/> <a href="${url}">Delete</a> </td>
         </tr></c:forEach>
     </table>
