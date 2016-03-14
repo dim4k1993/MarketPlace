@@ -38,7 +38,16 @@
 			</tr>
 				<th>Номер телефона:</th>
 				<td><input name="telephon_namber" type="text" /></td>
-			</tr>
+
+			<form method = "POST">
+				<select name = "regionM">
+					<c:forEach var="region" items="${region}">
+						<option value="${region.id}">${region.name}</option>
+					</c:forEach>
+				</select>
+				<input type = "submit" value = "Вибрать">
+			</form>
+
 			<tr>
 				<td><input type="submit" value="Добавить" />
 				<td>

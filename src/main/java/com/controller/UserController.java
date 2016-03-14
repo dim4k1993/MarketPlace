@@ -1,6 +1,8 @@
 package com.controller;
 
 import com.repository.UserRepository;
+import com.servise.CityService;
+import com.servise.RegionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +21,12 @@ public class UserController {
 	
 	@Autowired
 	UserService userService;
+
+	@Autowired
+	RegionService regionService;
+	@Autowired
+	CityService cityService;
+
 	@Autowired
 	UserRepository userRepository;
 
@@ -63,16 +71,33 @@ public class UserController {
 
 
 
+
+/*
+
 //відображення сторінки регістріції
 	@RequestMapping("/registration")
 	public String ShowRegistration() {
 		return "registration";
 	}
+*/
+
+
+	//відображення сторінки регістріції i модель регіонів
+@RequestMapping("/registration")
+public String ShowRegistration(Model model) {
+	model.addAttribute("region",regionService.getAll());
+	return "registration";
+
+}
+
 // реєстрація юзера
 	@RequestMapping(value="/registration", method = RequestMethod.POST)
-	public String saveRegistration (@RequestParam String name,
+	public String saveRegistration (Model model,@RequestParam int regionM, @RequestParam String name,
 									@RequestParam String lastName, @RequestParam  String email, @RequestParam String parol,
-									@RequestParam String telephon_namber,@RequestParam String povtorParol) throws IOException {
+									@RequestParam String telephon_namber,@RequestParam String povtorParol,HttpServletResponse response) throws IOException {
+		userService.mapUser.clear();
+		System.out.println(regionM);
+
 		if (name.equals("") || lastName.equals("") || email.equals("") ||
 				parol.equals("") || telephon_namber.equals("")||povtorParol.equals("")) {
 			return "redirect:/registration";
