@@ -57,8 +57,6 @@ public class UserController {
 		model.addAttribute("skypeMap",userService.mapUser.get("skype"));
 		return "userAccount";
 	}
-
-
 /*
 	//дає id юзерові
 	@RequestMapping(value = "/user/id{id}", method = RequestMethod.GET)
@@ -69,11 +67,7 @@ public class UserController {
 	}
 */
 
-
-
-
 /*
-
 //відображення сторінки регістріції
 	@RequestMapping("/registration")
 	public String ShowRegistration() {
@@ -86,17 +80,17 @@ public class UserController {
 @RequestMapping("/registration")
 public String ShowRegistration(Model model) {
 	model.addAttribute("region",regionService.getAll());
+	model.addAttribute("city",cityService.getAll());
 	return "registration";
 
 }
 
 // реєстрація юзера
 	@RequestMapping(value="/registration", method = RequestMethod.POST)
-	public String saveRegistration (Model model,@RequestParam int regionM, @RequestParam String name,
+	public String saveRegistration (Model model,@RequestParam int regionR,@RequestParam int cityM, @RequestParam String name,
 									@RequestParam String lastName, @RequestParam  String email, @RequestParam String parol,
 									@RequestParam String telephon_namber,@RequestParam String povtorParol,HttpServletResponse response) throws IOException {
 		userService.mapUser.clear();
-		System.out.println(regionM);
 
 		if (name.equals("") || lastName.equals("") || email.equals("") ||
 				parol.equals("") || telephon_namber.equals("")||povtorParol.equals("")) {
@@ -109,6 +103,8 @@ public String ShowRegistration(Model model) {
 		}
 		return "redirect:/registration";
 	}
+
+
 
 	}
 

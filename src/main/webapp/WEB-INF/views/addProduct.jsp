@@ -36,6 +36,7 @@
                     <td>
                 </tr>
                     <th>Email-адрес*</th>
+
         <td><input  pattern = "^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$" name = "email" type="text"/></td>
                 </tr>
                 <tr>
