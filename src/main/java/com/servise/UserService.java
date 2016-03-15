@@ -12,14 +12,14 @@ import java.util.Map;
 
 @Service
 public class UserService {
-	
+
 	@Autowired
 	private UserRepository userRepository;
 	private int idForUserLogin;
 	public Map<String, String> mapUser = new HashMap<String, String>();
 
 	//Метод додавання юзерів
-	public void userRegistration(String name,String lastName,String email,String parol,String telephon_namber){
+	public void userRegistration(String name, String lastName, String email, String parol, String telephon_namber) {
 		User user = new User();
 		user.setName(name);
 		user.setLastName(lastName);
@@ -39,22 +39,24 @@ public class UserService {
 	}*/
 
 
-//бачить юзера по id
-/*	public void comparisonUserVisit(int id){
-		idForUserLogin=  userRepository.findUserById(id).getId();
-		mapUser.put("firstName", userRepository.findOne(idForUserLogin).getName());
-		mapUser.put("lastName", userRepository.findOne(idForUserLogin).getLastName());
-		mapUser.put("email", userRepository.findOne(idForUserLogin).getEmail());
-		mapUser.put("telephon_namber", userRepository.findOne(idForUserLogin).getTelephon_namber());
+	//бачить юзера по id
+	public void comparisonUserVisit(int id) {
+		SearchInfo(userRepository.findUserById(id).getId());
+	}
 
-	}*/
+
+	//Search for login user
+	public int comparisonUser(String parol, String email) {
+		try {return SearchInfo(userRepository.findUserByEmailAndPassword(email, parol).getId());
+		} catch (NullPointerException e) {
+		}
+		return 9;
+	}
 
 
 	//Метод перевірки на наявність емайла і пароля і заповнення мапи
-	public int comparisonUser(String parol, String email) {
-
+	public int SearchInfo(int idForUserLogin) {
 		try {
-			idForUserLogin = userRepository.findUserByEmailAndPassword(email, parol).getId();
 			if (userRepository.findOne(idForUserLogin).getAdminStatus() == 0) {
 				mapUser.put("firstName", userRepository.findOne(idForUserLogin).getName());
 				mapUser.put("lastName", userRepository.findOne(idForUserLogin).getLastName());
@@ -62,7 +64,6 @@ public class UserService {
 				try {
 					mapUser.put("telephon_namber",(userRepository.findOne(idForUserLogin).getTelephon_namber()));
 					mapUser.put("skype",userRepository.findOne(idForUserLogin).getSkype());
-
 				} catch (NullPointerException e) {}
 				return 0;
 			}else if (userRepository.findOne(idForUserLogin).getAdminStatus() == 1) {

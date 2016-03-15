@@ -12,7 +12,7 @@
 </head>
 <body>
 <form method="post">
-    <h>Юзер Акаунт</h>
+    <h>Зашол гость</h>
     <table>
         <tr>
             <th>First Name:</th>
@@ -37,7 +37,7 @@
         </tr>
     </table>
     <table>
-    <tr><a href="addProduct">Подать объявление </a></tr>
+        <tr><a href="addProduct">Подать объявление </a></tr>
     </table>
     <tr>
         <a href="/loginUserPage">exit</a>

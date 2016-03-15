@@ -32,7 +32,6 @@
 		<p class="login-submit">
 			<button type="submit" class="login-button">Войти</button>
 		</p>
-	<p class="forgot-password"><a href="index.html">Забыл пароль?</a></p>
 	<p><a href="registration">Регистрация</a></p>
 </form>
 

@@ -23,7 +23,7 @@
 
     </table>
     <tr>
-        <a href="/user">exit</a>
+        <a href="/loginUserPage">exit</a>
     </tr>
 </form>
 

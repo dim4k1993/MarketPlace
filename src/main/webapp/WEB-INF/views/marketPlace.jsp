@@ -14,7 +14,7 @@
 <form method="post">
 	<h2>Торговая Площадка</h2>
 
-	<tr><a href="user">Мой профиль</a></tr>
+	<tr><a href="loginUserPage">Мой профиль</a></tr>
 	<tr><a href="addProduct">Подать объявление </a></tr>
 
 
