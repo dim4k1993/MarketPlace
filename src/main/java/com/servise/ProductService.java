@@ -5,11 +5,18 @@ package com.servise;
         import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.stereotype.Service;
 
+        import java.util.HashMap;
+        import java.util.Map;
+
 @Service
 public class ProductService {
 
     @Autowired
     private ProductRepository productRepository;
+
+    // створення мапи продуктів
+    private int idForProduct;
+    public Map<String, String> mapProduct = new HashMap<String, String>();
 
     // метод додавання продукту
     public void addProduct(String name,double price,String text,String stanProducta,
@@ -25,6 +32,28 @@ public class ProductService {
         product.setSkype(skype);
         productRepository.save(product);
     }
+
+    public void comparisonProductVisit(int id) {
+        SearchInfoProduct(productRepository.findProductById(id).getId());
+    }
+
+
+    //Метод перевірки на наявність емайла і пароля і заповнення мапи
+    public int SearchInfoProduct(int idForProduct) {
+            mapProduct.put("name", productRepository.findOne(idForProduct).getName());
+            mapProduct.put("stanProducta",(productRepository.findOne(idForProduct).getStanProducta()));
+            mapProduct.put("telephonNamber", productRepository.findOne(idForProduct).getTelephonNamber());
+            mapProduct.put("nameUser",productRepository.findOne(idForProduct).getNameUser());
+            mapProduct.put("city", productRepository.findOne(idForProduct).getCity().getName());
+            mapProduct.put("text", productRepository.findOne(idForProduct).getText());
+            mapProduct.put("email", productRepository.findOne(idForProduct).getEmail());
+                try {
+                    mapProduct.put("skype", productRepository.findOne(idForProduct).getSkype());
+                } catch (NullPointerException e) {}
+                return 0;
+    }
+
+
 
     // дістіє всі продукти
     public Iterable<Product> getAll(){

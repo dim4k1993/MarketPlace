@@ -15,6 +15,8 @@ public class UserService {
 
 	@Autowired
 	private UserRepository userRepository;
+
+	// створення мапи юзерів
 	private int idForUserLogin;
 	public Map<String, String> mapUser = new HashMap<String, String>();
 
@@ -41,13 +43,13 @@ public class UserService {
 
 	//бачить юзера по id
 	public void comparisonUserVisit(int id) {
-		SearchInfo(userRepository.findUserById(id).getId());
+		SearchInfoUser(userRepository.findUserById(id).getId());
 	}
 
 
 	//пошук по email юзера
 	public int comparisonUser(String parol, String email) {
-		try {return SearchInfo(userRepository.findUserByEmailAndPassword(email, parol).getId());
+		try {return SearchInfoUser(userRepository.findUserByEmailAndPassword(email, parol).getId());
 		} catch (NullPointerException e) {
 		}
 		return 9;
@@ -55,7 +57,7 @@ public class UserService {
 
 
 	//Метод перевірки на наявність емайла і пароля і заповнення мапи
-	public int SearchInfo(int idForUserLogin) {
+	public int SearchInfoUser(int idForUserLogin) {
 		try {
 			if (userRepository.findOne(idForUserLogin).getAdminStatus() == 0) {
 				mapUser.put("firstName", userRepository.findOne(idForUserLogin).getName());
@@ -64,6 +66,7 @@ public class UserService {
 				try {
 					mapUser.put("telephon_namber",(userRepository.findOne(idForUserLogin).getTelephon_namber()));
 					mapUser.put("skype",userRepository.findOne(idForUserLogin).getSkype());
+					mapUser.put("city", userRepository.findOne(idForUserLogin).getCity().getName());
 				} catch (NullPointerException e) {}
 				return 0;
 			}else if (userRepository.findOne(idForUserLogin).getAdminStatus() == 1) {

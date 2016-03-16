@@ -13,11 +13,11 @@
 <body>
 <form method="post">
 	<h2>Торговая Площадка</h2>
-
+	<table>
 	<tr><a href="loginUserPage">Мой профиль</a></tr>
 	<tr><a href="addProduct">Подать объявление </a></tr>
-
-
+	<tr><a href="productPage">Показать продукт </a></tr>
+	</table>
 </form>
 </body>
 

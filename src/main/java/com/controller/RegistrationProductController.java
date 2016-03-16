@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
-public class ProdoctController {
+public class RegistrationProductController {
 
     @Autowired
     ProductService productService;

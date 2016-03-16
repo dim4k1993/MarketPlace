@@ -23,6 +23,10 @@
             <td>${lastNameMap}</td>
         </tr>
         <tr>
+            <th>City:</th>
+            <td>${cityMap}</td>
+        </tr>
+        <tr>
             <th>Email:</th>
             <td>${emailMap}</td>
         </tr>

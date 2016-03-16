@@ -21,7 +21,8 @@ public class ShowModelUserController {
         model.addAttribute("telephon_namberMap",userService.mapUser.get("telephon_namber"));
         model.addAttribute("skypeMap",userService.mapUser.get("skype"));
         model.addAttribute("cityMap", userService.mapUser.get("city"));
-        model.addAttribute("ragionMap", userService.mapUser.get("region"));
+        model.addAttribute("regionMap",userService.mapUser.get("region"));
+
     }
 
 }

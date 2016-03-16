@@ -12,37 +12,48 @@
 </head>
 <body>
 <form method="post">
-    <h>Зашол гость</h>
+    <h>Продукт сторінка</h>
     <table>
         <tr>
-            <th>First Name:</th>
-            <td>${firstNameMap}</td>
+            <th> Імя продукта:</th>
+            <td>${nameMap}</td>
         </tr>
         <tr>
-            <th>Last Name:</th>
-            <td>${lastNameMap}</td>
+            <th>Ціна:</th>
+            <td>${priceMap}</td>
+        </tr>
+        <tr>
+            <th>Опис:</th>
+            <td>${textMap}</td>
+        </tr>
+        <tr>
+            <th>Стан продукта:</th>
+            <td>${stanProductaMap}</td>
+        </tr>
+        <tr>
+            <th>Ім'я власника:</th>
+            <td>${nameUserMap}</td>
         </tr>
         <tr>
             <th>Email:</th>
             <td>${emailMap}</td>
         </tr>
         <tr>
-            <th>phoneNumber:</th>
-            <td>${telephon_namberMap}</td>
+            <th>Телефонний номер:</th>
+            <td>${telephonNamberMap}</td>
         </tr>
         <tr>
             <th>Skype:</th>
             <td>${skypeMap}</td>
+
         </tr>
         <tr>
-            <th>City:</th>
+            <th>Місто:</th>
             <td>${cityMap}</td>
         </tr>
     </table>
-    <table>
-    </table>
     <tr>
-        <a href="/loginUserPage">exit</a>
+        <a href="/">exit</a>
     </tr>
 </form>
 </body>
