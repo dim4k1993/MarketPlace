@@ -48,7 +48,7 @@ table {
 }
 
 body, .login-submit, .login-submit:before, .login-submit:after {
-    background: #373737 url("css/bg.png") 0 0 repeat;
+    background: #373737 url("/resources/css/bg.png") 0 0 repeat;
 }
 
 body {
@@ -201,7 +201,7 @@ label {
     left: 12px;
     width: 25px;
     height: 19px;
-    background: url("css/arrow.png") 0 0 no-repeat;
+    background: url("/resources/css/arrow.png") 0 0 no-repeat;
 }
 
 ::-moz-focus-inner {

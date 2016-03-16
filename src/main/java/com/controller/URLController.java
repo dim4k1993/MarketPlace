@@ -13,7 +13,7 @@ public class URLController {
     @Autowired
     UserService userService;
 
-
+// метод для контроля URL
    @RequestMapping(value = {"/{url}/id{id}","/{url}"})
     public String ShowUserPrivate (Model model , @PathVariable String url) {
         userService.mapUser.clear();

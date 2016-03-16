@@ -11,6 +11,7 @@ public class CityService {
     @Autowired
     CityRepository cityRepository;
 
+    // дістає всі міста
     public Iterable<City> getAll(){
         return cityRepository.findAll();
     }

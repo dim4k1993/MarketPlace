@@ -13,7 +13,7 @@ public class ShowModelUserController {
     @Autowired
     UserService userService;
 
-
+// медад який заносить дані юзера в модеотку і показує їх
     public void ShowModelUserInfo ( Model model ) {
         model.addAttribute("firstNameMap", userService.mapUser.get("firstName"));
         model.addAttribute("lastNameMap", userService.mapUser.get("lastName"));

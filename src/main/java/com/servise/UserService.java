@@ -30,7 +30,7 @@ public class UserService {
 	}
 
 
-	//метод зміни статусу
+	//метод зміни статусу юзера
 /*		public void updateUser() {
 		User user1;
 		user1 = userRepository.findUserByEmailAndPassword("dimaszelenyuk@gmail.com", "11021993");
@@ -45,7 +45,7 @@ public class UserService {
 	}
 
 
-	//Search for login user
+	//пошук по email юзера
 	public int comparisonUser(String parol, String email) {
 		try {return SearchInfo(userRepository.findUserByEmailAndPassword(email, parol).getId());
 		} catch (NullPointerException e) {

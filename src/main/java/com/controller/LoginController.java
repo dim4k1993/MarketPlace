@@ -32,7 +32,8 @@ public class LoginController {
         return "loginUserPage";
     }
 
-
+    //Метод для входу на сторінку по email і паролю
+    //Метод оприділення юзера чи адмін якщо статус = 0 це юзер якщо = 1 то адмін
     @RequestMapping(value = "/loginUserPage", method = RequestMethod.POST)
     public String comparisonUser (HttpServletResponse response, @RequestParam String parol, @RequestParam String email)throws IOException {
         userService.mapUser.clear();

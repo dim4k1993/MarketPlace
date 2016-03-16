@@ -11,6 +11,7 @@ public class RegionService {
     @Autowired
     RegionRepository regionRepository;
 
+    // дістає всі області
     public Iterable<Region> getAll(){
         return regionRepository.findAll();
     }

@@ -18,14 +18,13 @@ public class RegistrationUserContriller {
 
     @Autowired
     UserService userService;
-
     @Autowired
     RegionService regionService;
     @Autowired
     CityService cityService;
 
 
-    //відображення сторінки регістріції i модель регіонів
+    //відображення сторінки регістріції i модель регіонів і міст
     @RequestMapping(value= "/registration", method = RequestMethod.GET)
     public String ShowRegistration(Model model) {
         long start = System.currentTimeMillis();
@@ -37,6 +36,9 @@ public class RegistrationUserContriller {
 
 
     // реєстрація юзера
+    //перевірка чи заповнені всі поля
+    // перевівка чи співпадають паролі
+    // повертає сторінку реністріції
     @RequestMapping(value="/registration", method = RequestMethod.POST)
     public String saveRegistration (HttpServletResponse response, @RequestParam String name,
                                     @RequestParam String lastName, @RequestParam  String email, @RequestParam String parol,

@@ -11,7 +11,7 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
-    //додавання продукту
+    // метод додавання продукту
     public void addProduct(String name,double price,String text,String stanProducta,
                            String nameUser,String email, String telephonNamber,String skype){
         Product product = new Product();
@@ -26,11 +26,12 @@ public class ProductService {
         productRepository.save(product);
     }
 
-
+    // дістіє всі продукти
     public Iterable<Product> getAll(){
         return productRepository.findAll();
     }
 
+    // удаляє вибраний продукт по id
     public void deleteProduct(String id){
         productRepository.delete(Integer.parseInt(id));
     }

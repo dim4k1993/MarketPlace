@@ -15,12 +15,14 @@ public class VisitUserControlleer {
     @Autowired
     ShowModelUserController showModelUserController;
 
-
+    // відображає сторінку юзера якщо зайшов гість
     @RequestMapping("/visitUser")
     public String ShowVisitUser(Model model) {
         showModelUserController.ShowModelUserInfo(model);
         return "visitPage";
     }
+
+    //присвоює id юзерові на сторінці
     @RequestMapping("userAccount/id{id}")
     public String ShowVisitUser1 (@PathVariable int id, Model model) {
         userService.comparisonUserVisit(id);
