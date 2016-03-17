@@ -19,8 +19,8 @@ public class ProductService {
     public Map<String, String> mapProduct = new HashMap<String, String>();
 
     // метод додавання продукту
-    public void addProduct(String name,double price,String text,String stanProducta,
-                           String nameUser,String email, String telephonNamber,String skype){
+    public void addProduct(String name, String price, String text, String stanProducta,
+                           String nameUser, String email, String telephonNamber, String skype){
         Product product = new Product();
         product.setName(name);
         product.setPrice(price);
@@ -41,6 +41,7 @@ public class ProductService {
     //Метод перевірки на наявність емайла і пароля і заповнення мапи
     public int SearchInfoProduct(int idForProduct) {
             mapProduct.put("name", productRepository.findOne(idForProduct).getName());
+            mapProduct.put("price",productRepository.findOne(idForProduct).getPrice());
             mapProduct.put("stanProducta",(productRepository.findOne(idForProduct).getStanProducta()));
             mapProduct.put("telephonNamber", productRepository.findOne(idForProduct).getTelephonNamber());
             mapProduct.put("nameUser",productRepository.findOne(idForProduct).getNameUser());

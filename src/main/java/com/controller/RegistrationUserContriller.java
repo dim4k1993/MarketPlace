@@ -1,6 +1,7 @@
 package com.controller;
 
 
+import com.entity.City;
 import com.servise.CityService;
 import com.servise.RegionService;
 import com.servise.UserService;
@@ -28,8 +29,7 @@ public class RegistrationUserContriller {
     @RequestMapping(value= "/registration", method = RequestMethod.GET)
     public String ShowRegistration(Model model) {
         long start = System.currentTimeMillis();
-        model.addAttribute("region",regionService.getAll());
-        model.addAttribute("city",cityService.getAll());
+        model.addAttribute("regionModel",regionService.getAll());
         System.out.println(System.currentTimeMillis() - start);
         return "registration";
     }
@@ -42,14 +42,14 @@ public class RegistrationUserContriller {
     @RequestMapping(value="/registration", method = RequestMethod.POST)
     public String saveRegistration (HttpServletResponse response, @RequestParam String name,
                                     @RequestParam String lastName, @RequestParam  String email, @RequestParam String parol,
-                                    @RequestParam String telephon_namber, @RequestParam String povtorParol) throws IOException {
+                                    @RequestParam String telephon_namber,@RequestParam String povtorParol, @RequestParam String skype) throws IOException {
 
         if (name.equals("") || lastName.equals("") || email.equals("") ||
                 parol.equals("") || telephon_namber.equals("")||povtorParol.equals("")) {
             return "redirect:/registration";
         }
         if(parol.equals(povtorParol)) {
-            userService.userRegistration(name, lastName, email, parol, telephon_namber);
+            userService.userRegistration(name, lastName, email, parol, telephon_namber,skype);
             return "redirect:/loginUserPage";
         }
         return "redirect:/registration";

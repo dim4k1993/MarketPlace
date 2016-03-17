@@ -32,15 +32,8 @@ public class RegistrationProductController {
                 stanProducta.equals("") || nameUser.equals("")||email.equals("")||telephonNamber.equals("")) {
             return "redirect:/addProduct";
         }
-        //ловить помилку якщо ввели замість цифр символи
-        try {
-            double priceD = Double.parseDouble(price);
-
-
-            productService.addProduct(name,priceD,text,stanProducta,
+            productService.addProduct(name,price,text,stanProducta,
                      nameUser, email,telephonNamber,skype);
-        }catch (NumberFormatException e){
-        }
 
         return "redirect:/";
     }

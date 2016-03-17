@@ -1,5 +1,6 @@
 package com.servise;
 
+import com.entity.City;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,13 +22,14 @@ public class UserService {
 	public Map<String, String> mapUser = new HashMap<String, String>();
 
 	//Метод додавання юзерів
-	public void userRegistration(String name, String lastName, String email, String parol, String telephon_namber) {
+	public void userRegistration(String name, String lastName, String email, String parol,String telephon_namber,String skype ) {
 		User user = new User();
 		user.setName(name);
 		user.setLastName(lastName);
 		user.setEmail(email);
 		user.setParol(parol);
 		user.setTelephon_namber(telephon_namber);
+		user.setSkype(skype);
 		userRepository.save(user);
 	}
 

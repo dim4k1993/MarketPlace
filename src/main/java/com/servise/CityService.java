@@ -15,4 +15,9 @@ public class CityService {
     public Iterable<City> getAll(){
         return cityRepository.findAll();
     }
+
+
+    public Iterable<City> getCity(int id){
+        return cityRepository.findByRegion(id);
+    }
 }

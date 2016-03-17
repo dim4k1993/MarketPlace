@@ -16,18 +16,11 @@ public class ProductController {
     @Autowired
     ShowModelProductController showModelProductController;
 
-    //відображення сторінки юзера
+    //відображення сторінки продукта
     @RequestMapping("/productPage")
     public String ShowProductPage(Model model) {
         showModelProductController.ShowModelProductInfo(model);
         return "productPage";
     }
 
-    //присвоює id продуктові на сторінці
-    @RequestMapping("productPage/id{id}")
-    public String ShowVisitUser1 (@PathVariable int id, Model model) {
-        productService.comparisonProductVisit(id);
-        showModelProductController.ShowModelProductInfo(model);
-        return "productPage";
-    }
 }

@@ -19,7 +19,7 @@ public class VisitUserControlleer {
     @RequestMapping("/visitUser")
     public String ShowVisitUser(Model model) {
         showModelUserController.ShowModelUserInfo(model);
-        return "visitPage";
+        return "visitPageUser";
     }
 
     //присвоює id юзерові на сторінці
@@ -27,7 +27,7 @@ public class VisitUserControlleer {
     public String ShowVisitUser1 (@PathVariable int id, Model model) {
         userService.comparisonUserVisit(id);
         showModelUserController.ShowModelUserInfo(model);
-        return "visitPage";
+        return "visitPageUser";
     }
 
 }
