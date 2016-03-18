@@ -35,12 +35,12 @@ public class LoginController {
     //Метод для входу на сторінку по email і паролю
     //Метод оприділення юзера чи адмін якщо статус = 0 це юзер якщо = 1 то адмін
     @RequestMapping(value = "/loginUserPage", method = RequestMethod.POST)
-    public String comparisonUser (HttpServletResponse response, @RequestParam String parol, @RequestParam String email)throws IOException {
+    public String comparisonUser (HttpServletResponse response, @RequestParam String password, @RequestParam String username)throws IOException {
         userService.mapUser.clear();
-        if (userService.comparisonUser(parol,email) == 0){
+        if (userService.comparisonUser(password,username) == 0){
             return "redirect:/userAccount";
         }
-        if (userService.comparisonUser(parol, email) == 1){
+        if (userService.comparisonUser(password, username) == 1){
             return "redirect:/adminAccount";
         }
         return "errorPasswordOrLoginPage";

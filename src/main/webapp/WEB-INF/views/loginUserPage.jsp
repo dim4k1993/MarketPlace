@@ -23,11 +23,11 @@
 	<form method="post" action="" class="login">
 	<p>
 		<label for="email">Email:</label>
-		<input type="text" required pattern = "^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$"name="email" id="email" >
+		<input type="text" required pattern = "^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$"name="username" id="email" >
 	</p>
 	<p>
 		<label for="parol">Пароль:</label>
-		<input pattern = "^[a-zA-Z0-9]+$" min = "5" required type="password" name="parol" id="parol" >
+		<input pattern = "^[a-zA-Z0-9]+$" min = "5" required type="password" name="password" id="parol" >
 	</p>
 		<p class="login-submit">
 			<button type="submit" class="login-button">Войти</button>

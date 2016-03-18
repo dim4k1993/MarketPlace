@@ -42,14 +42,14 @@ public class RegistrationUserContriller {
     @RequestMapping(value="/registration", method = RequestMethod.POST)
     public String saveRegistration (HttpServletResponse response, @RequestParam String name,
                                     @RequestParam String lastName, @RequestParam  String email, @RequestParam String parol,
-                                    @RequestParam String telephon_namber,@RequestParam String povtorParol, @RequestParam String skype) throws IOException {
+                                    @RequestParam String telephon_namber,@RequestParam String povtorParol) throws IOException {
 
         if (name.equals("") || lastName.equals("") || email.equals("") ||
                 parol.equals("") || telephon_namber.equals("")||povtorParol.equals("")) {
             return "redirect:/registration";
         }
         if(parol.equals(povtorParol)) {
-            userService.userRegistration(name, lastName, email, parol, telephon_namber,skype);
+            userService.userRegistration(name, lastName, email, parol, telephon_namber);
             return "redirect:/loginUserPage";
         }
         return "redirect:/registration";

@@ -1,6 +1,8 @@
 package com.servise;
 
+import com.controller.CityController;
 import com.entity.City;
+import com.repository.CityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,19 +19,25 @@ public class UserService {
 	@Autowired
 	private UserRepository userRepository;
 
+	@Autowired
+	CityController cityController;
+
+	@Autowired
+	CityRepository cityRepository;
+
 	// створення мапи юзерів
 	private int idForUserLogin;
 	public Map<String, String> mapUser = new HashMap<String, String>();
 
 	//Метод додавання юзерів
-	public void userRegistration(String name, String lastName, String email, String parol,String telephon_namber,String skype ) {
+	public void userRegistration(String name, String lastName, String email, String parol,String telephon_namber ) {
 		User user = new User();
 		user.setName(name);
 		user.setLastName(lastName);
 		user.setEmail(email);
 		user.setParol(parol);
 		user.setTelephon_namber(telephon_namber);
-		user.setSkype(skype);
+		user.setCity(cityController.cityId);
 		userRepository.save(user);
 	}
 

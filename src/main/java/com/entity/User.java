@@ -35,6 +35,10 @@ public class User {
 
     private  int adminStatus;
 
+    @Enumerated(EnumType.ORDINAL)
+    private Role role;
+
+
 
     //вказує, що поле нижче є відображенням зв`зку один до багатьох
     //з цієї сторони зв`язку, тобто в анотації OneToMany, завжди необхідно описати додаткові параметри
@@ -56,6 +60,13 @@ public class User {
     //до протилежної сторони зв`язку
     @JoinColumn
     private City city;
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
 
     public int getId() {
         return id;

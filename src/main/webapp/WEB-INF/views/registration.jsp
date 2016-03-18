@@ -1,6 +1,5 @@
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="com.entity.City" %>
-<%@ page import="com.repository.RegionRepository" %>
 <%@ page import="org.springframework.beans.factory.annotation.Autowired" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>

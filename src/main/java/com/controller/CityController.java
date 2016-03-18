@@ -1,5 +1,6 @@
 package com.controller;
 
+import com.entity.City;
 import com.repository.CityRepository;
 import com.servise.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ public class CityController {
     CityService cityService;
     @Autowired
     CityRepository cityRepository;
+    public City cityId;
 
     @RequestMapping("/searchCityByIdRegion{index}/{id}")
     public String controlUrlRegion(Model model,@PathVariable String id,@PathVariable String index){
@@ -36,6 +38,12 @@ public class CityController {
     }
 
     public void searchIdByCity(Model model, String id){
-        model.addAttribute("IdCity", cityRepository.findByCity(id));
+        System.out.println(id);
+        cityId=cityRepository.findByCity(id).iterator().next();
+        System.out.println(cityId.getName());
+        System.out.println(cityId.getId());
+
     }
+
+
 }
