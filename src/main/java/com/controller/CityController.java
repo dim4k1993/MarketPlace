@@ -38,10 +38,8 @@ public class CityController {
     }
 
     public void searchIdByCity(Model model, String id){
-        System.out.println(id);
         cityId=cityRepository.findByCity(id).iterator().next();
-        System.out.println(cityId.getName());
-        System.out.println(cityId.getId());
+
 
     }
 
