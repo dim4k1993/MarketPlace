@@ -53,14 +53,16 @@ public class UserService {
 
 	//бачить юзера по id
 	public void comparisonUserVisit(int id) {
-		SearchInfoUser(userRepository.findUserById(id).getId());
+		if(userRepository.findOne(id) != null) {
+			SearchInfoUser(userRepository.findUserById(id).getId());
+		}
 	}
 
 
 	//пошук по email юзера
 	public int comparisonUser(String parol, String email) {
-		try {return SearchInfoUser(userRepository.findUserByEmailAndPassword(email, parol).getId());
-		} catch (NullPointerException e) {
+		if (userRepository.findUserByEmailAndPassword(email, parol) != null) {
+			return SearchInfoUser(userRepository.findUserByEmailAndPassword(email, parol).getId());
 		}
 		return 9;
 	}

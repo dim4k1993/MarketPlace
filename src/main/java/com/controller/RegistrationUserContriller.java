@@ -11,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
@@ -40,9 +42,10 @@ public class RegistrationUserContriller {
     // перевівка чи співпадають паролі
     // повертає сторінку реністріції
     @RequestMapping(value="/registration", method = RequestMethod.POST)
-    public String saveRegistration (HttpServletResponse response, @RequestParam String name,
+    public String saveRegistration ( HttpServletResponse response, @RequestParam String name,
                                     @RequestParam String lastName, @RequestParam  String email, @RequestParam String parol,
-                                    @RequestParam String telephon_namber,@RequestParam String povtorParol) throws IOException {
+                                    @RequestParam String telephon_namber, @RequestParam String povtorParol) throws IOException {
+
 
         if (name.equals("") || lastName.equals("") || email.equals("") ||
                 parol.equals("") || telephon_namber.equals("")||povtorParol.equals("")) {

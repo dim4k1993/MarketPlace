@@ -34,7 +34,9 @@ public class ProductService {
     }
 
     public void comparisonProductVisit(int id) {
-        SearchInfoProduct(productRepository.findProductById(id).getId());
+        if(productRepository.findOne(id) != null) {
+            SearchInfoProduct(productRepository.findProductById(id).getId());
+        }
     }
 
 
