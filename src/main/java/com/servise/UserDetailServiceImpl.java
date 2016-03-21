@@ -9,18 +9,21 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 
 import java.util.ArrayList;
-import java.util.Collection;
 
-@Service
+import java.util.List;
+
+@Service("UserDetailsService")
 public class UserDetailServiceImpl implements UserDetailsService {
 
     @Autowired
     private UserRepository userRepository;
 
-    public UserDetails loadUserByUsername(String login)
-            throws UsernameNotFoundException {
+    @Transactional
+    public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
         com.entity.User user = null;
         user = userRepository.findOneByUserName(login);
         if (user == null) {
@@ -29,7 +32,7 @@ public class UserDetailServiceImpl implements UserDetailsService {
         if (user == null) {
             return null;
         }
-        Collection<SimpleGrantedAuthority> authorities = new ArrayList<SimpleGrantedAuthority>();
+        List<SimpleGrantedAuthority> authorities = new ArrayList<SimpleGrantedAuthority>();
         authorities.add(new SimpleGrantedAuthority(user.getRole().toString()));
         return  new User(String.valueOf(user.getId()), user.getParol(),authorities);
     }

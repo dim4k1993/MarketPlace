@@ -4,7 +4,7 @@
   <artifactId>projektMVC</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
-  
+
   <dependencies>
         <dependency>
             <groupId>com.fasterxml.jackson.jaxrs</groupId>
@@ -170,7 +170,7 @@
 	<artifactId>javax.servlet-api</artifactId>
 	<version>3.1.0</version>
 </dependency>
-        
+
     </dependencies>
-  
+
 </project>

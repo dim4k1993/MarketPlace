@@ -2,6 +2,7 @@ package com.servise;
 
 import com.controller.CityController;
 import com.entity.City;
+import com.entity.Role;
 import com.repository.CityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -43,13 +44,12 @@ public class UserService {
 
 
 	//метод зміни статусу юзера
-/*		public void updateUser() {
-		User user1;
+	public void updateUser(String Email, String password){
+		User user1 ;
 		user1 = userRepository.findUserByEmailAndPassword("dimaszelenyuk@gmail.com", "11021993");
-		user1.setAdminStatus(1);
+		user1.setRole(Role.ROLE_ADMIN);
 		userRepository.save(user1);
-	}*/
-
+	}
 
 	//бачить юзера по id
 	public void comparisonUserVisit(int id) {

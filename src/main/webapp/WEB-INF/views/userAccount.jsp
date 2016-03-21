@@ -43,9 +43,10 @@
     <table>
     <tr><a href="addProduct">Подать объявление </a></tr>
     </table>
-    <tr>
-        <a href="/loginUserPage">exit</a>
-    </tr>
+    <c:url value="/logout" var="logout"/>
+    <form method="post" action="${logout}?${_csrf.parameterName}=${_csrf.token}">
+        <input  type="submit" value="Вихід"/>
+    </form>
 </form>
 </body>
 </html>

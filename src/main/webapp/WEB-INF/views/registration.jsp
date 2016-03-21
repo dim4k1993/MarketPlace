@@ -14,7 +14,7 @@
 	<script   src="https://code.jquery.com/jquery-2.2.1.min.js" ></script>
 </head>
 <body>
-	<form method="post">
+	<form method="post" action="?${_csrf.parameterName}=${_csrf.token}">
 		<table align="center">
 			<h2 align="center"> Регистрация</h2>
 			<tr>
