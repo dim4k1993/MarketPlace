@@ -13,7 +13,14 @@ public class SystemAuthenticationSuccessHandler implements AuthenticationSuccess
     public void onAuthenticationSuccess(HttpServletRequest req,
                                         HttpServletResponse res, Authentication auth)
             throws IOException, ServletException {
-        res.sendRedirect(req.getContextPath() + "/userAccount");
+        String ROLE = String.valueOf(auth.getAuthorities());
+        if (ROLE.equals("[ROLE_ADMIN]")){
+            res.sendRedirect(req.getContextPath() + "/adminAccount");
+        }
+        if (ROLE.equals("[ROLE_USER]")){
+            res.sendRedirect(req.getContextPath() + "/userAccount");
+        }
+
     }
 
 }

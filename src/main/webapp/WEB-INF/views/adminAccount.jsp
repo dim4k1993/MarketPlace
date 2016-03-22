@@ -22,9 +22,12 @@
         <td> <a href="adminDeleteProduct">Удалить продукти</a></td>
 
     </table>
-    <tr>
-        <a href="/loginUserPage">exit</a>
-    </tr>
+
+    <c:url value="/logout" var="logout"/>
+    <form method="post" action="${logout}">
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+        <input  type="submit" value="Вихід"/>
+    </form>
 </form>
 
 </body>

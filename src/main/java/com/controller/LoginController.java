@@ -31,7 +31,7 @@ public class LoginController {
     }
 
     //відображення сторінки юзера
-    @RequestMapping(value = "/loginUserPage",method = RequestMethod.GET)
+    @RequestMapping(value = "/login",method = RequestMethod.GET)
     public String ShowUserPage(Model model) {
         return "loginUserPage";
     }

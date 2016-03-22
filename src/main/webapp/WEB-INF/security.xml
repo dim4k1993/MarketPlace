@@ -10,12 +10,18 @@
             class="com.servise.SystemAuthenticationSuccessHandler" />
 
 <http use-expressions="true">
+    <intercept-url pattern = "/userAccount/**" access="hasAnyRole('USER','ADMIN')" />
+    <intercept-url pattern = "/adminAccount/**" access="hasRole('ADMIN')"/>
+    <form-login
+            login-page="/login"
+            authentication-success-handler-ref="authenticationSuccessHandler"
+            authentication-failure-url="/login?error=true"
+            username-parameter="username"
+            password-parameter="password"/>
 
-    <form-login login-page="/loginUserPage" login-processing-url="/login" authentication-success-handler-ref="authenticationSuccessHandler" authentication-failure-url="/?authfail=true" default-target-url="/userAccount"/>
-    <logout logout-url="/logout" logout-success-url="/loginUserPage"/>
+    <logout logout-url="/logout" logout-success-url="/login"/>
+
     </http>
-
-
 
 
     <beans:bean id="encoder"

@@ -37,6 +37,7 @@ public class UserService {
 		user.setLastName(lastName);
 		user.setEmail(email);
 		user.setParol(parol);
+		user.setRole(Role.ROLE_USER);
 		user.setTelephon_namber(telephon_namber);
 		user.setCity(cityController.cityId);
 		userRepository.save(user);
@@ -44,7 +45,7 @@ public class UserService {
 
 
 	//метод зміни статусу юзера
-	public void updateUser(String Email, String password){
+	public void updateUser(String email, String parol){
 		User user1 ;
 		user1 = userRepository.findUserByEmailAndPassword("dimaszelenyuk@gmail.com", "11021993");
 		user1.setRole(Role.ROLE_ADMIN);
@@ -59,35 +60,17 @@ public class UserService {
 	}
 
 
-	//пошук по email юзера
-	public int comparisonUser(String parol, String email) {
-		if (userRepository.findUserByEmailAndPassword(email, parol) != null) {
-			return SearchInfoUser(userRepository.findUserByEmailAndPassword(email, parol).getId());
-		}
-		return 9;
-	}
-
-
 	//Метод перевірки на наявність емайла і пароля і заповнення мапи
-	public int SearchInfoUser(int idForUserLogin) {
-		try {
-			if (userRepository.findOne(idForUserLogin).getAdminStatus() == 0) {
+	public void SearchInfoUser(int idForUserLogin) {
+
 				mapUser.put("firstName", userRepository.findOne(idForUserLogin).getName());
 				mapUser.put("lastName", userRepository.findOne(idForUserLogin).getLastName());
-				mapUser.put("email", userRepository.findOne(idForUserLogin).getEmail());
-				try {
+
+					mapUser.put("email", userRepository.findOne(idForUserLogin).getEmail());
 					mapUser.put("telephon_namber",(userRepository.findOne(idForUserLogin).getTelephon_namber()));
 					mapUser.put("skype",userRepository.findOne(idForUserLogin).getSkype());
 					mapUser.put("city", userRepository.findOne(idForUserLogin).getCity().getName());
-				} catch (NullPointerException e) {}
-				return 0;
-			}else if (userRepository.findOne(idForUserLogin).getAdminStatus() == 1) {
-				return 1;
-			}
-		}catch (NullPointerException e){
-			return 9;
-		}
-		return 9;
+
 	}
 
 
