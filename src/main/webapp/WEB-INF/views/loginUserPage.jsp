@@ -20,7 +20,9 @@
 </head>
 <body>
 
-	<form method="post" action="" class="login">
+<c:url value="/login" var="login"/>
+<form method="post"  class="login" action="${login}?${_csrf.parameterName}=${_csrf.token}" >
+	<input type="hidden" >
 	<p>
 		<label for="email">Email:</label>
 		<input type="text" required pattern = "^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$"name="username" id="email" >
