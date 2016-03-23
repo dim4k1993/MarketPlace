@@ -30,9 +30,7 @@ public class RegistrationUserContriller {
     //відображення сторінки регістріції i модель регіонів і міст
     @RequestMapping(value= "/registration", method = RequestMethod.GET)
     public String ShowRegistration(Model model) {
-        long start = System.currentTimeMillis();
         model.addAttribute("regionModel",regionService.getAll());
-        System.out.println(System.currentTimeMillis() - start);
         return "registration";
     }
 

@@ -5,6 +5,7 @@ import com.entity.City;
 import com.entity.Role;
 import com.repository.CityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.entity.User;
@@ -26,6 +27,9 @@ public class UserService {
 	@Autowired
 	CityRepository cityRepository;
 
+	@Autowired
+	BCryptPasswordEncoder bCryptPasswordEncoder;
+
 	// створення мапи юзерів
 	private int idForUserLogin;
 	public Map<String, String> mapUser = new HashMap<String, String>();
@@ -36,7 +40,7 @@ public class UserService {
 		user.setName(name);
 		user.setLastName(lastName);
 		user.setEmail(email);
-		user.setParol(parol);
+		user.setParol(bCryptPasswordEncoder.encode(parol));
 		user.setRole(Role.ROLE_USER);
 		user.setTelephon_namber(telephon_namber);
 		user.setCity(cityController.cityId);
