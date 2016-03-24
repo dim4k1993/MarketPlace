@@ -29,7 +29,6 @@ public class UserController {
 			model.addAttribute("user", user);
 			return "redirect:/id" + principal.getName();
 		}else {
-
 			return "redirect:/";
 		}
 	}
