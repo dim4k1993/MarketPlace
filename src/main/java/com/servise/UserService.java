@@ -43,7 +43,7 @@ public class UserService {
 		user.setParol(bCryptPasswordEncoder.encode(parol));
 		user.setRole(Role.ROLE_USER);
 		user.setTelephon_namber(telephon_namber);
-		user.setCity(cityController.cityId);
+		user.setCity(cityController.city);
 		userRepository.save(user);
 	}
 
