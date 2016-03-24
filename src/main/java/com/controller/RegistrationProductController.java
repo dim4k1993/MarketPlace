@@ -17,7 +17,7 @@ public class RegistrationProductController {
 
 //відображення сторінки додавання продукту
     @RequestMapping("/addProduct")
-    public String showProdoct() {
+    public String showProduct() {
         return "addProduct";
     }
 
@@ -25,8 +25,8 @@ public class RegistrationProductController {
     //перевірка чи заповнені всі поля
     // після заповнення повертає на почадкову сторінку
     @RequestMapping(value="/addProduct", method = RequestMethod.POST)
-    public String saveProdoct (@RequestParam String name, @RequestParam String price, @RequestParam  String text, @RequestParam String stanProducta,
-                                    @RequestParam String nameUser, @RequestParam String email, @RequestParam String telephonNamber, @RequestParam String skype){
+    public String saveProduct(@RequestParam String name, @RequestParam String price, @RequestParam  String text, @RequestParam String stanProducta,
+                              @RequestParam String nameUser, @RequestParam String email, @RequestParam String telephonNamber, @RequestParam String skype){
 
         if (name.equals("") || price.equals("") || text.equals("") ||
                 stanProducta.equals("") || nameUser.equals("")||email.equals("")||telephonNamber.equals("")) {

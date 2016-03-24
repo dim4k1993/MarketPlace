@@ -48,11 +48,16 @@
                     <td><input name="skype" type="text" /></td>
                 </tr>
                 <tr>
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                     <td><input type="submit" value="Добавить" />
                     <td>
                 </tr>
-        <a href="/">Exit</a>
     </table>
+</form>
+<c:url value="/" var="logout"/>
+<form method="post" action="${logout}">
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+    <input  type="submit" value="Вихід"/>
 </form>
 
 </body>

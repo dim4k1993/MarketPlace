@@ -1,6 +1,7 @@
 package com.servise;
 
         import com.entity.Product;
+        import com.entity.Role;
         import com.repository.ProductRepository;
         import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.stereotype.Service;
@@ -28,6 +29,7 @@ public class ProductService {
         product.setStanProducta(stanProducta);
         product.setNameUser(nameUser);
         product.setEmail(email);
+        product.setRole(Role.ROLE_USER);
         product.setTelephonNamber(telephonNamber);
         product.setSkype(skype);
         productRepository.save(product);
@@ -41,7 +43,7 @@ public class ProductService {
 
 
     //Метод перевірки на наявність емайла і пароля і заповнення мапи
-    public int SearchInfoProduct(int idForProduct) {
+    public void SearchInfoProduct(int idForProduct) {
             mapProduct.put("name", productRepository.findOne(idForProduct).getName());
             mapProduct.put("price",productRepository.findOne(idForProduct).getPrice());
             mapProduct.put("stanProducta",(productRepository.findOne(idForProduct).getStanProducta()));
@@ -50,13 +52,9 @@ public class ProductService {
             mapProduct.put("city", productRepository.findOne(idForProduct).getCity().getName());
             mapProduct.put("text", productRepository.findOne(idForProduct).getText());
             mapProduct.put("email", productRepository.findOne(idForProduct).getEmail());
-                try {
-                    mapProduct.put("skype", productRepository.findOne(idForProduct).getSkype());
-                } catch (NullPointerException e) {}
-                return 0;
+            mapProduct.put("skype", productRepository.findOne(idForProduct).getSkype());
+
     }
-
-
 
     // дістіє всі продукти
     public Iterable<Product> getAll(){
