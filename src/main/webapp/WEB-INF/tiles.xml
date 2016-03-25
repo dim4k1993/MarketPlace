@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+    <!-- Description of template web page that will have 3 attributes: header, footer
+        and main content (body) -->
+    <!-- Опис шаблонної веб сторінки, на якій буде 3 параметри: хедер, футер
+        і головний контент -->
+    <definition name="base.definition" template="/WEB-INF/views/tiles/layout.jsp">
+        <put-attribute name="header" value="/WEB-INF/views/tiles/header.jsp"></put-attribute>
+        <put-attribute name="footer" value="/WEB-INF/views/tiles/footer.jsp"></put-attribute>
+        <!-- Here body must be empty, values will come in child definitions -->
+        <!-- Задаєм пустим, значення будуть приходити в наступних definition -->
+        <put-attribute name="body" value=""></put-attribute>
+    </definition>
+
+
+    <definition name="marketPlace" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/views/marketPlace.jsp"></put-attribute>
+        <put-attribute name="title" value=""></put-attribute>
+    </definition>
+
+    <definition name="loginUserPage" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/views/loginUserPage.jsp"></put-attribute>
+        <put-attribute name="title" value=""></put-attribute>
+    </definition>
+
+    <definition name="adminAccount" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/views/adminAccount.jsp"></put-attribute>
+        <put-attribute name="title" value=""></put-attribute>
+    </definition>
+
+    <definition name="productPage" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/views/productPage.jsp"></put-attribute>
+        <put-attribute name="title" value=""></put-attribute>
+    </definition>
+
+    <definition name="registration" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/views/registration.jsp"></put-attribute>
+        <put-attribute name="title" value=""></put-attribute>
+    </definition>
+
+    <definition name="userAccount" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/views/userAccount.jsp"></put-attribute>
+        <put-attribute name="title" value=""></put-attribute>
+    </definition>
+
+    <definition name="searchCityByIdRegion" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/views/searchCityByIdRegion.jsp"></put-attribute>
+        <put-attribute name="title" value=""></put-attribute>
+    </definition>
+
+    <definition name="newUser" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/views/newUser.jsp"></put-attribute>
+        <put-attribute name="title" value=""></put-attribute>
+    </definition>
+
+    <definition name="newProduct" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/views/newProduct.jsp"></put-attribute>
+        <put-attribute name="title" value=""></put-attribute>
+    </definition>
+
+    <definition name="adminDeleteUser" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/views/adminDeleteUser.jsp"></put-attribute>
+        <put-attribute name="title" value=""></put-attribute>
+    </definition>
+
+    <definition name="adminDeleteProduct" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/views/adminDeleteProduct.jsp"></put-attribute>
+        <put-attribute name="title" value=""></put-attribute>
+    </definition>
+
+    <definition name="addProduct" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/views/addProduct.jsp"></put-attribute>
+        <put-attribute name="title" value=""></put-attribute>
+    </definition>
+
+</tiles-definitions>
