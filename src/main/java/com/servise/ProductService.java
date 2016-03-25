@@ -29,7 +29,6 @@ public class ProductService {
         product.setStanProducta(stanProducta);
         product.setNameUser(nameUser);
         product.setEmail(email);
-        product.setRole(Role.ROLE_USER);
         product.setTelephonNamber(telephonNamber);
         product.setSkype(skype);
         productRepository.save(product);

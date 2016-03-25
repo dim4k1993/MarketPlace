@@ -26,8 +26,6 @@ public class Product {
 
     private  String skype;
 
-    @Enumerated(EnumType.ORDINAL)
-    private Role role;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "productSentMessenger")
     private List<Messenger> productSentMessages;
@@ -50,13 +48,6 @@ public class Product {
     @JoinColumn
     private City city;
 
-    public Role getRole() {
-        return role;
-    }
-
-    public void setRole(Role role) {
-        this.role = role;
-    }
 
     public int getId() {
         return id;

@@ -16,7 +16,7 @@ public class CityController {
     CityService cityService;
     @Autowired
     CityRepository cityRepository;
-    public City city;
+    public City cityId;
 
     @RequestMapping("/searchCityByIdRegion{index}/{id}")
     public String controlUrlRegion(Model model,@PathVariable String id,@PathVariable String index){
@@ -35,10 +35,12 @@ public class CityController {
 
     public void searchCityByRegion(Model model, int id){
         model.addAttribute("cityRegion", cityService.getCity(id));
+        System.out.println(id);
     }
 
     public void searchIdByCity(Model model, String id){
-        city=cityRepository.findByCity(id).iterator().next();
+        System.out.println(id);
+        cityId = cityRepository.findByCity(id).iterator().next();
 
 
     }

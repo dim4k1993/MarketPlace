@@ -4,6 +4,7 @@ import com.controller.CityController;
 import com.entity.City;
 import com.entity.Role;
 import com.repository.CityRepository;
+import org.omg.PortableInterceptor.Interceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -12,6 +13,7 @@ import com.entity.User;
 import com.repository.UserRepository;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 
@@ -43,7 +45,7 @@ public class UserService {
 		user.setParol(bCryptPasswordEncoder.encode(parol));
 		user.setRole(Role.ROLE_USER);
 		user.setTelephon_namber(telephon_namber);
-		user.setCity(cityController.city);
+		user.setCity(cityController.cityId);
 		userRepository.save(user);
 	}
 
