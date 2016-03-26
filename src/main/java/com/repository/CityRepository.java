@@ -20,4 +20,5 @@ public interface CityRepository extends CrudRepository<City,Integer>{
 
 
 
+
 }
