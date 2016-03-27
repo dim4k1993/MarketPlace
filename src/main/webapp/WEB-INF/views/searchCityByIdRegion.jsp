@@ -30,6 +30,14 @@
 
 <script>
 
+    $("#optionReg").change(function(){
+        var id = $("#optionReg").val();
+        index = "city";
+        $.get("searchCityByIdRegion" + index + "/"+ id, {}, function(result){
+            $("#selectCity").html(result);
+        });
+    });
+
     $("#optionCity").change(function(){
         index = "cityId";
         var id = $("#optionCity").val();

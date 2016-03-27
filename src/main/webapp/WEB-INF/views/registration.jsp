@@ -48,6 +48,7 @@
 				<td>
 					<div id="regionDiv">
 						<select id="option" name = "IdRegion">
+							<option value="Виберете Область">Виберете Область</option>
 						<c:forEach var="regionModel" items="${regionModel}">
 							<option value="${regionModel.id}">${regionModel.name}</option>
 						</c:forEach>
@@ -56,6 +57,7 @@
 
 						<div id="select"></div>
 						<div id="selectCity"></div>
+						<tr>${IdCity}</tr>
 					</div>
 				</td>
 			</tr>

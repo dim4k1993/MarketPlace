@@ -16,7 +16,6 @@
 	<table>
 	<tr><a href="loginUserPage">Мой профиль</a></tr>
 	<tr><a href="addProduct">Подать объявление </a></tr>
-	<tr><a href="/product_id">Показать продукт </a></tr>
 	</table>
 </form>
 </body>
