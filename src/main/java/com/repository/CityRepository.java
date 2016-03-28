@@ -11,7 +11,7 @@ import java.util.Set;
 public interface CityRepository extends CrudRepository<City,Integer>{
 
 
-    @Query(value = "select name from City r where (r.region like concat(:region))")
+    @Query(value = "select r from City r where (r.region like concat(:region))")
     Set<City> findByRegion(@Param("region") int region);
 
     @Query(value = "select c from City c where c.name =:name")

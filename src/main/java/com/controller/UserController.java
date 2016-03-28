@@ -34,7 +34,7 @@ public class UserController {
 	}
 
 	//присвоює id юзерові на сторінці
-	@RequestMapping("/id{id}")
+	@RequestMapping("/user_id{id}")
 	public String ShowVisitUser1 (Model model,@PathVariable int id) {
 		User owner = userRepository.findOne(id);
 		if (owner == null) {

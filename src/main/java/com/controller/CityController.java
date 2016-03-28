@@ -39,10 +39,9 @@ public class CityController {
     }
 
     public void searchIdByCity(Model model, String id){
+        int intId = Integer.parseInt(id);
+        cityId = cityRepository.findOne(intId);
         System.out.println(id);
-        cityId = cityRepository.findByCity(id).iterator().next();
-
-
     }
 
 

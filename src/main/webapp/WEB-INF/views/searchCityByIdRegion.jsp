@@ -21,7 +21,7 @@
     <c:when test="${index.equals('city')}">
         <select id="optionCity" name = "RegionId">
             <c:forEach var="cityRegion" items="${cityRegion}">
-                <option >${cityRegion}</option>
+                <option value="${cityRegion.getId()}">${cityRegion.getName()}</option>
             </c:forEach>
         </select>
     </c:when>

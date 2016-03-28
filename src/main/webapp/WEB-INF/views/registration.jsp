@@ -61,6 +61,7 @@
 					</div>
 				</td>
 			</tr>
+
 			<tr>
 				<td align="right"><input type="submit" value="Зареєструватися"/></td>
 				<td>
@@ -81,6 +82,9 @@
 		});
 	});
 </script>
+
+	
+
 
 </body>
 

@@ -45,6 +45,7 @@ public class UserService {
 		user.setParol(bCryptPasswordEncoder.encode(parol));
 		user.setRole(Role.ROLE_USER);
 		user.setTelephon_namber(telephon_namber);
+		System.out.println(cityController.cityId.getName());
 		user.setCity(cityController.cityId);
 		userRepository.save(user);
 	}
