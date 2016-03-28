@@ -17,10 +17,11 @@
         </tr>
     </table>
     <table>
-        <td> <a href="adminDeleteUser">Удалить юзеров</a></td>
+        <td> <a href="adminUser">Робота с ЮЗЕРОМ</a></td>
         <td></td>
-        <td> <a href="adminDeleteProduct">Удалить продукти</a></td>
-
+        <td> <a href="adminProduct">Робота с ПРОДУКТОМ</a></td>
+        <td></td>
+        <td> <a href="adminCategory">Робота с КАТЕРОГИЯМИ</a></td>
     </table>
 
 

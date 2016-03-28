@@ -70,13 +70,18 @@
         <put-attribute name="title" value=""></put-attribute>
     </definition>
 
-    <definition name="adminDeleteUser" extends="base.definition">
-        <put-attribute name="body" value="/WEB-INF/views/adminDeleteUser.jsp"></put-attribute>
+    <definition name="adminUser" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/views/adminUser.jsp"></put-attribute>
         <put-attribute name="title" value=""></put-attribute>
     </definition>
 
-    <definition name="adminDeleteProduct" extends="base.definition">
-        <put-attribute name="body" value="/WEB-INF/views/adminDeleteProduct.jsp"></put-attribute>
+    <definition name="adminProduct" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/views/adminProduct.jsp"></put-attribute>
+        <put-attribute name="title" value=""></put-attribute>
+    </definition>
+
+    <definition name="adminCategory" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/views/adminCategory.jsp"></put-attribute>
         <put-attribute name="title" value=""></put-attribute>
     </definition>
 
