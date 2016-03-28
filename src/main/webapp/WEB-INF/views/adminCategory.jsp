@@ -29,15 +29,13 @@
         </tr>
     </table>
 
-    <table>
-        <c:forEach var="category" items="${categorys}"><tr>
-            <td>${category.getCategoryName()}</td>
-            <td><--</td>
-            <td><c:url value="/catagory_id${category.id}" var = "url"/>  <a href="${url}" >Показать</a>  </td>
-            <td><c:url value="/adminCatagory/${category.id}" var = "url"/> <a href="${url}">Удалить</a> </td>
-        </tr></c:forEach>
-    </table>
-
 </form>
+<table>
+    <c:forEach var="category" items="${categorys}"><tr>
+        <td>${category.getCategoryName()}</td>
+        <td><--</td>
+        <td><c:url value="/adminDeleteCategory/${category.id}" var = "url"/> <a href="${url}">Удалить</a> </td>
+    </tr></c:forEach>
+</table>
 </body>
 </html>

@@ -19,12 +19,12 @@ public class CategoryService {
     }
 
 
-    // виводить всіх юзерів
+
     public Iterable<Category> getAll(){
         return categoryRepository.findAll();
     }
 
-    // удаляє вибраного юзера
+
     public void deleteCategory(String id){
         categoryRepository.delete(Integer.parseInt(id));
     }

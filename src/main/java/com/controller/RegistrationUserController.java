@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Controller
-public class RegistrationUserContriller {
+public class RegistrationUserController {
 
     @Autowired
     UserService userService;

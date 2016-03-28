@@ -33,7 +33,7 @@ public class AdminChangeController {
         return "adminUser";
     }
     // удаляє вибраного юзера в адмінці
-    @RequestMapping("/adminUser/{id}")
+    @RequestMapping("/adminDeleteUser/{id}")
     public String deleteUserPage (@PathVariable String id){
         userService.deleteUser(id);
         return "redirect:/adminUser";
@@ -47,7 +47,7 @@ public class AdminChangeController {
         return "adminProduct";
     }
     //удаляє вибраний продукт в адмінці
-    @RequestMapping("/adminProduct/{id}")
+    @RequestMapping("/adminDeleteProduct/{id}")
     public String deleteProduct (@PathVariable String id){
         productService.deleteProduct(id);
         return "redirect:/adminProduct";
@@ -61,10 +61,10 @@ public class AdminChangeController {
     }
 
     //удаляє вибрану категорію в адмінці
-    @RequestMapping ("/adminCategory{id}")
+    @RequestMapping ("/adminDeleteCategory/{id}")
     public String deleteCategory(@PathVariable String id){
         categoryService.deleteCategory(id);
-        return "redirect:adminCategory";
+        return "redirect:/adminCategory";
     }
 
 
@@ -78,7 +78,7 @@ public class AdminChangeController {
         }
         else
             categoryService.addCategory(categoryName);
-        return "redirect:/adminAccount";
+        return "redirect:/adminCategory";
 
     }
 
