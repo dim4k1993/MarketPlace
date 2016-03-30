@@ -1,5 +1,6 @@
 package com.servise;
 
+        import com.controller.CityController;
         import com.entity.Product;
         import com.entity.Role;
         import com.repository.ProductRepository;
@@ -15,22 +16,16 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
+    @Autowired
+    private CityController cityController;
+
     // створення мапи продуктів
     private int idForProduct;
     public Map<String, String> mapProduct = new HashMap<String, String>();
 
-    // метод додавання продукту
-    public void addProduct(String name, String price, String text, String stanProducta,
-                           String nameUser, String email, String telephonNamber, String skype){
-        Product product = new Product();
-        product.setName(name);
-        product.setPrice(price);
-        product.setText(text);
-        product.setStanProducta(stanProducta);
-        product.setNameUser(nameUser);
-        product.setEmail(email);
-        product.setTelephonNamber(telephonNamber);
-        product.setSkype(skype);
+
+    //Метод додавання продукту
+    public  void  saveProduct(Product product){
         productRepository.save(product);
     }
 

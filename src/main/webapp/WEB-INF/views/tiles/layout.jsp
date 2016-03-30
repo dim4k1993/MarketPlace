@@ -5,7 +5,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title><tiles:getAsString name="title"></tiles:getAsString></title>
+    <%--<title><tiles:getAsString name="title"></tiles:getAsString></title>--%>
 </head>
 
 <!-- This is template, "parent" web page  -->

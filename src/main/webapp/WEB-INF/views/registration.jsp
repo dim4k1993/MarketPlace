@@ -12,37 +12,42 @@
 <!--[if IE 8]> <html class="lt-ie9" lang="uk"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="uk9=5211"> <!--<![endif]-->
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<script   src="https://code.jquery.com/jquery-2.2.1.min.js" ></script>
 </head>
+
 <body>
-	<form method="post" action="?${_csrf.parameterName}=${_csrf.token}">
+
+	<sf:form method="POST" modelAttribute="user"  action="/registration=user+add">
+		<sf:input path="id" id="id" type="hidden"/>
+		<fieldset>
 		<table align="center">
-			<h2 align="center"> Регистрация</h2>
+			<tr>
+				<h2 align="center"> Регистрация</h2>
+			</tr>
 			<tr>
 				<th>Имя:</th>
-				<td><input name="name" type="text" /></td>
+				<td><sf:input path="name"/></td>
+				<td><sf:errors path="name"/></td>
 			</tr>
 			<tr>
 				<th>Фамилия:</th>
-				<td><input name="lastName" type="text" /></td>
+				<td><sf:input path="lastName"/></td>
+				<td><sf:errors path="lastName"/></td>
 			</tr>
 			<tr>
 				<th>Email-адрес:</th>
-				<td><input  pattern = "^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$" name = "email"  type="text"/></td>
+				<td><sf:input pattern = "^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$" path="email"/></td>
+				<td><sf:errors path="email"/></td>
 			</tr>
 			<tr>
 				<th>Пароль:</th>
-				<td><input pattern = "^[a-zA-Z0-9]+$" name = "parol" type="password"/></td>
-			</tr>
-			<tr>
-				<th> Повторите пороль :</th>
-				<td><input pattern = "^[a-zA-Z0-9]+$" name = "povtorParol" type="password"/></td>
-				<td>
+				<td><sf:input pattern = "^[a-zA-Z0-9]+$" path="parol" type="password"/></td>
+				<td><sf:errors path="parol"/> </td>
 			</tr>
 			<tr>
 				<th>Номер телефона:</th>
-				<td><input name="telephon_namber" type="text" /></td>
+				<td><sf:input path="telephon_namber"/></td>
+				<td><sf:errors path="telephon_namber"/></td>
 			</tr>
 			<tr>
 				<th>Розташування:</th>
@@ -55,21 +60,18 @@
 						</c:forEach>
 						</select>
 						<br>
-
 						<div id="select"></div>
 						<div id="selectCity"></div>
-						<tr>${IdCity}</tr>
+						<%--<tr>${IdCity}</tr>--%>
 					</div>
 				</td>
 			</tr>
-
 			<tr>
 				<td align="right"><input type="submit" value="Зареєструватися"/></td>
-				<td>
 			</tr>
 		</table>
-	</form>
-
+		</fieldset>
+	</sf:form>
 
 <script>
 	$("#option").change(function(){
@@ -83,10 +85,6 @@
 		});
 	});
 </script>
-
-
-
-
 
 </body>
 

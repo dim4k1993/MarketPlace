@@ -15,7 +15,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>Войти в кабинет</title>
 	<style>
-		<%--<%@include file='/resources/css/UserEnter.css' %>--%>
 	</style>
 </head>
 <body>

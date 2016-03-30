@@ -1,19 +1,19 @@
 package com.servise;
 
 import com.controller.CityController;
-import com.entity.City;
 import com.entity.Role;
 import com.repository.CityRepository;
-import org.omg.PortableInterceptor.Interceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.entity.User;
 import com.repository.UserRepository;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 
@@ -36,20 +36,14 @@ public class UserService {
 	private int idForUserLogin;
 	public Map<String, String> mapUser = new HashMap<String, String>();
 
-	//Метод додавання юзерів
-	public void userRegistration(String name, String lastName, String email, String parol,String telephon_namber ) {
-		User user = new User();
-		user.setName(name);
-		user.setLastName(lastName);
-		user.setEmail(email);
-		user.setParol(bCryptPasswordEncoder.encode(parol));
+	//	//Метод додавання юзерів
+	public  void  saveUser(User user){
 		user.setRole(Role.ROLE_USER);
-		user.setTelephon_namber(telephon_namber);
-		System.out.println(cityController.cityId.getName());
+		user.setParol(bCryptPasswordEncoder.encode(user.getParol()));
 		user.setCity(cityController.cityId);
+		System.out.println(cityController.cityId.getName());
 		userRepository.save(user);
 	}
-
 
 	//метод зміни статусу юзера
 	public void updateUser(String email, String parol){

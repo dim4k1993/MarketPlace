@@ -1,9 +1,13 @@
 package com.controller;
 
 
+import com.entity.Product;
 import com.servise.ProductService;
+import com.servise.RegionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,27 +19,27 @@ public class RegistrationProductController {
     @Autowired
     ProductService productService;
 
+    @Autowired
+    RegionService regionService;
+
 //відображення сторінки додавання продукту
     @RequestMapping("/addProduct")
-    public String showProduct() {
+    public String showProduct(Model model) {
+        model.addAttribute("regionModel",regionService.getAll());
         return "addProduct";
     }
 
-//додавання продукту
-    //перевірка чи заповнені всі поля
-    // після заповнення повертає на почадкову сторінку
-    @RequestMapping(value="/addProduct", method = RequestMethod.POST)
-    public String saveProduct(@RequestParam String name, @RequestParam String price, @RequestParam  String text, @RequestParam String stanProducta,
-                              @RequestParam String nameUser, @RequestParam String email, @RequestParam String telephonNamber, @RequestParam String skype){
+    //створення продукту
+    @ModelAttribute("product")
+    public Product setProduct(){
+        return new Product();
+    }
 
-        if (name.equals("") || price.equals("") || text.equals("") ||
-                stanProducta.equals("") || nameUser.equals("")||email.equals("")||telephonNamber.equals("")) {
-            return "redirect:/addProduct";
-        }
-            productService.addProduct(name,price,text,stanProducta,
-                     nameUser, email,telephonNamber,skype);
-
-        return "redirect:/";
+    //додавання продукту
+    @RequestMapping(value = "/registration=product+add",method = RequestMethod.POST)
+    public String registrationProduct(@ModelAttribute Product product){
+        productService.saveProduct(product);
+        return "redirect:/productPage";
     }
 
 }

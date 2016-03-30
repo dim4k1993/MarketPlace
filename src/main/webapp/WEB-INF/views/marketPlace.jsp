@@ -20,20 +20,7 @@
 	</table>
 </form>
 
-<%--<sf:form method="POST" modelAttribute="catagory" action="/marketPlace/addCategory">--%>
-	<%--<sf:input path="id" id="id" type ="hidden"/>--%>
-	<%--<fielded>--%>
-		<%--<table>--%>
-			<%--<tr>--%>
-				<%--<td>--%>
-					<%--<th>Name Category</th>--%>
-					<%--<sf:input path="categoryName"/>--%>
-					<%--<input type="submit" value="add">--%>
-				<%--</td>--%>
-			<%--</tr>--%>
-		<%--</table>--%>
-	<%--</fielded>--%>
-<%--</sf:form>--%>
+
 </body>
 
 </html>
