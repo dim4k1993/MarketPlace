@@ -14,6 +14,8 @@ import org.springframework.jmx.export.annotation.ManagedAttribute;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,6 +23,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
+import javax.validation.executable.ValidateOnExecution;
 import java.io.IOException;
 
 @Controller
@@ -45,7 +49,11 @@ public class RegistrationUserController {
 
     // реєстрація юзера
     @RequestMapping(value = "/registration=user+add",method = RequestMethod.POST)
-    public String registrationUser(@ModelAttribute User user){
+    public String registrationUser(Model model,@Valid @ModelAttribute User user,BindingResult result){
+        if(result.hasErrors()){
+            model.addAttribute("regionModel",regionService.getAll());
+            return "registration";
+        }
         userService.saveUser(user);
         return "redirect:/userAccount";
     }

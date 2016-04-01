@@ -36,12 +36,12 @@
 			</tr>
 			<tr>
 				<th>Email-адрес:</th>
-				<td><sf:input pattern = "^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$" path="email"/></td>
+				<td><sf:input path="email"/></td>
 				<td><sf:errors path="email"/></td>
 			</tr>
 			<tr>
 				<th>Пароль:</th>
-				<td><sf:input pattern = "^[a-zA-Z0-9]+$" path="parol" type="password"/></td>
+				<td><sf:input path="parol" type="password"/></td>
 				<td><sf:errors path="parol"/> </td>
 			</tr>
 			<tr>

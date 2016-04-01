@@ -3,8 +3,10 @@ package com.entity;
 import com.entity.City;
 import com.entity.Messenger;
 import com.entity.Product;
+import org.hibernate.validator.constraints.Email;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 import java.util.List;
 
 //показує, що клас буде відображено у БД
@@ -23,10 +25,11 @@ public class User {
 
     private  String parol;
 
+    @Email
     private String email;
 
     private String telephon_namber;
-
+    @Pattern(regexp = "[A-Za-z]{6,15}", message = "error")
     private String name;
 
     private String lastName;
