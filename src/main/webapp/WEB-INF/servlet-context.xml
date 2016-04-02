@@ -25,7 +25,7 @@
 		</property>
 	</bean>
 
-
+	<mvc:resources mapping="/resources/**" location="/web-resources/" />
 	<mvc:annotation-driven validator="validator"/>
 	<bean name="validator"  class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/>
 
