@@ -14,8 +14,8 @@
 <sf:form method="POST" modelAttribute="product"  action="/registration=product+add">
 <sf:input path="id" id="id" type="hidden"/>
 <fieldset>
-    <table align="center">
-        <h2 align="center"> Подать бесплатное объявление</h2>
+    <table align="center" style="margin-top: 100px">
+        <h2 align="center" style="margin-top: 100px"> Подать бесплатное объявление</h2>
                 <tr>
                     <th>Заголовок*</th>
                     <td><sf:input path="name"/></td>
@@ -73,4 +73,7 @@
 </form>
 
 </body>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script   src="https://code.jquery.com/jquery-2.2.2.min.js"   integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="   crossorigin="anonymous"></script>
 </html>

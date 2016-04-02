@@ -11,9 +11,9 @@
 </head>
 <body>
 <form method="post">
-    <table align="center">
+    <table align="center" style="margin-top: 100px">
         <tr>
-            <h2 align="center">Админка</h2>
+            <h2 align="center" style="margin-top: 100px">Админка</h2>
         </tr>
     </table>
     <table>
@@ -32,4 +32,7 @@
     <input  type="submit" value="Вихід"/>
 </form>
 </body>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script   src="https://code.jquery.com/jquery-2.2.2.min.js"   integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="   crossorigin="anonymous"></script>
 </html>

@@ -11,18 +11,18 @@
 <!--[if IE 8]> <html class="lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>Войти в кабинет</title>
-	<style>
+	<style type="text/css">
 	</style>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Insert title here</title>
 </head>
 <body>
-
 <c:url value="/login" var="login"/>
 <form method="post"  class="login" action="${login}">
 	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-	<input type="hidden" >
+		<fieldset>
+			<table align="center" style="margin-top: 100px">
+				<h2 align="center" style="margin-top: 100px"> войти в кабинет</h2>
 	<p>
 		<label for="email">Email:</label>
 		<input type="text" required pattern = "^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$"name="username" id="email" >
@@ -35,7 +35,12 @@
 			<button type="submit" class="login-button">Войти</button>
 		</p>
 	<p><a href="registration">Регистрация</a></p>
+			</table>
+		</fieldset>
 </form>
 
 </body>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script   src="https://code.jquery.com/jquery-2.2.2.min.js"   integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="   crossorigin="anonymous"></script>
 </html>
