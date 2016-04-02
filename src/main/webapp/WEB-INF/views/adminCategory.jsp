@@ -35,7 +35,8 @@
         <td>${category.getCategoryName()}</td>
         <td><--</td>
         <td><c:url value="/adminDeleteCategory/${category.id}" var = "url"/> <a href="${url}">Удалить /</a></td>
-        <td><c:url value="/adminPidCategory${category.id}" var = "url"/> <a href="${url}">добавить пк</a>  </td>
+        <td><c:url value="/adminPidCategory${category.id}" var = "url"/> <a href="${url}">добавить пк /</a>  </td>
+        <td><c:url value="/adminPidCategory" var = "url"/> <a href="${url}">проказать пк </a>  </td>
     </tr></c:forEach>
 </table>
 </body>

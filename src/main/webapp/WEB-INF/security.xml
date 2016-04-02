@@ -12,6 +12,12 @@
 <http use-expressions="true">
     <intercept-url pattern = "/userAccount/**" access="hasAnyRole('USER','ADMIN')" />
     <intercept-url pattern = "/adminAccount/**" access="hasRole('ADMIN')"/>
+    <intercept-url pattern = "/adminUser/**" access="hasRole('ADMIN')"/>
+    <intercept-url pattern = "/adminProduct/**" access="hasRole('ADMIN')"/>
+    <intercept-url pattern = "/adminCategory/**" access="hasRole('ADMIN')"/>
+    <intercept-url pattern = "/adminPidCategory/**" access="hasRole('ADMIN')"/>
+    <intercept-url pattern = "/adminPidCategory{id}/**" access="hasRole('ADMIN')"/>
+
     <form-login
             login-page="/login"
             authentication-success-handler-ref="authenticationSuccessHandler"
