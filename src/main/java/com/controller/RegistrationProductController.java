@@ -39,7 +39,7 @@ public class RegistrationProductController {
     @RequestMapping(value = "/registration=product+add",method = RequestMethod.POST)
     public String registrationProduct(@ModelAttribute Product product){
         productService.saveProduct(product);
-        return "redirect:/productPage";
+        return "redirect:/addProduct";
     }
 
 }

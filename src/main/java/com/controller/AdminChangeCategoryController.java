@@ -1,8 +1,6 @@
 package com.controller;
 
 import com.servise.CategoryService;
-import com.servise.ProductService;
-import com.servise.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,42 +14,9 @@ import java.io.IOException;
 
 //контроллер роботи адміністротора
 @Controller
-public class AdminChangeController {
-
-    @Autowired
-    UserService userService;
-    @Autowired
-    ProductService productService;
+public class AdminChangeCategoryController {
     @Autowired
     CategoryService categoryService;
-
-
-    // виводить всіх юзерів в адмінці
-    @RequestMapping("/adminUser")
-    public String ShowUser(Model model) {
-        model.addAttribute("users",userService.getAll());
-        return "adminUser";
-    }
-    // удаляє вибраного юзера в адмінці
-    @RequestMapping("/adminDeleteUser/{id}")
-    public String deleteUserPage (@PathVariable String id){
-        userService.deleteUser(id);
-        return "redirect:/adminUser";
-    }
-
-
-    // виводить всі продукти в адмінці
-   @RequestMapping("/adminProduct")
-    public String ShowProduct(Model model) {
-       model.addAttribute("products",productService.getAll());
-        return "adminProduct";
-    }
-    //удаляє вибраний продукт в адмінці
-    @RequestMapping("/adminDeleteProduct/{id}")
-    public String deleteProduct (@PathVariable String id){
-        productService.deleteProduct(id);
-        return "redirect:/adminProduct";
-    }
 
     //виводить всі категорії а админці
     @RequestMapping("/adminCategory")
@@ -70,7 +35,7 @@ public class AdminChangeController {
 
     //addCategory
     @RequestMapping(value="/adminCategory", method = RequestMethod.POST)
-    public String saveRegistration (HttpServletResponse response, @RequestParam String categoryName
+    public String saveCategory (HttpServletResponse response, @RequestParam String categoryName
     ) throws IOException {
 
         if (categoryName.equals("")) {
@@ -81,5 +46,6 @@ public class AdminChangeController {
         return "redirect:/adminCategory";
 
     }
+
 
 }

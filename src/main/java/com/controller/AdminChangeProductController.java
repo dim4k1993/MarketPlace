@@ -1,0 +1,30 @@
+package com.controller;
+
+import com.servise.ProductService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+//контроллер роботи адміністротора
+@Controller
+public class AdminChangeProductController {
+
+    @Autowired
+    ProductService productService;
+
+    // виводить всі продукти в адмінці
+    @RequestMapping("/adminProduct")
+    public String ShowProduct(Model model) {
+        model.addAttribute("products",productService.getAll());
+        return "adminProduct";
+    }
+    //удаляє вибраний продукт в адмінці
+    @RequestMapping("/adminDeleteProduct/{id}")
+    public String deleteProduct (@PathVariable String id){
+        productService.deleteProduct(id);
+        return "redirect:/adminProduct";
+    }
+
+}

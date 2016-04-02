@@ -13,11 +13,11 @@
     <title>Insert title here</title>
 </head>
 <body>
-<form method="post">
+<form method="post" action="/adminCategory">
     <h>Category:</h>
 
-    <table align="center">
-        <h2 align="center"> добавить категорию:</h2>
+    <table align="center" style="margin-top: 100px">
+        <h2 align="center" style="margin-top: 100px"> добавить категорию:</h2>
         <tr>
             <th>Назва Катерогии:</th>
             <td><input name="categoryName" type="text" /></td>
@@ -34,7 +34,8 @@
     <c:forEach var="category" items="${categorys}"><tr>
         <td>${category.getCategoryName()}</td>
         <td><--</td>
-        <td><c:url value="/adminDeleteCategory/${category.id}" var = "url"/> <a href="${url}">Удалить</a> </td>
+        <td><c:url value="/adminDeleteCategory/${category.id}" var = "url"/> <a href="${url}">Удалить /</a></td>
+        <td><c:url value="/adminPidCategory${category.id}" var = "url"/> <a href="${url}">добавить пк</a>  </td>
     </tr></c:forEach>
 </table>
 </body>

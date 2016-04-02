@@ -30,7 +30,7 @@ public class ProductController {
     if (principal != null){
         Product product = productRepository.findOne(Integer.parseInt(principal.getName()));
         model.addAttribute("product", product);
-        return "redirect:/product_Id" + principal.getName();
+        return "redirect:/product_id" + principal.getName();
     }else {
         return "redirect:/";
     }

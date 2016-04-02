@@ -60,8 +60,7 @@
     <input  type="submit" value="Вихід"/>
 </form>
 
-<security:authorize
-        access="isAuthenticated() and hasRole('ROLE_ADMIN')">
+<security:authorize access="isAuthenticated() and hasRole('ROLE_ADMIN')">
     <h1>Це буде бачити тільки адмін</h1>
     <%--Це буде бачити тільки адмін--%>
 </security:authorize>
@@ -69,20 +68,15 @@
     <%--Це буде бачити користувач який не залогінився--%>
     <h1>Це буде бачити користувач який не залогінився</h1>
 </security:authorize>
-<security:authorize
-        access="isAuthenticated() and principal.username!='${user.id}' and !hasRole('ROLE_ADMIN')">
+<security:authorize access="isAuthenticated() and principal.username!='${user.id}' and !hasRole('ROLE_ADMIN')">
     <%--Це буде бачити користувач який залогінився він не являється власником сторінки і він не адмін--%>
     <h1>Це буде бачити користувач який залогінився він не являється власником сторінки і він не адмін</h1>
 </security:authorize>
-<security:authorize
-        access="isAuthenticated() and principal.username=='${user.id}'">
+<security:authorize access="isAuthenticated() and principal.username=='${user.id}'">
     <%--Це буде бачити користувач який є власником сторінки--%>
     <h1>Це буде бачити користувач який є власником сторінки</h1>
 </security:authorize>
 
 
 </body>
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-<script   src="https://code.jquery.com/jquery-2.2.2.min.js"   integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="   crossorigin="anonymous"></script>
 </html>

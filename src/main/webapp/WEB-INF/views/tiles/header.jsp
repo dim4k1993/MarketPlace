@@ -35,9 +35,32 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right ">
-
+                <security:authorize access="!isAuthenticated()">
+                    <%--Це буде бачити користувач який не залогінився--%>
+                <li>
+                    <a href="loginUserPage">Мой Кабинет</a>
+                </li>
+                </security:authorize>
+                <security:authorize access="isAuthenticated() and hasRole('ROLE_ADMIN')">
+                    <%--Це буде бачити тільки адмін--%>
+                    <li>
+                        <a href="adminAccount">Мой Кабинет</a>
+                    </li>
+                </security:authorize>
+                <security:authorize access="isAuthenticated() and principal.username!='${user.id}' and !hasRole('ROLE_ADMIN')">
+                    <%--Це буде бачити користувач який залогінився він не являється власником сторінки і він не адмін--%>
+                    <li>
+                        <a href="userAccount">Мой Кабинет</a>
+                    </li>
+                </security:authorize>
+                <security:authorize access="isAuthenticated() and principal.username=='${user.id}' and !hasRole('ROLE_ADMIN')">
+                    <%--Це буде бачити користувач який залогінився він не являється власником сторінки і він не адмін--%>
+                    <li>
+                        <a href="userAccount">Мой Кабинет</a>
+                    </li>
+                </security:authorize>
                 <li class="dropdown">
-                    <a href="/loginUserPage" class="dropdown-toggle" data-toggle="dropdown">Мой Кабинет <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">DropDown<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#">11111111</a>
@@ -51,14 +74,23 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="/addProduct">Подать Обявление</a>
+                    <a href="addProduct">Подать Обявление</a>
                 </li>
                 <li>
-                    <a href="/registration">Регистрация</a>
+                    <a href="registration">Регистрация</a>
                 </li>
+                <security:authorize access="!isAuthenticated()">
+                    <%--Це буде бачити користувач який не залогінився--%>
                 <li>
-                    <a href="/loginUserPage">Войти</a>
+                    <a href="loginUserPage">Войти</a>
                 </li>
+                </security:authorize>
+                <security:authorize access="isAuthenticated()">
+                    <%--Це буде бачити користувач який  залогінився--%>
+                    <li>
+                        <a href="logout">Вийти</a>
+                    </li>
+                </security:authorize>
             </ul>
         </div>
     </div>

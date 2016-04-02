@@ -22,6 +22,8 @@
         <td> <a href="adminProduct">Робота с ПРОДУКТОМ</a></td>
         <td></td>
         <td> <a href="adminCategory">Робота с КАТЕРОГИЯМИ</a></td>
+        <td></td>
+        <td> <a href="adminPidCategory">Робота с ПОД-КАТЕРОГИЯМИ</a></td>
     </table>
 
 

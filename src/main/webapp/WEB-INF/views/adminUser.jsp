@@ -20,7 +20,7 @@
         <c:forEach var="user" items="${users}"><tr>
             <td>${user.getLastName()}</td>
             <td><--</td>
-            <td><c:url value="/user_id${user.id}" var = "url"/>  <a href="${url}" >Показать</a>  </td>
+            <td><c:url value="/user_id${user.id}" var = "url"/><a href="${url}" >Показать</a>  </td>
             <td><c:url value="/adminDeleteUser/${user.id}" var = "url"/> <a href="${url}">Удалить</a> </td>
         </tr></c:forEach>
     </table>

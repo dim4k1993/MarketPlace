@@ -2,7 +2,9 @@ package com.servise;
 
 
 import com.entity.Category;
+import com.entity.PidCategory;
 import com.repository.CategoryRepository;
+import com.repository.PidCategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +14,8 @@ public class CategoryService {
     @Autowired
     CategoryRepository categoryRepository;
 
+
+
     public void addCategory(String categoryName ){
         Category category = new Category();
         category.setCategoryName(categoryName);
@@ -19,13 +23,12 @@ public class CategoryService {
     }
 
 
-
     public Iterable<Category> getAll(){
         return categoryRepository.findAll();
     }
-
-
     public void deleteCategory(String id){
         categoryRepository.delete(Integer.parseInt(id));
     }
+
+
 }
