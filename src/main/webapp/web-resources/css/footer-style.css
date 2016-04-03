@@ -4,7 +4,21 @@
  color:orange !important;
 }
 .footerclass{
- font-family: algerian;
- font-size: 20px!important;
+ font-family: calibri;
  text-align: center;
+}
+
+.footer-right{
+ margin-right: 40px;
+ font-weight: bold;
+ font-size: 13px;
+}
+
+
+.iconSyte{
+ margin-top: -20px;
+ margin-left: 35px;
+ color:#FF8C00;
+ font-family: algerian;
+ font-size: 18px;
 }

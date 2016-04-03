@@ -20,13 +20,29 @@
 <body>
 <hr>
 <!-- Footer -->
-
 <footer>
-    <div class="row footerclass">
+    <div class=" footer-icon">
+        <div align="right" class="footer-right">
+            <a href="#">Про marketPlace</a> /
+            <a href="#">Соглашение</a> /
+            <a href="#">О компании</a> /
+            <a href="#">Центр помощи</a>
+        </div>
+
+
+    </div>
+
+    <div class=" iconSyte hidden-xs">
+        <p>MarketPlace</p>
+    </div>
+
+    <div class=" footerclass">
         <div class="col-lg-12 " >
-            <p>MarketPlace &copy; Dimas Zelenyuk 2016</p>
+            <p> Используя &copy; marketPlace, Вы принимаете  <a href="#" > Соглашение</a></p>
+            <a href="#" >Карта сайта</a>
         </div>
     </div>
+
 </footer>
 
 

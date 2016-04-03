@@ -59,20 +59,6 @@
                         <a href="userAccount">Мой Кабинет</a>
                     </li>
                 </security:authorize>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">DropDown<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="#">11111111</a>
-                        </li>
-                        <li>
-                            <a href="#">2222222</a>
-                        </li>
-                        <li>
-                            <a href="#">3333333</a>
-                        </li>
-                    </ul>
-                </li>
                 <li>
                     <a href="addProduct">Подать Обявление</a>
                 </li>
