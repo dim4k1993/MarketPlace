@@ -836,21 +836,6 @@
 [class*="entypo-"]:before {
   font-family: 'entypo', sans-serif;
 }
-* {
-  font-family: 'Ubuntu', sans-serif;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  -ms-transition: all 0.2s ease-out;
-  -o-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
 html,
 body {
   width: 100%;
@@ -976,7 +961,7 @@ div.loginpanel div.buttons span a {
 div.loginpanel input[type="button"] {
   cursor: pointer;
   color: #FFF;
-  text-shadow: 0 1px #FF8C00;
+  text-sadow: 0 1px #FF8C00;
   font-size: 1.2em;
   border: 0 none;
   -webkit-border-radius: 4px;
@@ -1190,7 +1175,6 @@ div.loginpanel div.hr div:last-child {
   .resp-info:before {
     content: 'max 400';
   }
-
 }
 
 .myButton {
@@ -1203,3 +1187,4 @@ div.loginpanel div.hr div:last-child {
   width: 281px !important;
   margin-left: -10px !important;
 }
+

@@ -21,7 +21,7 @@
 <hr>
 <!-- Footer -->
 <footer>
-    <div class=" footer-icon">
+    <div class="footer-icon">
         <div align="right" class="footer-right">
             <a href="#">Про marketplace</a> /
             <a href="#">Соглашение</a> /

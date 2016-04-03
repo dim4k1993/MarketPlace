@@ -7,36 +7,15 @@
 <head>
 	<style>
 		<%@include file='/web-resources/css/bootstrap.min.css' %>
-
 		<%@include file='/web-resources/css/loginPage-style.css' %>
 	</style>
-	<title>LoginPage</title>
 </head>
 <body>
-<%--<c:url value="/login" var="login"/>--%>
-<%--<form method="post"  class="login" action="${login}">--%>
-	<%--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />--%>
-			<%----%>
-				<%----%>
-	<%--<p>--%>
-		<%--<label for="email">Email:</label>--%>
-		<%--<input type="text" required pattern = "^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$"name="username" id="email" >--%>
-	<%--</p>--%>
-	<%--<p>--%>
-		<%--<label for="parol">Пароль:</label>--%>
-		<%--<input pattern = "^[a-zA-Z0-9]+$" min = "5" required type="password" name="password" id="parol" >--%>
-	<%--</p>--%>
-		<%--<p class="login-submit">--%>
-			<%--<button type="submit" class="login-button">Войти</button>--%>
-		<%--</p>--%>
-	<%----%>
-
-
 	<c:url value="/login" var="login"/>
 	<form method="post"  class="login" action="${login}">
 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-		<h2 align="center" style="margin-top: 100px;">Увійти</h2>
-	<div align="center"  style="margin-top:250px" class="loginpanel">
+		<h2 align="center" style="margin-top: 80px;">Войти</h2>
+	<div align="center"  style="margin-top:220px" class="loginpanel">
 		<div class="txt">
 			<input id="email" type="text" required pattern = "^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$"name="username" placeholder="Email" />
 			<label for="email" class="entypo-user"></label>
