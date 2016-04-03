@@ -17,6 +17,7 @@ public class PidCategoryService {
     @Autowired
     CategoryRepository categoryRepository;
 
+    //додає під-категорії
     public void addPidCategory(String name, int id){
         PidCategory pidCategory = new PidCategory();
         pidCategory.setName(name);
@@ -24,16 +25,23 @@ public class PidCategoryService {
         pidCategoryRepository.save(pidCategory);
     }
 
+    //показує дікатегорію по категорії
     public Category showPidCategory(int id){
         return categoryRepository.findOne(id);
-
     }
 
+    //дістає всі під-категорії
     public Iterable<PidCategory> getAll(){
         return pidCategoryRepository.findAll();
     }
+
+    //удаляє вибрану під-катенорію
     public void deletePidCategory(String id){
         pidCategoryRepository.delete(Integer.parseInt(id));
     }
 
+    //виводть під-категорію по id катерогії
+    public Iterable<PidCategory> findPidCategoryByCategory(int id){
+        return pidCategoryRepository.findPidCategoryFromCategoryId(id);
+    }
 }

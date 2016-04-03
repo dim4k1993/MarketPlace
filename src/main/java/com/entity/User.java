@@ -4,6 +4,7 @@ import com.entity.City;
 import com.entity.Messenger;
 import com.entity.Product;
 import org.hibernate.validator.constraints.Email;
+import org.springframework.beans.factory.annotation.Required;
 
 import javax.persistence.*;
 import javax.validation.constraints.Pattern;
@@ -23,15 +24,19 @@ public class User {
 
     private String foto;
 
+
     private  String parol;
 
     @Email
     private String email;
 
+    @Pattern(regexp = "^[0-9]+$", message = "не коректний ввод")
     private String telephon_namber;
-    @Pattern(regexp = "[A-Za-z]{6,15}", message = "error")
+
+    @Pattern(regexp = "[A-Za-z]{2,15}", message = "введите пожалосто коректное имя")
     private String name;
 
+    @Pattern(regexp = "[A-Za-z]{2,15}", message = "введите пожалосто коректную фамилию")
     private String lastName;
 
     private  String skype;

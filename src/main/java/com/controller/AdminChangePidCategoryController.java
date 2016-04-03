@@ -19,26 +19,19 @@ public class AdminChangePidCategoryController {
     @Autowired
     PidCategoryService pidCategoryService;
 
-
-    //виводить всі під-категорії а админці
-    @RequestMapping("/adminPidCategory")
-    public String ShowPidCategory(Model model){
-        model.addAttribute("pidcategorys", pidCategoryService.getAll());
-        return "adminPidCategory";
-    }
-
     //удаляє вибрану під-категорію в адмінці
     @RequestMapping ("/adminDeletePidCategory/{id}")
     public String deletePidCategory(@PathVariable String id){
         pidCategoryService.deletePidCategory(id);
-        return "redirect:/adminPidCategory";
+        return "redirect:/adminCategory";
     }
 
-
     //пероходить до підкатегорії даної категорії
+    //виводить під-категорії які доровнюють категорії в админці
     @RequestMapping ("/adminPidCategory{id}")
-    public String ShowPidCategoryFromId(@PathVariable String id, Model model){
+    public String ShowPidCategoryFromIdCategory(@PathVariable String id,Model model){
         model.addAttribute("id_category", id);
+        model.addAttribute("pidcategorys", pidCategoryService.findPidCategoryByCategory(Integer.parseInt(id)));
         return "adminPidCategory";
     }
 
@@ -48,11 +41,11 @@ public class AdminChangePidCategoryController {
     public String savePidCategory (HttpServletResponse response, @RequestParam String name, @PathVariable("id") int id
     ) throws IOException {
         if (name.equals("")) {
-            return "redirect:/adminPidCategory";
+            return "redirect:/adminPidCategory{id}";
         }
         else
             pidCategoryService.addPidCategory(name,id);
-        return "redirect:/adminPidCategory";
+        return "redirect:/adminPidCategory{id}";
 
     }
 }
