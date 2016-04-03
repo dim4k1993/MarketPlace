@@ -13,8 +13,10 @@
     <title>Insert title here</title>
 </head>
 <body>
-<form method="post">
+<form method="post" action="/adminProduct${idPidCategory}">
     <h>Удалить продукт:</h>
+
+    <h1 align="center" style="margin-top: 100px">${idPidCategory}</h1>
 
     <table style="margin-top: 100px">
         <c:forEach var="product" items="${products}"><tr>

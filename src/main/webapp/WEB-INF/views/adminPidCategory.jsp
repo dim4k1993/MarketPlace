@@ -31,7 +31,8 @@
     <c:forEach var="pidcategory" items="${pidcategorys}"><tr>
         <td>${pidcategory.getName()}</td>
         <td><--</td>
-        <td><c:url value="/adminDeletePidCategory/${pidcategory.id}" var = "url"/> <a href="${url}">Удалить</a></td>
+        <td><c:url value="/adminDeletePidCategory/${pidcategory.id}" var = "url"/> <a href="${url}">Удалить /</a></td>
+        <td><c:url value="/adminProduct${pidcategory.id}" var = "url"/>  <a href="${url}" >показать продукти</a>  </td>
     </tr></c:forEach>
 </table>
 </body>

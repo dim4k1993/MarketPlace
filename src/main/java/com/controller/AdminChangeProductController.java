@@ -27,4 +27,14 @@ public class AdminChangeProductController {
         return "redirect:/adminProduct";
     }
 
+    //пероходить до продукту даної під-категорії
+    //виводить продукти які доровнюють під-категорії в админці
+    @RequestMapping ("/adminProduct{id}")
+    public String ShowProductFromIdPidCategory(@PathVariable String id,Model model){
+        model.addAttribute("idPidCategory", id);
+        model.addAttribute("products", productService.findProductByPidCategory(Integer.parseInt(id)));
+        return "adminProduct";
+    }
+
+
 }

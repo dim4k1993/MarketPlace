@@ -60,6 +60,9 @@ public class ProductService {
         productRepository.delete(Integer.parseInt(id));
     }
 
-
+    //виводть під-категорію по id катерогії
+    public Iterable<Product> findProductByPidCategory(int id){
+        return productRepository.findProductFromPidCategoryId(id);
+    }
 
 }
