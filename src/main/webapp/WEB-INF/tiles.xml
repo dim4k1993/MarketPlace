@@ -95,5 +95,15 @@
         <put-attribute name="title" value=""></put-attribute>
     </definition>
 
+    <definition name="pidCategory" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/views/pidCategory.jsp"></put-attribute>
+        <put-attribute name="title" value=""></put-attribute>
+    </definition>
+
+    <definition name="allProduct" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/views/allProduct.jsp"></put-attribute>
+        <put-attribute name="title" value=""></put-attribute>
+    </definition>
+
 
 </tiles-definitions>

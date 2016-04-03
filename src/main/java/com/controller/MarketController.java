@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.entity.Category;
 import com.repository.CategoryRepository;
+import com.servise.CategoryService;
 import com.servise.CityService;
 import com.servise.RegionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,20 +17,16 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class MarketController {
 	@Autowired
-	CategoryRepository categoryRepository;
+	CategoryService categoryService;
 
 	// показує почадкову сторінку
+	//виводить всі категорії а на головній сторінці
 	@RequestMapping("/")
-	public String ShowPage() {
+	public String ShowStartingPage(Model model) {
+		model.addAttribute("categorys", categoryService.getAll());
 		return "marketPlace";
 	}
 
-//	@RequestMapping(value = "marketPlace/adCategory", method = RequestMethod.POST)
-//	public String adCategory(@ModelAttribute Category category){
-//		System.out.println(category.getCategoryName());
-//		categoryRepository.save(category);
-//		return "redirect:marketPlace";
-//	}
 }
 	
 

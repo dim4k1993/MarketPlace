@@ -17,6 +17,7 @@
     <intercept-url pattern = "/adminCategory/**" access="hasRole('ADMIN')"/>
     <intercept-url pattern = "/adminPidCategory/**" access="hasRole('ADMIN')"/>
     <intercept-url pattern = "/adminPidCategory{id}/**" access="hasRole('ADMIN')"/>
+    <intercept-url pattern = "/adminProduct{id}/**" access="hasRole('ADMIN')"/>
 
     <form-login
             login-page="/login"

@@ -23,7 +23,7 @@
 <footer>
     <div class=" footer-icon">
         <div align="right" class="footer-right">
-            <a href="#">Про marketPlace</a> /
+            <a href="#">Про marketplace</a> /
             <a href="#">Соглашение</a> /
             <a href="#">О компании</a> /
             <a href="#">Центр помощи</a>

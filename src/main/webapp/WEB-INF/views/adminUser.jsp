@@ -13,7 +13,7 @@
     <title>Insert title here</title>
 </head>
 <body>
-<form method="post">
+<form method="post" action="/adminUser">
     <h>Удалить юзера:</h>
 
     <table style="margin-top: 100px">

@@ -12,9 +12,16 @@
 </head>
 
 <body>
-<table style="margin-top: 100px">
 
-</table>
+	<table align="center" style="margin-top: 200px">
+		<c:forEach var="category" items="${categorys}">
+			<tr>
+				<td><c:url value="pidCategory${category.id}" var="url"/><a href="${url}"> ${category.getCategoryName()}</a></td>
+			</tr>
+		</c:forEach>
+	</table>
+
+
 
 </body>
 
