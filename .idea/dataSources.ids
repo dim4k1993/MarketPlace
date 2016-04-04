@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source name="MySQL - shop@localhost" uuid="6d23ae4c-7cfd-4d34-8baa-bc1a167cb2d9">
+  <data-source name="MySQL - shop@localhost" uuid="a1cc025c-4146-476e-b300-df42b028609d">
     <database-info product="MySQL" version="5.7.11-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
@@ -19,6 +19,7 @@
       <column id="10" parent="2" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
       </column>
       <column id="11" parent="2" name="categoryName">
         <data-type>varchar(255)</data-type>
@@ -30,6 +31,7 @@
       <column id="13" parent="3" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
       </column>
       <column id="14" parent="3" name="region_id">
         <mandatory>1</mandatory>
@@ -58,6 +60,7 @@
       <column id="20" parent="4" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
       </column>
       <column id="21" parent="4" name="Messenger">
         <data-type>varchar(255)</data-type>
@@ -121,6 +124,7 @@
       <column id="35" parent="5" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
       </column>
       <column id="36" parent="5" name="name">
         <data-type>varchar(255)</data-type>
@@ -145,6 +149,7 @@
       <column id="41" parent="6" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
       </column>
       <column id="42" parent="6" name="email">
         <data-type>varchar(255)</data-type>
@@ -180,116 +185,125 @@
       <column id="52" parent="6" name="user_id">
         <data-type>int(11)</data-type>
       </column>
-      <index id="53" parent="6" name="FKb01hreekouqp2bhnmxfpnww3g">
+      <column id="53" parent="6" name="role">
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="54" parent="6" name="FKb01hreekouqp2bhnmxfpnww3g">
         <columns>pidCategory_id</columns>
         <desc-columns></desc-columns>
       </index>
-      <index id="54" parent="6" name="FKjjjpu17bcfybnqfj6sub721u9">
+      <index id="55" parent="6" name="FKjjjpu17bcfybnqfj6sub721u9">
         <columns>city_id</columns>
         <desc-columns></desc-columns>
       </index>
-      <index id="55" parent="6" name="FKt9ajreq5lrb0b89vhnrpq7kcs">
+      <index id="56" parent="6" name="FKt9ajreq5lrb0b89vhnrpq7kcs">
         <columns>user_id</columns>
         <desc-columns></desc-columns>
       </index>
-      <key id="56" parent="6" name="PRIMARY">
+      <key id="57" parent="6" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <foreign-key id="57" parent="6" name="FKb01hreekouqp2bhnmxfpnww3g">
+      <foreign-key id="58" parent="6" name="FKb01hreekouqp2bhnmxfpnww3g">
         <columns>pidCategory_id</columns>
         <ref-key>~.pidcategory.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <foreign-key id="58" parent="6" name="FKjjjpu17bcfybnqfj6sub721u9">
+      <foreign-key id="59" parent="6" name="FKjjjpu17bcfybnqfj6sub721u9">
         <columns>city_id</columns>
         <ref-key>~.city.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <foreign-key id="59" parent="6" name="FKt9ajreq5lrb0b89vhnrpq7kcs">
+      <foreign-key id="60" parent="6" name="FKt9ajreq5lrb0b89vhnrpq7kcs">
         <columns>user_id</columns>
         <ref-key>~.user.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <column id="60" parent="7" name="id">
+      <column id="61" parent="7" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
       </column>
-      <column id="61" parent="7" name="fotoName">
+      <column id="62" parent="7" name="fotoName">
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="62" parent="7" name="product_id">
+      <column id="63" parent="7" name="product_id">
         <data-type>int(11)</data-type>
       </column>
-      <index id="63" parent="7" name="FKnage2o2tlk1mhlj7goa0x4b9m">
+      <index id="64" parent="7" name="FKnage2o2tlk1mhlj7goa0x4b9m">
         <columns>product_id</columns>
         <desc-columns></desc-columns>
       </index>
-      <key id="64" parent="7" name="PRIMARY">
+      <key id="65" parent="7" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <foreign-key id="65" parent="7" name="FKnage2o2tlk1mhlj7goa0x4b9m">
+      <foreign-key id="66" parent="7" name="FKnage2o2tlk1mhlj7goa0x4b9m">
         <columns>product_id</columns>
         <ref-key>~.product.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <column id="66" parent="8" name="id">
+      <column id="67" parent="8" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
       </column>
-      <column id="67" parent="8" name="name">
+      <column id="68" parent="8" name="name">
         <data-type>varchar(50)</data-type>
       </column>
-      <key id="68" parent="8" name="PRIMARY">
+      <key id="69" parent="8" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="69" parent="9" name="id">
+      <column id="70" parent="9" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="71" parent="9" name="adminStatus">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="70" parent="9" name="adminStatus">
-        <mandatory>1</mandatory>
+      <column id="72" parent="9" name="email">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="73" parent="9" name="foto">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="74" parent="9" name="lastName">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="75" parent="9" name="name">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="76" parent="9" name="parol">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="77" parent="9" name="skype">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="78" parent="9" name="telephon_namber">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="79" parent="9" name="city_id">
         <data-type>int(11)</data-type>
       </column>
-      <column id="71" parent="9" name="email">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="72" parent="9" name="foto">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="73" parent="9" name="lastName">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="74" parent="9" name="name">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="75" parent="9" name="parol">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="76" parent="9" name="skype">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="77" parent="9" name="telephon_namber">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="78" parent="9" name="city_id">
+      <column id="80" parent="9" name="role">
         <data-type>int(11)</data-type>
       </column>
-      <index id="79" parent="9" name="FKjw6mvqcrldh9lpmi3xqhyie05">
+      <index id="81" parent="9" name="FKjw6mvqcrldh9lpmi3xqhyie05">
         <columns>city_id</columns>
         <desc-columns></desc-columns>
       </index>
-      <key id="80" parent="9" name="PRIMARY">
+      <key id="82" parent="9" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <foreign-key id="81" parent="9" name="FKjw6mvqcrldh9lpmi3xqhyie05">
+      <foreign-key id="83" parent="9" name="FKjw6mvqcrldh9lpmi3xqhyie05">
         <columns>city_id</columns>
         <ref-key>~.city.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>

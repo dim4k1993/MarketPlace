@@ -13,6 +13,22 @@
 <!--[if gt IE 8]><!--> <html lang="uk9=5211"> <!--<![endif]-->
 <head>
 	<script   src="https://code.jquery.com/jquery-2.2.1.min.js" ></script>
+	<style>
+		.errorblock{
+			width: 400px;
+			color:#000;
+			background-color: #b74c4c;
+			border: 2px solid #333;
+			padding: 8px;
+			margin: auto;
+			margin-top: 10px;
+		}
+		.error{
+			color: red;
+			font-size: 20px;
+			text-align: left;
+		}
+	</style>
 </head>
 
 <body>
@@ -21,6 +37,7 @@
 		<sf:input path="id" id="id" type="hidden"/>
 		<fieldset>
 		<table align="center" style="margin-top: 100px">
+			<sf:errors path="*" element="div" cssClass="errorblock" style="margin-top: 100px"/>
 			<tr>
 				<h2 align="center" style="margin-top: 100px"> Регистрация</h2>
 			</tr>

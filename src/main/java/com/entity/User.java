@@ -3,11 +3,14 @@ package com.entity;
 import com.entity.City;
 import com.entity.Messenger;
 import com.entity.Product;
+import com.servise.CustomValidation.CustomValidationEmailUser;
 import org.hibernate.validator.constraints.Email;
 import org.springframework.beans.factory.annotation.Required;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 //показує, що клас буде відображено у БД
@@ -27,16 +30,18 @@ public class User {
 
     private  String parol;
 
-    @Email
+
+    @CustomValidationEmailUser(message = "такой user уже зарегистрован")
+    @Email(message = "не верно введен email ")
     private String email;
 
     @Pattern(regexp = "^[0-9]+$", message = "не коректний ввод")
     private String telephon_namber;
 
-    @Pattern(regexp = "[A-Za-z]{2,15}", message = "введите пожалосто коректное имя")
+    @Size(min = 2, max = 15, message = "введите имя (от 2 до 15 знаков)")
     private String name;
 
-    @Pattern(regexp = "[A-Za-z]{2,15}", message = "введите пожалосто коректную фамилию")
+    @Size(min = 2, max = 15, message = "введите фамилию (от 2 до 15 знаков)")
     private String lastName;
 
     private  String skype;

@@ -1,4 +1,6 @@
 package com.entity;
+import com.servise.CustomValidation.CustomValidationEmailUser;
+
 import javax.persistence.*;
 import java.util.List;
 
