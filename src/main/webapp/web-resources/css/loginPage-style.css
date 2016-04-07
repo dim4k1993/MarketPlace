@@ -7,8 +7,35 @@
   src: url('http://weloveiconfonts.com/api/fonts/entypo/entypo.eot');
   src: url('http://weloveiconfonts.com/api/fonts/entypo/entypo.eot?#iefix') format('eot'), url('http://weloveiconfonts.com/api/fonts/entypo/entypo.woff') format('woff'), url('http://weloveiconfonts.com/api/fonts/entypo/entypo.ttf') format('truetype'), url('http://weloveiconfonts.com/api/fonts/entypo/entypo.svg#entypo') format('svg');
 }
-
+.entypo-note:before {
+  content: "\266a";
+}
+.entypo-note-beamed:before {
+  content: "\266b";
+}
+.entypo-music:before {
+  content: "\1f3b5";
+}
+.entypo-search:before {
+  content: "\1f50d";
+}
+.entypo-flashlight:before {
+  content: "\1f526";
+}
+.entypo-mail:before {
+  content: "\2709";
+}
+.entypo-heart:before {
+  content: "\2665";
+}
+.entypo-heart-empty:before {
+  content: "\2661";
+}
+.entypo-star:before {
+  content: "\2605";
+}
 .entypo-star-empty:before {
+  content: "\2606";
 }
 .entypo-user:before {
   content: "\1f464";
@@ -86,7 +113,6 @@
   content: "\1f517";
 }
 .entypo-attach:before {
-    
   content: "\1f4ce";
 }
 .entypo-lock:before {
@@ -836,6 +862,7 @@
 [class*="entypo-"]:before {
   font-family: 'entypo', sans-serif;
 }
+
 html,
 body {
   width: 100%;
@@ -881,7 +908,7 @@ div.loginpanel a.register:before {
   padding-right: 6px;
 }
 div.loginpanel a.register:hover {
-  color: #555;
+  color: #2ecc71;
   text-shadow: 0 1px #555;
 }
 div.loginpanel a.register:active {
@@ -905,6 +932,7 @@ div.loginpanel div.txt input[type="password"] {
   color: #555;
   text-shadow: 0 1px #FFF;
   padding: 12px 12px 12px 45px;
+  border: 1px solid #888;
   border: 2px solid transparent;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -920,7 +948,7 @@ div.loginpanel div.txt input[type="password"]:focus {
 }
 div.loginpanel div.txt input[type="text"]:focus,
 div.loginpanel div.txt input[type="password"]:focus {
-  border-color: #FF8C00;
+  border-color: #27ae60;
 }
 div.loginpanel div.txt label {
   cursor: text;
@@ -932,7 +960,7 @@ div.loginpanel div.txt label:before {
   top: 0px;
   font-family: 'entypo', sans-serif;
   font-size: 1.1em;
-  color: #555;
+  color: #2ecc71;
   line-height: 58px;
   text-align: center;
   width: 50px;
@@ -961,29 +989,29 @@ div.loginpanel div.buttons span a {
 div.loginpanel input[type="button"] {
   cursor: pointer;
   color: #FFF;
-  text-sadow: 0 1px #FF8C00;
+  text-shadow: 0 1px #27ae60;
   font-size: 1.2em;
   border: 0 none;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
   outline: none;
-  background-color: #FF8C00;
-  -webkit-box-shadow: 0 2px #555, inset 0 0 #555;
-  -moz-box-shadow: 0 2px #555, inset 0 0 #555;
-  box-shadow: 0 2px #555, inset 0 0 #555;
+  background-color: #2ecc71;
+  -webkit-box-shadow: 0 2px #27ae60, inset 0 0 #27ae60;
+  -moz-box-shadow: 0 2px #27ae60, inset 0 0 #27ae60;
+  box-shadow: 0 2px #27ae60, inset 0 0 #27ae60;
 }
 div.loginpanel input[type="button"]:hover,
 div.loginpanel input[type="button"]:focus {
-  background-color: #FFA500;
-  -webkit-box-shadow: 0 2px #555, inset 0 0 #555;
-  -moz-box-shadow: 0 2px #555, inset 0 0 #555;
-  box-shadow: 0 2px #555, inset 0 0 #FFA500;
+  background-color: #29b765;
+  -webkit-box-shadow: 0 2px #229955, inset 0 0 #27ae60;
+  -moz-box-shadow: 0 2px #229955, inset 0 0 #27ae60;
+  box-shadow: 0 2px #229955, inset 0 0 #27ae60;
 }
 div.loginpanel input[type="button"]:active {
-  -webkit-box-shadow: 0 0 #CDC0B0, inset 0 1px #CDC0B0;
-  -moz-box-shadow: 0 0 #CDC0B0, inset 0 1px #CDC0B0;
-  box-shadow: 0 0 #CDC0B0, inset 0 1px #CDC0B0;
+  -webkit-box-shadow: 0 0 #229955, inset 0 1px #229955;
+  -moz-box-shadow: 0 0 #229955, inset 0 1px #229955;
+  box-shadow: 0 0 #229955, inset 0 1px #229955;
   -webkit-transform: translateY(2px);
   -moz-transform: translateY(2px);
   -ms-transform: translateY(2px);
@@ -1082,20 +1110,20 @@ div.loginpanel div.social a.twitter:active:before {
   box-shadow: 0 0 0 4px rgba(86, 180, 239, 0.6), 0 0 0 4px #333, 0 1px 0 4px rgba(255, 255, 255, 0.6);
 }
 div.loginpanel div.social a.googleplus:before {
-  content: "\f354";
+  content: "\f30f";
 }
 div.loginpanel div.social a.googleplus:hover:before,
 div.loginpanel div.social a.googleplus:focus:before {
-  text-shadow: 0 1px #1e2e4f;
-  background-color: #3b5998;
-  -webkit-box-shadow: 0 0 0 4px rgba(59, 89, 152, 0.6);
-  -moz-box-shadow: 0 0 0 4px rgba(59, 89, 152, 0.6);
-  box-shadow: 0 0 0 4px rgba(59, 89, 152, 0.6);
+  text-shadow: 0 1px #96271a;
+  background-color: #dd4b39;
+  -webkit-box-shadow: 0 0 0 4px rgba(221, 75, 57, 0.6);
+  -moz-box-shadow: 0 0 0 4px rgba(221, 75, 57, 0.6);
+  box-shadow: 0 0 0 4px rgba(221, 75, 57, 0.6);
 }
 div.loginpanel div.social a.googleplus:active:before {
   -webkit-box-shadow: 0 0 0 4px rgba(221, 75, 57, 0.6), 0 0 0 4px #333, 0 1px 0 4px rgba(255, 255, 255, 0.6);
-  -moz-box-shadow: 0 0 0 4px rgba(), 0 0 0 4px #333, 0 1px 0 4px rgba();
-  box-shadow: 0 0 0 4px rgba(), 0 0 0 4px #333, 0 1px 0 4px rgba(255, 255, 255, 0.6);
+  -moz-box-shadow: 0 0 0 4px rgba(221, 75, 57, 0.6), 0 0 0 4px #333, 0 1px 0 4px rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 0 4px rgba(221, 75, 57, 0.6), 0 0 0 4px #333, 0 1px 0 4px rgba(255, 255, 255, 0.6);
 }
 div.loginpanel div.hr {
   display: -webkit-box;

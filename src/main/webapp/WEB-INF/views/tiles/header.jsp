@@ -55,9 +55,19 @@
                 </security:authorize>
                 <security:authorize access="isAuthenticated() and principal.username=='${user.id}' and !hasRole('ROLE_ADMIN')">
                     <%--Це буде бачити користувач який залогінився він не являється власником сторінки і він не адмін--%>
+                    <security:authorize access="!isAuthenticated()">
+                        <%--Це буде бачити користувач який не залогінився--%>
                     <li>
                         <a href="userAccount">Мой Кабинет</a>
                     </li>
+                    </security:authorize>
+                    <security:authorize access="isAuthenticated()">
+                        <%--Це буде бачити користувач який не залогінився--%>
+                        <li>
+                            <a href="userAccount">${user.name} ${user.lastName}</a>
+                        </li>
+                    </security:authorize>
+
                 </security:authorize>
                 <li>
                     <a href="addProduct">Подать Обявление</a>
