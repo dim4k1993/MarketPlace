@@ -30,7 +30,7 @@
 
 <body>
 
-	<sf:form method="POST" modelAttribute="user"  action="/registration=user+add">
+	<sf:form method="POST" modelAttribute="user"  action="/registration=user+add?${_csrf.parameterName}=${_csrf.token}">
 		<sf:input path="id" id="id" type="hidden"/>
 		<fieldset>
 		<table align="center" style="margin-top: 100px">

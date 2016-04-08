@@ -1,6 +1,7 @@
 package com.servise;
 
 import com.controller.CityController;
+import com.controller.UserSettingsController;
 import com.entity.Role;
 import com.repository.CityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,9 @@ public class UserService {
 	CityRepository cityRepository;
 
 	@Autowired
+	UserSettingsController userSettingsController;
+
+	@Autowired
 	BCryptPasswordEncoder bCryptPasswordEncoder;
 
 
@@ -42,6 +46,11 @@ public class UserService {
 		userRepository.save(user);
 	}
 
+	public  void  savePhotoAvatarUser(User user, String s){
+		user.setFoto(s);
+		userRepository.save(user);
+	}
+
 	//метод зміни статусу юзера
 	public void updateUser(String email, String parol){
 		User user1 ;
@@ -49,14 +58,6 @@ public class UserService {
 		user1.setRole(Role.ROLE_ADMIN);
 		userRepository.save(user1);
 	}
-
-//	//бачить юзера по id
-//	public void comparisonUserVisit(int id) {
-//		if(userRepository.findOne(id) != null) {
-//			SearchInfoUser(userRepository.findUserById(id).getId());
-//		}
-//	}
-//
 
 
 	// виводить всіх юзерів
