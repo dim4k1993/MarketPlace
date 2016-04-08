@@ -9,12 +9,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-<%@include file='/web-resources/css/bootstrap.min.css' %>
 
-<%@include file='/web-resources/css/header-style.css' %>
-    </style>
-
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/resources/css/header-style.css" rel="stylesheet">
 </head>
 
 <body>

@@ -12,49 +12,14 @@
 <!--[if IE 8]> <html class="lt-ie9" lang="uk"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="uk9=5211"> <!--<![endif]-->
 <head>
-    <style>
-        <%@include file='/web-resources/css/bootstrap.min.css' %>
-        <%@include file='/web-resources/css/userAccount-style.css' %>
-    </style>
+
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/resources/css/userAccount-style.css" rel="stylesheet">
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Insert title here</title>
 </head>
 <body>
-<%--<form method="post">--%>
-    <%--<h>Юзер Акаунт</h>--%>
-    <%--<table>--%>
-        <%--<tr>--%>
-            <%--<th>First Name:</th>--%>
-            <%--<td>${firstNameMap}</td>--%>
-        <%--</tr>--%>
-        <%--<tr>--%>
-            <%--<th>Last Name:</th>--%>
-            <%--<td>${lastNameMap}</td>--%>
-        <%--</tr>--%>
-        <%--<tr>--%>
-            <%--<th>City:</th>--%>
-            <%--<td>${cityMap}</td>--%>
-        <%--</tr>--%>
-        <%--<tr>--%>
-            <%--<th>Email:</th>--%>
-            <%--<td>${emailMap}</td>--%>
-        <%--</tr>--%>
-        <%--<tr>--%>
-            <%--<th>phoneNumber:</th>--%>
-            <%--<td>${telephon_namberMap}</td>--%>
-        <%--</tr>--%>
-        <%--<tr>--%>
-            <%--<th>Skype:</th>--%>
-            <%--<td>${skypeMap}</td>--%>
-
-        <%--</tr>--%>
-    <%--</table>--%>
-    <%--<table>--%>
-    <%--<tr><a href="addProduct">Подать объявление </a></tr>--%>
-    <%--</table>--%>
-
-<%--</form>--%>
-
 
 <nav class="menu" tabindex="0">
     <div class="smartphone-menu-trigger"></div>
@@ -66,7 +31,7 @@
         <li tabindex="0" class="icon-dashboard g"><a href="addProduct"><span>Подати Оголошення</span></a></li>
         <li tabindex="0" class="icon-customers "><a href="#"><span>Мої Оголошення</span></a></li>
         <li tabindex="0" class="icon-users "><a href="#"><span>Повідомлення</span></a></li>
-        <li tabindex="0" class="icon-settings "><a href="#"><span>Налаштування</span></a></li>
+        <li tabindex="0" class="icon-settings "><a href="userSettings"><span>Налаштування</span></a></li>
     </ul>
 </nav>
 

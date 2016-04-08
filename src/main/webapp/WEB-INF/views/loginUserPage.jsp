@@ -5,10 +5,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<style>
-		<%@include file='/web-resources/css/bootstrap.min.css' %>
-		<%@include file='/web-resources/css/loginPage-style.css' %>
-	</style>
+	<link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/resources/css/loginPage-style.css" rel="stylesheet">
 </head>
 <body>
 	<c:url value="/login" var="login"/>

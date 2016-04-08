@@ -10,10 +10,8 @@
 
     <title>Footer</title>
 
-    <style>
-    <%@include file='/web-resources/css/bootstrap.min.css' %>
-    <%@include file='/web-resources/css/footer-style.css' %>
-    </style>
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/resources/css/footer-style.css" rel="stylesheet">
 
 </head>
 
