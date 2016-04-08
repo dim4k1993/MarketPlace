@@ -32,9 +32,6 @@ public class UserService {
 	@Autowired
 	BCryptPasswordEncoder bCryptPasswordEncoder;
 
-	// створення мапи юзерів
-	private int idForUserLogin;
-	public Map<String, String> mapUser = new HashMap<String, String>();
 
 	//	//Метод додавання юзерів
 	public  void  saveUser(User user){
@@ -53,26 +50,13 @@ public class UserService {
 		userRepository.save(user1);
 	}
 
-	//бачить юзера по id
-	public void comparisonUserVisit(int id) {
-		if(userRepository.findOne(id) != null) {
-			SearchInfoUser(userRepository.findUserById(id).getId());
-		}
-	}
-
-
-	//Метод перевірки на наявність емайла і пароля і заповнення мапи
-	public void SearchInfoUser(int idForUserLogin) {
-
-				mapUser.put("firstName", userRepository.findOne(idForUserLogin).getName());
-				mapUser.put("lastName", userRepository.findOne(idForUserLogin).getLastName());
-
-					mapUser.put("email", userRepository.findOne(idForUserLogin).getEmail());
-					mapUser.put("telephon_namber",(userRepository.findOne(idForUserLogin).getTelephon_namber()));
-					mapUser.put("skype",userRepository.findOne(idForUserLogin).getSkype());
-					mapUser.put("city", userRepository.findOne(idForUserLogin).getCity().getName());
-
-	}
+//	//бачить юзера по id
+//	public void comparisonUserVisit(int id) {
+//		if(userRepository.findOne(id) != null) {
+//			SearchInfoUser(userRepository.findUserById(id).getId());
+//		}
+//	}
+//
 
 
 	// виводить всіх юзерів

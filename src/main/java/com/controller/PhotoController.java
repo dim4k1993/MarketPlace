@@ -1,35 +1,28 @@
 //package com.controller;
 //
 //
+//import com.servise.PhotoService;
+//import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.stereotype.Controller;
+//import org.springframework.ui.Model;
+//import org.springframework.web.bind.annotation.PathVariable;
 //import org.springframework.web.bind.annotation.RequestMapping;
-//import org.springframework.web.bind.annotation.RequestMethod;
-//import org.springframework.web.bind.annotation.RequestParam;
-//import org.springframework.web.multipart.MultipartFile;
 //
-//import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
+//import java.security.Principal;
 //
 //
 //@Controller
 //public class PhotoController {
 //
-//    @RequestMapping(value = "/foto")
-//    String addFoto() {
-//        return "foto";
+//    @Autowired
+//    PhotoService photoService;
+//
+//    @RequestMapping(value = "/addAvatarPhoto")
+//    public String showPhotoPage(@PathVariable("id") int id, Model model, Principal principal){
+//
+//        return "PhotoAvatar";
 //    }
 //
-//    @RequestMapping(value = "/settings/uptadelogo", method = RequestMethod.POST)
-//    String addLogoSave(@RequestParam(value = "file") MultipartFile file) {
-//        if (!(file.getOriginalFilename().endsWith(".jpeg")
-//                || file.getOriginalFilename().endsWith(".png")
-//                || file.getOriginalFilename().endsWith(".jpg"))) {
-//            return "redirect:/addlogo?" + "wrongfile=true";
-//        } else {
 //
 //
-//            return "redirect:/profile/"+id;
-//        }
-//
-//
-//    }
 //}

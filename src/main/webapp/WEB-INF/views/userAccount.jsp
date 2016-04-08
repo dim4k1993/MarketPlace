@@ -59,7 +59,7 @@
 <nav class="menu" tabindex="0">
     <div class="smartphone-menu-trigger"></div>
     <header class="avatar">
-        <img src="https://pp.vk.me/c622216/v622216700/5f9ee/peqtjlVZ2NY.jpg" />
+        <img src="${user.foto}"/>
         <h3>${user.name} ${user.lastName}</h3>
     </header>
     <ul>

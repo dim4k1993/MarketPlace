@@ -19,8 +19,6 @@ public class UserController {
 	UserRepository userRepository;
 	@Autowired
 	UserService userService;
-	@Autowired
-	ShowModelUserController showModelUserController;
 
 	@RequestMapping("/userAccount")
 	public String ShowUser1(Model model, Principal principal){

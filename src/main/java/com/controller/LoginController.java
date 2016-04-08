@@ -23,8 +23,6 @@ public class LoginController {
     @Autowired
     UserRepository userRepository;
 
-    @Autowired
-    ShowModelUserController showModelUserController;
 
     @RequestMapping("/loginUserPage")
     public String redirectUrlLogin(){
