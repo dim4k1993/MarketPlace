@@ -15,8 +15,8 @@ import java.security.Principal;
 @Service
 public class FileSaveService{
 
-    public String saveFile (String userId, MultipartFile file, String absolutePath) throws IOException {
-        File uploadRootDir = new File(absolutePath+File.separator+"avatarUser"+File.separator+userId+File.separator+"foto");
+    public String saveFile (String userId, MultipartFile file, String uploadRootPath ) throws IOException {
+        File uploadRootDir = new File(uploadRootPath +File.separator+"avatarUser"+File.separator+userId+File.separator+"foto");
         String originalName = "";
         if (!uploadRootDir.exists()){
             uploadRootDir.mkdirs();
@@ -30,7 +30,7 @@ public class FileSaveService{
         BufferedImage bi =  ImageIO.read(new ByteArrayInputStream(file.getBytes()));
         File path = new File(uploadRootDir+File.separator+originalName+String.valueOf(userId)+".jpg");
         ImageIO.write(bi,"jpg",path);
-        return String.valueOf(path.getAbsolutePath());
+        return String.valueOf(path.getPath());
 
         }
 

@@ -42,12 +42,15 @@ public class UserService {
 		user.setRole(Role.ROLE_USER);
 		user.setParol(bCryptPasswordEncoder.encode(user.getParol()));
 		user.setCity(cityController.cityId);
-		System.out.println(cityController.cityId.getName());
+		user.setFoto("/resources/allForSite/default/defaultFoto.png");
+		if (user.getCity() == null){
+			System.out.println("uycwic");
+		}
 		userRepository.save(user);
 	}
 
-	public  void  savePhotoAvatarUser(User user, String s){
-		user.setFoto(s);
+	public  void  savePhotoAvatarUser(User user, String foto){
+		user.setFoto(foto);
 		userRepository.save(user);
 	}
 
