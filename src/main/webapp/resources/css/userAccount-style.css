@@ -6,9 +6,8 @@ body {
   padding-left: 240px;
 }
 main {
-
   margin-left: 40px;
-  color: white;
+  color: black;
   margin-top: 51px;
   position: relative;
   height: 100vh;
@@ -161,16 +160,6 @@ main {
   }
 }
 
-	.helper{
-		background:#5cd07b;
-		position:absolute;
-		top:50%;
-		left:50%;
-		transform:translate3d(-50%,-50%,0);
-		padding:2.2em 5em;
-		text-align:center;
-		border-radius:20px;
-		font-size:2em;
-		font-weight:bold;
-}
+
+
 

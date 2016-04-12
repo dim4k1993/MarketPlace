@@ -15,6 +15,7 @@
 
     <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
     <link href="/resources/css/userAccount-style.css" rel="stylesheet">
+    <link href="/resources/css/productFile-style.css" rel="stylesheet">
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Insert title here</title>
@@ -29,16 +30,14 @@
     </header>
     <ul>
         <li tabindex="0" class="icon-dashboard g"><a href="addProduct"><span>Подати Оголошення</span></a></li>
-        <li tabindex="0" class="icon-customers "><a href="#"><span>Мої Оголошення</span></a></li>
+        <li tabindex="0" class="icon-customers "><a href="userAccount"><span>Мої Оголошення</span></a></li>
         <li tabindex="0" class="icon-users "><a href="#"><span>Повідомлення</span></a></li>
         <li tabindex="0" class="icon-settings "><a href="userSettings"><span>Налаштування</span></a></li>
     </ul>
 </nav>
 
-<main>
+<main class="main">
 
-    <div class="helper">
-        Додати оголошення
 
         <security:authorize access="isAuthenticated() and hasRole('ROLE_ADMIN')">
             <h1>Це буде бачити тільки адмін</h1>
@@ -54,17 +53,32 @@
         </security:authorize>
         <security:authorize access="isAuthenticated() and principal.username=='${user.id}'">
             <%--Це буде бачити користувач який є власником сторінки--%>
-            <h1>Це буде бачити користувач який є власником сторінки</h1>
+
+            <article>
+                <div class="fancy title">
+                    <span>Мої Оголошення</span>
+                </div>
+            </article>
 
             <c:forEach var="product" items="${user.product}">
-                <tr>
-                    <td><c:url value="/product_id${product.id}" var="url"/><a href="${url}"> ${product.name}</a></td>
-                </tr>
+
+                <figure class="snip0035">
+                    <img src="${user.foto}" alt="sample17"/>
+                    <figcaption>
+                        <div class="image">
+                            <img src="${user.foto}" alt="sample17"/>
+                        </div>
+                        <h2><c:url value="/product_id${product.id}" var="url"/><h2>${product.name}</h2></h2>
+
+                    </figcaption>
+                    <a href="${url}"></a>
+
+                </figure>
             </c:forEach>
 
         </security:authorize>
 
-    </div>
+
 
 </main>
 

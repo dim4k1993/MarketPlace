@@ -6,10 +6,13 @@ import com.servise.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.security.Principal;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class ProductController {
@@ -20,9 +23,6 @@ public class ProductController {
 
     @Autowired
     ProductService productService;
-
-    @Autowired
-    ShowModelProductController showModelProductController;
 
     //відображення сторінки продукта
     @RequestMapping("/productPage")
@@ -58,6 +58,11 @@ public class ProductController {
         model.addAttribute("products", productService.findProductByPidCategory(Integer.parseInt(id)));
         return "allProduct";
     }
+
+
+
+
+
 
 
 }

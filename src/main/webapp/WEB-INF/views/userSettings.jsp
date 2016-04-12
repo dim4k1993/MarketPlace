@@ -30,7 +30,7 @@
     </header>
     <ul>
         <li tabindex="0" class="icon-dashboard g"><a href="addProduct"><span>Подати Оголошення</span></a></li>
-        <li tabindex="0" class="icon-customers "><a href="#"><span>Мої Оголошення</span></a></li>
+        <li tabindex="0" class="icon-customers "><a href="userAccount"><span>Мої Оголошення</span></a></li>
         <li tabindex="0" class="icon-users "><a href="#"><span>Повідомлення</span></a></li>
         <li tabindex="0" class="icon-settings "><a href="userSettings"><span>Налаштування</span></a></li>
     </ul>
