@@ -41,8 +41,22 @@
 
 
         <security:authorize access="isAuthenticated() and hasRole('ROLE_ADMIN')">
-            <h1>Це буде бачити тільки адмін</h1>
             <%--Це буде бачити тільки адмін--%>
+            <c:forEach var="product" items="${user.product}">
+
+                <figure class="snip0035">
+                    <img src="${user.foto}" alt="sample17"/>
+                    <figcaption>
+                        <div class="image">
+                            <img src="${user.foto}" alt="sample17"/>
+                        </div>
+                        <h2><c:url value="/product_id${product.id}" var="url"/><h2>${product.name}</h2></h2>
+
+                    </figcaption>
+                    <a href="${url}"></a>
+
+                </figure>
+            </c:forEach>
         </security:authorize>
         <security:authorize access="!isAuthenticated()">
             <%--Це буде бачити користувач який не залогінився--%>
