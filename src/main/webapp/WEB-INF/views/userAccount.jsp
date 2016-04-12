@@ -39,6 +39,7 @@
 
     <div class="helper">
         Додати оголошення
+
         <security:authorize access="isAuthenticated() and hasRole('ROLE_ADMIN')">
             <h1>Це буде бачити тільки адмін</h1>
             <%--Це буде бачити тільки адмін--%>
@@ -54,6 +55,13 @@
         <security:authorize access="isAuthenticated() and principal.username=='${user.id}'">
             <%--Це буде бачити користувач який є власником сторінки--%>
             <h1>Це буде бачити користувач який є власником сторінки</h1>
+
+            <c:forEach var="product" items="${user.product}">
+                <tr>
+                    <td><c:url value="/product_id${product.id}" var="url"/><a href="${url}"> ${product.name}</a></td>
+                </tr>
+            </c:forEach>
+
         </security:authorize>
 
     </div>

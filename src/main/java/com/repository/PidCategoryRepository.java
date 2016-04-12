@@ -9,6 +9,7 @@ import java.util.Set;
 
 
 public interface PidCategoryRepository extends CrudRepository<PidCategory,Integer> {
+
     @Query(value = "select a from PidCategory a where(a.category LIKE concat(:idCategory))")
     Iterable <PidCategory>findPidCategoryFromCategoryId(@Param("idCategory") int idCategory);
 }

@@ -36,7 +36,7 @@ public class ProductController {
     }
 }
 
-    //присвоює id юзерові на сторінці
+    //присвоює id продукту на сторінці
     @RequestMapping("/product_id{id}")
     public String ShowVisitProduct1 (Model model,@PathVariable int id) {
         Product product = productRepository.findOne(id);

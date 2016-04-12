@@ -65,4 +65,9 @@ public class ProductService {
         return productRepository.findProductFromPidCategoryId(id);
     }
 
+    //виводть продукт по id user
+    public Iterable<Product> findProductByUser(int id){
+        return productRepository.findProductByUserId(id);
+    }
+
 }

@@ -74,12 +74,12 @@
     <h1>Це буде бачити користувач який не залогінився</h1>
 </security:authorize>
 <security:authorize
-        access="isAuthenticated() and principal.username!='${product.id}' and !hasRole('ROLE_ADMIN')">
+        access="isAuthenticated() and principal.username!='${product.user.id}' and !hasRole('ROLE_ADMIN')">
     <%--Це буде бачити користувач який залогінився він не являється власником сторінки і він не адмін--%>
     <h1>Це буде бачити користувач який залогінився він не являється власником сторінки і він не адмін</h1>
 </security:authorize>
 <security:authorize
-        access="isAuthenticated() and principal.username=='${product.id}'">
+        access="isAuthenticated() and principal.username=='${product.user.id}'">
     <%--Це буде бачити користувач який є власником сторінки--%>
     <h1>Це буде бачити користувач який є власником сторінки</h1>
 </security:authorize>

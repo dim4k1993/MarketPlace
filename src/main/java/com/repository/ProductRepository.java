@@ -18,4 +18,7 @@ public interface ProductRepository extends CrudRepository<Product, Integer> {
 
     @Query(value = "select a from Product a where(a.pidCategory LIKE concat(:idPidCategory))")
     Iterable <Product>findProductFromPidCategoryId(@Param("idPidCategory") int idPidCategory);
+
+    @Query(value = "select b from Product b where(b.user like concat(:userId))")
+    Iterable<Product> findProductByUserId (@Param("userId") int idUser);
 }

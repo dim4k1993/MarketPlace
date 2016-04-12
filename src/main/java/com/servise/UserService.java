@@ -2,8 +2,10 @@ package com.servise;
 
 import com.controller.CityController;
 import com.controller.UserSettingsController;
+import com.entity.Product;
 import com.entity.Role;
 import com.repository.CityRepository;
+import com.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -31,6 +33,10 @@ public class UserService {
 	CityRepository cityRepository;
 
 	@Autowired
+	ProductRepository productRepository;
+
+
+	@Autowired
 	UserSettingsController userSettingsController;
 
 	@Autowired
@@ -42,15 +48,15 @@ public class UserService {
 		user.setRole(Role.ROLE_USER);
 		user.setParol(bCryptPasswordEncoder.encode(user.getParol()));
 		user.setCity(cityController.cityId);
-		user.setFoto("/resources/allForSite/default/defaultFoto.png");
+		user.setFoto("/resources/default/defaultFoto.png");
 		if (user.getCity() == null){
-			System.out.println("uycwic");
+			System.out.println("error");
 		}
 		userRepository.save(user);
 	}
 
-	public  void  savePhotoAvatarUser(User user, String foto){
-		user.setFoto(foto);
+	public  void  savePhotoAvatarUser(User user, String photo){
+		user.setFoto(photo);
 		userRepository.save(user);
 	}
 
@@ -72,4 +78,5 @@ public class UserService {
 	public void deleteUser(String id){
 		userRepository.delete(Integer.parseInt(id));
 	}
+
 }

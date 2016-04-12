@@ -18,6 +18,14 @@
 		</property>
 	</bean>
 
+	<mvc:annotation-driven validator="validator">
+		<mvc:message-converters>
+			<bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
+			<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+
+
 	<!-- Bean tilesConfigurer demands xml, in which tiles definitions are defined -->
 	<!-- Bean tilesConfigurer вимагає xml, в якому є описані tiles definitions -->
 	<bean id="tilesConfigurer"
@@ -30,13 +38,13 @@
 	</bean>
 
 
-
-	<mvc:annotation-driven validator="validator"/>
 	<bean name="validator"  class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/>
-
-	<bean id="multipartResolver"
-		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
     </bean>
+
+
+
+
+
 
 </beans>
