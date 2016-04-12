@@ -2,6 +2,7 @@ package com.controller;
 
 
 import com.entity.Product;
+import com.entity.ProductPhotos;
 import com.servise.ProductService;
 import com.servise.RegionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,8 +38,9 @@ public class RegistrationProductController {
 
     //додавання продукту
     @RequestMapping(value = "/registration=product+add",method = RequestMethod.POST)
-    public String registrationProduct(@ModelAttribute Product product){
+    public String registrationProduct(@ModelAttribute Product product, ProductPhotos productPhotos){
         productService.saveProduct(product);
+       // productService.saveProductPhoto(productPhotos);
         return "redirect:/addProduct";
     }
 

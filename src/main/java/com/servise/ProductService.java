@@ -2,7 +2,9 @@ package com.servise;
 
         import com.controller.CityController;
         import com.entity.Product;
+        import com.entity.ProductPhotos;
         import com.entity.Role;
+        import com.repository.ProductPhotosRepository;
         import com.repository.ProductRepository;
         import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.stereotype.Service;
@@ -20,14 +22,19 @@ public class ProductService {
     private ProductRepository productRepository;
 
     @Autowired
-    private CityController cityController;
+    private ProductPhotosRepository productPhotosRepository;
 
 
     //Метод додавання продукту
     public  void  saveProduct(Product product){
         productRepository.save(product);
     }
-
+//
+//    //Метод додавання foto продукту
+//    public  void  saveProductPhoto( ProductPhotos productPhotos){
+//        productPhotos.setFotoName("/resources/default/defaultFoto.png");
+//        productPhotosRepository.save(productPhotos);
+//    }
 
     // дістіє всі продукти
     public Iterable<Product> getAll(){
