@@ -61,7 +61,7 @@ figure.snip0035 {
     margin-top: 30px;
     min-width: 180px;
     max-width: 270px;
-    max-height: 210px;
+    max-height: 190px;
     width: 100%;
     background: #000000;
 }
@@ -83,7 +83,7 @@ figure.snip0035 > img {
 }
 
 figure.snip0035 figcaption {
-    position: absolute;
+
     top: 0;
     left: 0;
     width: 100%;

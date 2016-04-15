@@ -21,20 +21,12 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
-    @Autowired
-    private ProductPhotosRepository productPhotosRepository;
-
 
     //Метод додавання продукту
     public  void  saveProduct(Product product){
         productRepository.save(product);
     }
-//
-//    //Метод додавання foto продукту
-//    public  void  saveProductPhoto( ProductPhotos productPhotos){
-//        productPhotos.setFotoName("/resources/default/defaultFoto.png");
-//        productPhotosRepository.save(productPhotos);
-//    }
+
 
     // дістіє всі продукти
     public Iterable<Product> getAll(){
@@ -46,7 +38,7 @@ public class ProductService {
         productRepository.delete(Integer.parseInt(id));
     }
 
-    //виводть під-категорію по id катерогії
+    //виводть ПРОДУКТ по id під-катерогії
     public Iterable<Product> findProductByPidCategory(int id){
         return productRepository.findProductFromPidCategoryId(id);
     }

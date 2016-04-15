@@ -42,21 +42,26 @@
 
         <security:authorize access="isAuthenticated() and hasRole('ROLE_ADMIN')">
             <%--Це буде бачити тільки адмін--%>
+            <article>
+                <div class="fancy title">
+                    <span>Мої Оголошення</span>
+                </div>
+            </article>
             <c:forEach var="product" items="${user.product}">
-
                 <figure class="snip0035">
-                    <img src="${user.foto}" alt="sample17"/>
-                    <figcaption>
-                        <div class="image">
-                            <img src="${user.foto}" alt="sample17"/>
-                        </div>
-                        <h2><c:url value="/product_id${product.id}" var="url"/><h2>${product.name}</h2></h2>
-
-                    </figcaption>
-                    <a href="${url}"></a>
-
+                    <c:forEach var="productPhoto" items="${product.productPhotos}">
+                        <img src="${productPhoto.fotoName}" alt="sample17"/>
+                        <figcaption>
+                            <div class="image">
+                                <img src="${productPhoto.fotoName}" alt="sample17"/>
+                            </div>
+                            <h2><c:url value="/product_id${product.id}" var="url"/><h2>${product.name}</h2></h2>
+                        </figcaption>
+                        <a href="${url}"></a>
+                    </c:forEach>
                 </figure>
             </c:forEach>
+
         </security:authorize>
         <security:authorize access="!isAuthenticated()">
             <%--Це буде бачити користувач який не залогінився--%>
@@ -68,26 +73,24 @@
         </security:authorize>
         <security:authorize access="isAuthenticated() and principal.username=='${user.id}'">
             <%--Це буде бачити користувач який є власником сторінки--%>
-
             <article>
                 <div class="fancy title">
                     <span>Мої Оголошення</span>
                 </div>
             </article>
-
             <c:forEach var="product" items="${user.product}">
-
                 <figure class="snip0035">
-                    <img src="${user.foto}" alt="sample17"/>
-                    <figcaption>
-                        <div class="image">
-                            <img src="${user.foto}" alt="sample17"/>
-                        </div>
-                        <h2><c:url value="/product_id${product.id}" var="url"/><h2>${product.name}</h2></h2>
+                        <c:forEach var="productPhoto" items="${product.productPhotos}">
+                            <img src="${productPhoto.fotoName}" alt="sample17"/>
+                            <figcaption>
+                            <div class="image">
+                            <img src="${productPhoto.fotoName}" alt="sample17"/>
+                            </div>
+                            <h2><c:url value="/product_id${product.id}" var="url"/><h2>${product.name}</h2></h2>
 
-                    </figcaption>
-                    <a href="${url}"></a>
-
+                            </figcaption>
+                            <a href="${url}"></a>
+                        </c:forEach>
                 </figure>
             </c:forEach>
 

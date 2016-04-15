@@ -5,6 +5,7 @@ import com.entity.Role;
 import com.entity.User;
 import com.repository.ProductRepository;
 import com.repository.UserRepository;
+import com.servise.ProductPhotoService;
 import com.servise.ProductService;
 import com.servise.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,10 @@ public class UserController {
 	@Autowired
 	ProductService productService;
 
+	@Autowired
+	ProductPhotoService productPhotoService;
+
+
 	@RequestMapping("/userAccount")
 	public String ShowUser1( Model model, Principal principal){
 		if (principal != null){
@@ -50,6 +55,7 @@ public class UserController {
 	//присвоює id юзерові на сторінці
 	//виводить продукти які він має
 	//якщо такого іd нема виводить newUser
+	//виводить foto продуктів які він має
 	@RequestMapping("/user_id{id}")
 	public String ShowVisitUser1 (Model model,@PathVariable int id) {
 		User owner = userRepository.findOne(id);
@@ -60,7 +66,7 @@ public class UserController {
 		else {
 			model.addAttribute("idUser", id);
 			model.addAttribute("userProducts", productService.findProductByUser(id));
-
+			model.addAttribute("productPhotos", productPhotoService.findProductPhotosByProduct(id));
 			model.addAttribute("user", owner);
 			return "userAccount";
 		}

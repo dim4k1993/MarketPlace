@@ -17,7 +17,8 @@
 
 .iconSyte{
  margin-top: -20px;
- margin-left: 55px;
+ float: left;
+ margin-left: 30px;
  color:#59bf0f;
  font-size: 18px;
 }

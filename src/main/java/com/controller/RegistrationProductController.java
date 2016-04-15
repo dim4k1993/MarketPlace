@@ -3,6 +3,7 @@ package com.controller;
 
 import com.entity.Product;
 import com.entity.ProductPhotos;
+import com.servise.ProductPhotoService;
 import com.servise.ProductService;
 import com.servise.RegionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,9 @@ public class RegistrationProductController {
 
     @Autowired
     ProductService productService;
+
+    @Autowired
+    ProductPhotoService productPhotoService;
 
     @Autowired
     RegionService regionService;
@@ -40,7 +44,7 @@ public class RegistrationProductController {
     @RequestMapping(value = "/registration=product+add",method = RequestMethod.POST)
     public String registrationProduct(@ModelAttribute Product product, ProductPhotos productPhotos){
         productService.saveProduct(product);
-       // productService.saveProductPhoto(productPhotos);
+        productPhotoService.saveProductPhoto(productPhotos);
         return "redirect:/addProduct";
     }
 
