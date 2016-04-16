@@ -15,7 +15,8 @@
 
     <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
     <link href="/resources/css/userAccount-style.css" rel="stylesheet">
-    <link href="/resources/css/productFile-style.css" rel="stylesheet">
+    <%--<link href="/resources/css/productFile-style.css" rel="stylesheet">--%>
+    <link href="/resources/css/productUser-style.css" rel="stylesheet">
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Insert title here</title>
@@ -38,8 +39,6 @@
 
 <main class="main">
 
-
-
         <security:authorize access="isAuthenticated() and hasRole('ROLE_ADMIN')">
             <%--Це буде бачити тільки адмін--%>
             <article>
@@ -48,18 +47,48 @@
                 </div>
             </article>
             <c:forEach var="product" items="${user.product}">
-                <figure class="snip0035">
+                <div class="container-item">
                     <c:forEach var="productPhoto" items="${product.productPhotos}">
-                        <img src="${productPhoto.fotoName}" alt="sample17"/>
-                        <figcaption>
-                            <div class="image">
-                                <img src="${productPhoto.fotoName}" alt="sample17"/>
+                        <div class="item">
+                            <div class="photoProduct" >
+                                <img src="${productPhoto.fotoName}"/>
                             </div>
-                            <h2><c:url value="/product_id${product.id}" var="url"/><h2>${product.name}</h2></h2>
-                        </figcaption>
-                        <a href="${url}"></a>
+                            <div class="item-overlay">
+                                <a href="#" class="item-button share share-btn"></a>
+                            </div>
+                            <div class="item-content">
+                                <div class="item-top-content">
+                                    <div class="item-top-content-inner">
+                                        <div class="item-product">
+                                            <div class="item-top-title">
+                                                <h3 class="nameProduct">${product.name}</h3>
+                                                <p class="subdescription">
+                                                <h6>${product.stanProducta}</h6>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="item-product-price">
+                                            <span class="price-num">${product.price}грн.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-add-content">
+                                    <div class="item-add-content-inner">
+                                        <div class="section">
+                                            <a href="/product_id${product.id}" class="btn buy expand">Открить продукт</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-menu popout-menu">
+                            <ul>
+                                <li class="color-blue"><a href="#" class="popout-menu-item glyphicon glyphicon-cog"> </a></li>
+                                <li class="color-red"><a href="#" class="popout-menu-item glyphicon glyphicon-trash"></a></li>
+                            </ul>
+                        </div>
                     </c:forEach>
-                </figure>
+                </div>
             </c:forEach>
 
         </security:authorize>
@@ -79,21 +108,49 @@
                 </div>
             </article>
             <c:forEach var="product" items="${user.product}">
-                <figure class="snip0035">
-                        <c:forEach var="productPhoto" items="${product.productPhotos}">
-                            <img src="${productPhoto.fotoName}" alt="sample17"/>
-                            <figcaption>
-                            <div class="image">
-                            <img src="${productPhoto.fotoName}" alt="sample17"/>
+            <div class="container-item">
+            <c:forEach var="productPhoto" items="${product.productPhotos}">
+                <div class="item">
+                    <div class="photoProduct" >
+                        <img src="${productPhoto.fotoName}"/>
+                    </div>
+                    <div class="item-overlay">
+                        <a href="#" class="item-button share share-btn"></a>
+                    </div>
+                    <div class="item-content">
+                        <div class="item-top-content">
+                            <div class="item-top-content-inner">
+                                <div class="item-product">
+                                    <div class="item-top-title">
+                                        <h3 class="nameProduct">${product.name}</h3>
+                                        <p class="subdescription">
+                                            <h6>${product.stanProducta}</h6>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="item-product-price">
+                                    <span class="price-num">${product.price}грн.</span>
+                                </div>
                             </div>
-                            <h2><c:url value="/product_id${product.id}" var="url"/><h2>${product.name}</h2></h2>
-
-                            </figcaption>
-                            <a href="${url}"></a>
-                        </c:forEach>
-                </figure>
+                        </div>
+                        <div class="item-add-content">
+                            <div class="item-add-content-inner">
+                                <div class="section">
+                                    <a href="/product_id${product.id}" class="btn buy expand">Открить продукт</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-menu popout-menu">
+                    <ul>
+                        <li class="color-blue"><a href="#" class="popout-menu-item glyphicon glyphicon-cog"> </a></li>
+                        <li class="color-red"><a href="#" class="popout-menu-item glyphicon glyphicon-trash"></a></li>
+                    </ul>
+                </div>
             </c:forEach>
-
+            </div>
+        </c:forEach>
         </security:authorize>
 
 
@@ -104,6 +161,7 @@
 </body>
 <script src="/resources/js/jquery.js"></script>
 <script src="/resources/js/bootstrap.min.js"></script>
+
 
 <%--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>--%>
 <%--<script   src="https://code.jquery.com/jquery-2.2.2.min.js"   integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="   crossorigin="anonymous"></script>--%>
