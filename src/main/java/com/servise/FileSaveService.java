@@ -15,7 +15,7 @@ import java.security.Principal;
 @Service
 public class FileSaveService{
 
-    public String saveFile (String userId, MultipartFile file, String uploadRootPath ) throws IOException {
+        public String saveFile (String userId, MultipartFile file, String uploadRootPath ) throws IOException {
         File uploadRootDir = new File(uploadRootPath +File.separator+"avatarUser"+File.separator+userId+File.separator+"photo");
         String originalName = "";
         if (!uploadRootDir.exists()){
