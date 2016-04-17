@@ -50,7 +50,7 @@
                 <div class="container-item">
                     <c:forEach var="productPhoto" items="${product.productPhotos}">
                         <div class="item">
-                            <div class="photoProduct" >
+                            <div class="photoProduct">
                                 <img src="${productPhoto.fotoName}"/>
                             </div>
                             <div class="item-overlay">
@@ -84,12 +84,7 @@
                         <div class="item-menu popout-menu">
                             <ul>
                                 <li class="color-blue"><a href="#" class="popout-menu-item glyphicon glyphicon-cog"> </a></li>
-                                <li class="color-red">
-                                    <c:forEach var="product" items="${products}">
-                                    <a href="/userDeleteProduct/${product.id}"
-                                    </c:forEach>
-                                       class="popout-menu-item glyphicon glyphicon-trash">
-                                    </a></li>
+                                <li class="color-red"><a href="/userDeleteProduct/${product.id}" class="popout-menu-item glyphicon glyphicon-trash"></a></li>
                             </ul>
                         </div>
                     </c:forEach>
@@ -150,12 +145,7 @@
                 <div class="item-menu popout-menu">
                     <ul>
                         <li class="color-blue"><a href="#" class="popout-menu-item glyphicon glyphicon-cog"> </a></li>
-                        <li class="color-red">
-                            <c:forEach var="product" items="${products}">
-                                <a href="/userDeleteProduct/${product.id}"
-                                </c:forEach>
-                                   class="popout-menu-item glyphicon glyphicon-trash">
-                                </a></li>
+                        <li class="color-red"><a href="/userDeleteProduct/${product.id}" class="popout-menu-item glyphicon glyphicon-trash"></a></li>
                     </ul>
                 </div>
             </c:forEach>

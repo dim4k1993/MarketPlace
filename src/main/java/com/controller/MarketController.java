@@ -23,7 +23,7 @@ public class MarketController {
 	@Autowired
 	ProductService productService;
 
-	// показує почадкову сторінку
+	 //показує почадкову сторінку
 	//виводить всі категорії а на головній сторінці
 	@RequestMapping("/")
 	public String ShowStartingPage(Model model) {

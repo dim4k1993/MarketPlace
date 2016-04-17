@@ -37,17 +37,17 @@ public class UserSettingsController {
     }
 
     @RequestMapping(value = "/userSettings/addPhoto")
-    public String addPhotoAvatar(@RequestParam (value ="photoAvatar")MultipartFile file,HttpServletRequest request,Principal principal) throws IOException {
+    public String addPhotoAvatar(@RequestParam (value ="photoAvatar")MultipartFile file,HttpServletRequest request,Principal principal ) throws IOException {
         if( file.getBytes().length >= 52428800){
             return "redirect:/addPhoto";
         }else {
-//            String uploadRootPath  = request.getServletContext().getRealPath("resources");
+            String uploadRootPath  = request.getServletContext().getRealPath("resources");
             String absolutePath = "C:\\Users\\Dimas\\Desktop\\logos\\MarketPlace\\src\\main\\webapp\\resources";
             String fotoPath = fileSaveService.saveFile(principal.getName(), file, absolutePath);
-//            String fotoPath1 = fileSaveService.saveFile(principal.getName(), file, uploadRootPath );
+            String fotoPath1 = fileSaveService.saveFile(principal.getName(), file, uploadRootPath );
             userService.savePhotoAvatarUser(userRepository.findOne(Integer.parseInt(principal.getName())), fotoPath.substring(56));
             System.out.println(fotoPath);
-//            System.out.println(fotoPath1);
+            System.out.println(fotoPath1);
 
         }
     return "redirect:/userSettings";
