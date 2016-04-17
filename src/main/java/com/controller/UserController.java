@@ -65,6 +65,7 @@ public class UserController {
 		}
 		else {
 			model.addAttribute("idUser", id);
+			model.addAttribute("products",productService.getAll());
 			model.addAttribute("userProducts", productService.findProductByUser(id));
 			model.addAttribute("productPhotos", productPhotoService.findProductPhotosByProduct(id));
 			model.addAttribute("user", owner);
@@ -72,5 +73,12 @@ public class UserController {
 		}
 	}
 
+//
+//	//удаляє вибраний продукт в User
+@RequestMapping("/userDeleteProduct/{id}")
+public String deleteProductUser (@PathVariable int id){
+	productService.deleteProduct(id);
+	return "redirect:/userAccount";
+}
 
 }

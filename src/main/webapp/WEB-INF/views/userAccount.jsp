@@ -84,7 +84,12 @@
                         <div class="item-menu popout-menu">
                             <ul>
                                 <li class="color-blue"><a href="#" class="popout-menu-item glyphicon glyphicon-cog"> </a></li>
-                                <li class="color-red"><a href="#" class="popout-menu-item glyphicon glyphicon-trash"></a></li>
+                                <li class="color-red">
+                                    <c:forEach var="product" items="${products}">
+                                    <a href="/userDeleteProduct/${product.id}"
+                                    </c:forEach>
+                                       class="popout-menu-item glyphicon glyphicon-trash">
+                                    </a></li>
                             </ul>
                         </div>
                     </c:forEach>
@@ -145,7 +150,12 @@
                 <div class="item-menu popout-menu">
                     <ul>
                         <li class="color-blue"><a href="#" class="popout-menu-item glyphicon glyphicon-cog"> </a></li>
-                        <li class="color-red"><a href="#" class="popout-menu-item glyphicon glyphicon-trash"></a></li>
+                        <li class="color-red">
+                            <c:forEach var="product" items="${products}">
+                                <a href="/userDeleteProduct/${product.id}"
+                                </c:forEach>
+                                   class="popout-menu-item glyphicon glyphicon-trash">
+                                </a></li>
                     </ul>
                 </div>
             </c:forEach>

@@ -1110,7 +1110,7 @@ div.loginpanel div.social a.twitter:active:before {
   box-shadow: 0 0 0 4px rgba(86, 180, 239, 0.6), 0 0 0 4px #333, 0 1px 0 4px rgba(255, 255, 255, 0.6);
 }
 div.loginpanel div.social a.googleplus:before {
-  content: "\f30f";
+  content: "\f354";
 }
 div.loginpanel div.social a.googleplus:hover:before,
 div.loginpanel div.social a.googleplus:focus:before {

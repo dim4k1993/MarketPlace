@@ -22,7 +22,6 @@
 	</table>
 
 
-
 </body>
 
 <script src="/resources/js/jquery.js"></script>

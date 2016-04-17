@@ -19,11 +19,12 @@
     <h1 align="center" style="margin-top: 100px">${idPidCategory}</h1>
 
     <table style="margin-top: 100px">
-        <c:forEach var="product" items="${products}"><tr>
+        <c:forEach var="product" items="${products}">
+            <tr>
             <td>${product.getName()}</td>
             <td><--</td>
             <td><c:url value="/product_id${product.id}" var = "url"/>  <a href="${url}" >показать /</a>  </td>
-            <td><c:url value="/adminDeleteProduct/${product.id}" var = "url"/> <a href="${url}"> Удалить</a> </td>
+            <td><c:url value="/adminDeleteProduct/${product.id}" var = "url"/> <a href="${url}">Удалить </a></td>
         </tr></c:forEach>
     </table>
 

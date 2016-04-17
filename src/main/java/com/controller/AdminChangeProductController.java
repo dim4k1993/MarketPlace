@@ -1,5 +1,6 @@
 package com.controller;
 
+import com.entity.Product;
 import com.servise.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,12 +21,14 @@ public class AdminChangeProductController {
         model.addAttribute("products",productService.getAll());
         return "adminProduct";
     }
+
     //удаляє вибраний продукт в адмінці
     @RequestMapping("/adminDeleteProduct/{id}")
-    public String deleteProduct (@PathVariable String id){
+    public String deleteProductAdmin (@PathVariable int id){
         productService.deleteProduct(id);
         return "redirect:/adminProduct";
     }
+
 
     //пероходить до продукту даної під-категорії
     //виводить продукти які доровнюють під-категорії в админці
