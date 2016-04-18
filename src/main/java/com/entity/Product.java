@@ -1,5 +1,6 @@
 package com.entity;
 import com.servise.CustomValidation.CustomValidationEmailUser;
+import org.hibernate.validator.constraints.Email;
 
 import javax.persistence.*;
 import java.util.List;
@@ -29,10 +30,10 @@ public class Product {
     private  String skype;
 
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "productSentMessenger")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "productSentMessenger")
     private List<Messenger> productSentMessages;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "productReceivedMessenger")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "productReceivedMessenger")
     private List<Messenger> productReceivedMessages;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "product")

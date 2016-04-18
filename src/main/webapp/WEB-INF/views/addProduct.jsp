@@ -2,6 +2,7 @@
                 pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -13,9 +14,9 @@
 <body>
 <sf:form method="POST" modelAttribute="product"  action="/registration=product+add">
 <sf:input path="id" id="id" type="hidden"/>
-<fieldset>
-    <table align="center" style="margin-top: 100px">
-        <h2 align="center" style="margin-top: 100px"> Подать бесплатное объявление</h2>
+    <fieldset>
+        <table align="center" style="margin-top: 100px">
+            <h2 align="center" style="margin-top: 100px"> Подать бесплатное объявление</h2>
                 <tr>
                     <th>Заголовок*</th>
                     <td><sf:input path="name"/></td>
@@ -44,9 +45,9 @@
                     <td>
                 </tr>
                     <th>Email-адрес*</th>
-                        <td><sf:input pattern = "^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$" path="email"/></td>
-                        <td><sf:errors path="email"/></td>
-                </tr>
+                        <td><sf:input path="email"/></td>
+                        <td><sf:errors path="email"/>
+                        </td>
                 <tr>
                     <th>Номер телефона*</th>
                     <td><sf:input path="telephonNamber"/></td>
@@ -56,15 +57,33 @@
                     <th>Skype:</th>
                     <td><sf:input path="skype"/></td>
                     <td><sf:errors path="skype"/></td>
-
                 <tr>
-                    <%--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />--%>
                     <td align="right"><input type="submit" value="Добавить"/></td>
-                    <td>
                 </tr>
-    </table>
-</fieldset>
+        </table>
+    </fieldset>
 </sf:form>
+
+<%--readonly="true"--%>
+<%--value="${user.name}"--%>
+<%--value="${user.email}"--%>
+<%--value="${user.telephon_namber}"--%>
+
+    <security:authorize access="isAuthenticated() and principal.username=='${user.id}'">
+    <%--Це буде бачити користувач який є власником сторінки--%>
+    </security:authorize>
+
+    <security:authorize access="isAuthenticated() and hasRole('ROLE_ADMIN')">
+    <%--Це буде бачити тільки адмін--%>
+    </security:authorize>
+
+
+    <security:authorize access="!isAuthenticated()">
+        <%--Це буде бачити користувач який не залогінився--%>
+    </security:authorize>
+
+
+
 
 </body>
 

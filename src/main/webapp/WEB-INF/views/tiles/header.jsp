@@ -51,7 +51,7 @@
                     </li>
                 </security:authorize>
                 <security:authorize access="isAuthenticated() and principal.username=='${user.id}' and !hasRole('ROLE_ADMIN')">
-                    <%--Це буде бачити користувач який залогінився він не являється власником сторінки і він не адмін--%>
+                    <%--Це буде бачити користувач який залогінився він являється власником сторінки і він не адмін--%>
                     <security:authorize access="!isAuthenticated()">
                         <%--Це буде бачити користувач який не залогінився--%>
                     <li>
@@ -59,16 +59,23 @@
                     </li>
                     </security:authorize>
                     <security:authorize access="isAuthenticated()">
-                        <%--Це буде бачити користувач який не залогінився--%>
+                        <%--Це буде бачити користувач який залогінився--%>
                         <li>
                             <a href="userAccount">${user.name} ${user.lastName}</a>
                         </li>
                     </security:authorize>
 
                 </security:authorize>
+                    <security:authorize access="!isAuthenticated()">
                 <li>
-                    <a href="addProduct">Подать Обявление</a>
+                    <a href="registration">Подать Обявление</a>
                 </li>
+                    </security:authorize>
+                <security:authorize access="isAuthenticated()">
+                    <li>
+                        <a href="addProduct">Подать Обявление</a>
+                    </li>
+                </security:authorize>
                 <li>
                     <a href="registration">Регистрация</a>
                 </li>

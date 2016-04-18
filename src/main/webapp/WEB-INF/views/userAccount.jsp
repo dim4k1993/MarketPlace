@@ -48,11 +48,12 @@
             </article>
             <c:forEach var="product" items="${user.product}">
                 <div class="container-item">
-                    <c:forEach var="productPhoto" items="${product.productPhotos}">
+                    <c:forEach var="productPhoto" items="${product.productPhotos.get(0).fotoName}">
                         <div class="item">
                             <div class="photoProduct">
-                                <img src="${productPhoto.fotoName}"/>
+                                <img src="${productPhoto}"/>
                             </div>
+                            </c:forEach>
                             <div class="item-overlay">
                                 <a href="#" class="item-button share share-btn"></a>
                             </div>
@@ -87,10 +88,8 @@
                                 <li class="color-red"><a href="/userDeleteProduct/${product.id}" class="popout-menu-item glyphicon glyphicon-trash"></a></li>
                             </ul>
                         </div>
-                    </c:forEach>
                 </div>
             </c:forEach>
-
         </security:authorize>
         <security:authorize access="!isAuthenticated()">
             <%--Це буде бачити користувач який не залогінився--%>
@@ -109,11 +108,12 @@
             </article>
             <c:forEach var="product" items="${user.product}">
             <div class="container-item">
-            <c:forEach var="productPhoto" items="${product.productPhotos}">
+            <c:forEach var="productPhoto" items="${product.productPhotos.get(0).fotoName}">
                 <div class="item">
                     <div class="photoProduct" >
-                        <img src="${productPhoto.fotoName}"/>
+                        <img src="${productPhoto}"/>
                     </div>
+                    </c:forEach>
                     <div class="item-overlay">
                         <a href="#" class="item-button share share-btn"></a>
                     </div>
@@ -148,7 +148,6 @@
                         <li class="color-red"><a href="/userDeleteProduct/${product.id}" class="popout-menu-item glyphicon glyphicon-trash"></a></li>
                     </ul>
                 </div>
-            </c:forEach>
             </div>
         </c:forEach>
         </security:authorize>

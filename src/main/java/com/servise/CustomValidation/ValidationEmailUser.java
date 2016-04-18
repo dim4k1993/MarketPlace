@@ -17,7 +17,6 @@ public class ValidationEmailUser implements ConstraintValidator<CustomValidation
 
 
     public void initialize(CustomValidationEmailUser customValidationEmailUser) {
-
     }
 
     public boolean isValid(String s, ConstraintValidatorContext constraintValidatorContext) {

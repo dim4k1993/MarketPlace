@@ -59,10 +59,10 @@ public class User {
     //fetch зазвичай обов`язковий, оскільки по замовчуванню витягує з БД весь ланцюжок з повною колекцією
     //mappedBy обов`язковий, вказує на сторону відповідальну за зв`язок
     //ссилається завжди на поле з іншої сторони яке приймає за параметр об`єкт цього класу, див. ProductPhone
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "userSentMessenger")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "userSentMessenger")
     private List<Messenger> sentMessages;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "userReceivedMessenger")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "userReceivedMessenger")
     private List<Messenger> receivedMessages;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "user")

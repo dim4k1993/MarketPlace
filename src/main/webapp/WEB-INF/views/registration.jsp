@@ -29,7 +29,6 @@
 </head>
 
 <body>
-
 	<sf:form method="POST" modelAttribute="user"  action="/registration=user+add?${_csrf.parameterName}=${_csrf.token}">
 		<sf:input path="id" id="id" type="hidden"/>
 		<fieldset>
@@ -76,7 +75,7 @@
 						<br>
 						<div id="select"></div>
 						<div id="selectCity"></div>
-						<%--<tr>${IdCity}</tr>--%>
+
 					</div>
 				</td>
 			</tr>
@@ -89,9 +88,6 @@
 
 <script>
 	$("#option").change(function(){
-//        $.ajax({url: "searchCityByIdRegion", success: function(result){
-//            $("#regionDiv").append(result);
-//        }});
 		var id = $("#option").val();
 		index = "city";
 		$.get("searchCityByIdRegion" + index + "/"+ id, {}, function(result){

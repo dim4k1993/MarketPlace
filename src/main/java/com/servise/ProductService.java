@@ -4,8 +4,10 @@ package com.servise;
         import com.entity.Product;
         import com.entity.ProductPhotos;
         import com.entity.Role;
+        import com.entity.User;
         import com.repository.ProductPhotosRepository;
         import com.repository.ProductRepository;
+        import com.repository.UserRepository;
         import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.stereotype.Service;
         import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,10 +24,23 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
+    @Autowired
+    private ProductPhotosRepository productPhotosRepository;
+
+    @Autowired
+    private UserRepository userRepository;
+
 
     //Метод додавання продукту
-    public  void  saveProduct(Product product){
+    // i додовання фотографій його
+    public  void  saveProduct(Product product, ProductPhotos productPhotos, Principal principal){
+        product.setUser(userRepository.findOne(Integer.parseInt(principal.getName())));
         productRepository.save(product);
+        if(product.getProductPhotos() == null) {
+            productPhotos.setFotoName("/resources/default/no-image.png");
+            productPhotos.setProduct(product);
+            productPhotosRepository.save(productPhotos);
+        }
     }
 
 
@@ -33,21 +48,6 @@ public class ProductService {
     public Iterable<Product> getAll(){
         return productRepository.findAll();
     }
-
-//    // дістіє один продукти
-//    public Product getOne(int id){
-//        return productRepository.findOne(id);
-//    }
-//
-//    // удаляє вибраний продукт по id
-//    public void deleteProductById(String id){
-//        productRepository.delete(Integer.parseInt(id));
-//    }
-//
-//    // удаляє вибраний продукт
-//    public void deleteProduct(Product product){
-//        productRepository.delete(product);
-//    }
 
     //виводть ПРОДУКТ по id під-катерогії
     public Iterable<Product> findProductByPidCategory(int id){
@@ -60,14 +60,24 @@ public class ProductService {
     }
 
 
-    //удаляє вибраний продукт
-    public String deleteProduct (int id){
+    //удаляє вибраний продукт user
+    public String deleteProductUser (int id){
         Product product = productRepository.findOne(id);
         product.setCity(null);
         product.setPidCategory(null);
         product.setUser(null);
         productRepository.delete(product);
         productRepository.delete(product.getId());
+        return "redirect:/adminProduct";
+    }
+
+    //удаляє вибраний продукт admin
+    public String deleteProductAdmin (int id){
+        Product product = productRepository.findOne(id);
+        product.setCity(null);
+        product.setPidCategory(null);
+        product.setUser(null);
+        productRepository.delete(product);
         return "redirect:/adminProduct";
     }
 

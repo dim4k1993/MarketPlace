@@ -12,11 +12,11 @@ public class ProductPhotoService {
     private ProductPhotosRepository productPhotosRepository;
 
 
-    //Метод додавання дефолтного фото до продукту при регистрации продута
-    public  void  saveProductPhoto( ProductPhotos productPhotos){
-        productPhotos.setFotoName("/resources/default/no-image.png");
-        productPhotosRepository.save(productPhotos);
-    }
+//    //Метод додавання дефолтного фото до продукту при регистрации продута
+//    public  void  saveProductPhoto( ProductPhotos productPhotos){
+//        productPhotos.setFotoName("/resources/default/no-image.png");
+//        productPhotosRepository.save(productPhotos);
+//    }
 
 
     //виводть foto по id Producta
