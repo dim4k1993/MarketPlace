@@ -68,7 +68,7 @@
                 </security:authorize>
                     <security:authorize access="!isAuthenticated()">
                 <li>
-                    <a href="registration">Подать Обявление</a>
+                    <a href="loginUserPage">Подать Обявление</a>
                 </li>
                     </security:authorize>
                 <security:authorize access="isAuthenticated()">
