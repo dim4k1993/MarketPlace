@@ -63,7 +63,6 @@
         </table>
     </fieldset>
 </sf:form>
-
 <%--readonly="true"--%>
 <%--value="${user.name}"--%>
 <%--value="${user.email}"--%>
