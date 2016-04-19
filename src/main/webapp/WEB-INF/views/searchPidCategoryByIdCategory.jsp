@@ -18,11 +18,11 @@
 <body>
 <c:choose>
 
-    <c:when test="${index.equals('city')}">
-        <select id="optionCity" name = "RegionId">
-            <option value="Виберете city">-Виберете city-</option>
-            <c:forEach var="cityRegion" items="${cityRegion}">
-                <option value="${cityRegion.getId()}">${cityRegion.getName()}</option>
+    <c:when test="${indexCategory.equals('pidCategory')}">
+        <select id="optionPidCategory" name = "CategoryId">
+            <option value="Виберете pidCategory">-Виберете pidCategory-</option>
+            <c:forEach var="pidCategoryCategory" items="${pidCategoryCategory}">
+                <option value="${pidCategoryCategory.getId()}">${pidCategoryCategory.getCategoryName}</option>
             </c:forEach>
         </select>
     </c:when>
@@ -31,19 +31,19 @@
 
 <script>
 
-    $("#optionReg").change(function(){
-        var id = $("#optionReg").val();
-        index = "city";
-        $.get("searchCityByIdRegion" + index + "/"+ id, {}, function(result){
-            $("#selectCity").html(result);
+    $("#optionCat").change(function(){
+        var id = $("#optionCat").val();
+        indexCategory = "pidCategory";
+        $.get("searchPidCategoryByIdCategory" + indexCategory + "/"+ id, {}, function(result){
+            $("#selectPidCategory").html(result);
         });
     });
 
-    $("#optionCity").change(function(){
-        index = "cityId";
-        var id = $("#optionCity").val();
-        $.get("searchCityByIdRegion" + index + "/"+ id, {}, function(result){
-            $("#selectId").html(result);
+    $("#optionPidCategory").change(function(){
+        indexCategory = "pidCategoryId";
+        var id = $("#optionPidCategory").val();
+        $.get("searchPidCategoryByIdCategory" + indexCategory + "/"+ id, {}, function(result){
+            $("#selectPidCatId").html(result);
         });
     });
 </script>

@@ -1,6 +1,7 @@
 package com.servise;
 
         import com.controller.CityController;
+        import com.controller.PidCategoryController;
         import com.entity.Product;
         import com.entity.ProductPhotos;
         import com.entity.Role;
@@ -25,6 +26,13 @@ public class ProductService {
     private ProductRepository productRepository;
 
     @Autowired
+    CityController cityController;
+
+    @Autowired
+    PidCategoryController pidCategoryController;
+
+
+    @Autowired
     private ProductPhotosRepository productPhotosRepository;
 
     @Autowired
@@ -35,6 +43,11 @@ public class ProductService {
     // i додовання фотографій його
     public  void  saveProduct(Product product, ProductPhotos productPhotos, Principal principal){
         product.setUser(userRepository.findOne(Integer.parseInt(principal.getName())));
+        if (product.getCity() == null){
+            System.out.println("error");
+        }
+        product.setPidCategory(pidCategoryController.pidCategoryId);
+        product.setCity(cityController.cityId);
         productRepository.save(product);
         if(product.getProductPhotos() == null) {
             productPhotos.setFotoName("/resources/default/no-image.png");

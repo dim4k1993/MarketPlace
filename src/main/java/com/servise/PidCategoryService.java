@@ -44,4 +44,8 @@ public class PidCategoryService {
     public Iterable<PidCategory> findPidCategoryByCategory(int id){
         return pidCategoryRepository.findPidCategoryFromCategoryId(id);
     }
+
+    public Iterable<PidCategory> getPidCategory(int id){
+        return pidCategoryRepository.findPidCategoryFromCategoryId(id);
+    }
 }

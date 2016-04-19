@@ -22,10 +22,12 @@ public class CategoryService {
         categoryRepository.save(category);
     }
 
-
+    // дістає всі категорії
     public Iterable<Category> getAll(){
         return categoryRepository.findAll();
     }
+
+
     public void deleteCategory(String id){
         categoryRepository.delete(Integer.parseInt(id));
     }

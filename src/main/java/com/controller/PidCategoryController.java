@@ -1,6 +1,8 @@
 package com.controller;
 
 import com.entity.Category;
+import com.entity.PidCategory;
+import com.repository.PidCategoryRepository;
 import com.servise.PidCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +16,10 @@ public class PidCategoryController {
     @Autowired
     PidCategoryService pidCategoryService;
 
+    @Autowired
+    PidCategoryRepository pidCategoryRepository;
+    public PidCategory pidCategoryId;
+
 
 
     //пероходить до підкатегорії даної категорії
@@ -24,5 +30,30 @@ public class PidCategoryController {
         model.addAttribute("pidcategorys", pidCategoryService.findPidCategoryByCategory(Integer.parseInt(id)));
         return "pidCategory";
     }
+
+    @RequestMapping("/searchPidCategoryByIdCategory{indexCategory}/{id}")
+    public String controlUrlCategory(Model model,@PathVariable String id,@PathVariable String indexCategory){
+        model.addAttribute("indexCategory",indexCategory);
+        if (indexCategory.equals("pidCategory")) {
+            int idCategory = Integer.parseInt(id);
+            searchPidCategoryByCategory(model,idCategory);
+        }else
+        if (indexCategory.equals("pidCategoryId")){
+            searchIdByPidCategory(model,id);
+        }
+        return"searchPidCategoryByIdCategory";
+    }
+
+    public void searchPidCategoryByCategory(Model model, int id){
+        model.addAttribute("pidCategoryCategory", pidCategoryService.getPidCategory(id));
+        System.out.println(id);
+    }
+
+    public void searchIdByPidCategory(Model model, String id){
+        int intId = Integer.parseInt(id);
+        pidCategoryId = pidCategoryRepository.findOne(intId);
+        System.out.println(id);
+    }
+
 
 }

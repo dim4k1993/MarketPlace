@@ -14,8 +14,8 @@ public interface CityRepository extends CrudRepository<City,Integer>{
     @Query(value = "select r from City r where (r.region like concat(:region))")
     Set<City> findByRegion(@Param("region") int region);
 
-    @Query(value = "select c from City c where c.name =:name")
-    Set<City> findByCity(@Param("name") String name);
+//    @Query(value = "select c from City c where c.name =:name")
+//    Set<City> findByCity(@Param("name") String name);
 
 
 
