@@ -25,7 +25,7 @@ public class AdminChangeProductController {
     //удаляє вибраний продукт в адмінці
     @RequestMapping("/adminDeleteProduct/{id}")
     public String deleteProductAdmin (@PathVariable int id){
-        productService.deleteProductAdmin(id);
+        productService.deleteProduct(id);
         return "redirect:/adminProduct";
     }
 

@@ -39,7 +39,7 @@
 
 <main class="main">
 
-        <security:authorize access="isAuthenticated() and hasRole('ROLE_ADMIN')">
+        <security:authorize access="isAuthenticated() and principal.username!='${user.id}' and hasRole('ROLE_ADMIN')">
             <%--Це буде бачити тільки адмін--%>
             <article>
                 <div class="fancy title">
@@ -99,6 +99,8 @@
             <%--Це буде бачити користувач який залогінився він не являється власником сторінки і він не адмін--%>
             <h1>Це буде бачити користувач який залогінився він не являється власником сторінки і він не адмін</h1>
         </security:authorize>
+
+
         <security:authorize access="isAuthenticated() and principal.username=='${user.id}'">
             <%--Це буде бачити користувач який є власником сторінки--%>
             <article>
@@ -151,7 +153,6 @@
             </div>
         </c:forEach>
         </security:authorize>
-
 
 
 </main>

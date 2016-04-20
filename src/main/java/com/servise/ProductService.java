@@ -73,26 +73,17 @@ public class ProductService {
     }
 
 
-    //удаляє вибраний продукт user
-    public String deleteProductUser (int id){
+    //удаляє вибраний продукт
+    public String deleteProduct(int id){
         Product product = productRepository.findOne(id);
         product.setCity(null);
         product.setPidCategory(null);
         product.setUser(null);
         productRepository.delete(product);
         productRepository.delete(product.getId());
-        return "redirect:/adminProduct";
+        return "redirect:/";
     }
 
-    //удаляє вибраний продукт admin
-    public String deleteProductAdmin (int id){
-        Product product = productRepository.findOne(id);
-        product.setCity(null);
-        product.setPidCategory(null);
-        product.setUser(null);
-        productRepository.delete(product);
-        return "redirect:/adminProduct";
-    }
 
 
 }

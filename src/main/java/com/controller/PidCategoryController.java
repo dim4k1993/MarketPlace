@@ -31,14 +31,14 @@ public class PidCategoryController {
         return "pidCategory";
     }
 
-    @RequestMapping("/searchPidCategoryByIdCategory{indexCategory}/{id}")
-    public String controlUrlCategory(Model model,@PathVariable String id,@PathVariable String indexCategory){
-        model.addAttribute("indexCategory",indexCategory);
-        if (indexCategory.equals("pidCategory")) {
+    @RequestMapping("/searchPidCategoryByIdCategory{index}/{id}")
+    public String controlUrlCategory(Model model,@PathVariable String id,@PathVariable String index){
+        model.addAttribute("index",index);
+        if (index.equals("pidCategory")) {
             int idCategory = Integer.parseInt(id);
             searchPidCategoryByCategory(model,idCategory);
         }else
-        if (indexCategory.equals("pidCategoryId")){
+        if (index.equals("pidCategoryId")){
             searchIdByPidCategory(model,id);
         }
         return"searchPidCategoryByIdCategory";

@@ -72,24 +72,24 @@
                             <br>
                             <div id="selectCit"></div>
                             <div id="selectCity"></div>
-                            <div id="selectId"></div>
+                            <%--<div id="selectId"></div>--%>
                         </div>
                     </td>
 
-                    <%--<th>Категория:</th>--%>
-                    <%--<td>--%>
-                        <%--<div id="categoryDiv">--%>
-                            <%--<select id="option1" name = "IdCategory">--%>
-                                <%--<option value="Виберете Категорию">-Виберете Категорию-</option>--%>
-                                <%--<c:forEach var="categoryModel" items="${categoryModel}">--%>
-                                    <%--<option value="${categoryModel.id}">${categoryModel.categoryName}</option>--%>
-                                <%--</c:forEach>--%>
-                            <%--</select>--%>
-                            <%--<br>--%>
-                            <%--<div id="select1"></div>--%>
-                            <%--<div id="selectPidCategory"></div>--%>
-                        <%--</div>--%>
-                    <%--</td>--%>
+                    <th>Категория:</th>
+                    <td>
+                        <div id="categoryDiv">
+                            <select id="option1" name = "IdCategory">
+                                <option value="Виберете Категорию">-Виберете Категорию-</option>
+                                <c:forEach var="categoryModel" items="${categoryModel}">
+                                    <option value="${categoryModel.id}">${categoryModel.categoryName}</option>
+                                </c:forEach>
+                            </select>
+                            <br>
+                            <div id="selectPidCat"></div>
+                            <div id="selectPidCategory"></div>
+                        </div>
+                    </td>
                 <tr>
                     <td align="right"><input type="submit" value="Добавить"/></td>
                 </tr>
@@ -108,15 +108,15 @@
 </script>
 
 
-<%--<script>--%>
-    <%--$("#option1").change(function(){--%>
-        <%--var id = $("#option1").val();--%>
-        <%--indexCategory = "pidCategory";--%>
-        <%--$.get("searchPidCategoryByIdCategory" + indexCategory + "/"+ id, {}, function(result){--%>
-            <%--$("#select1").html(result);--%>
-        <%--});--%>
-    <%--});--%>
-<%--</script>--%>
+<script>
+    $("#option1").change(function(){
+        var id = $("#option1").val();
+        index = "pidCategory";
+        $.get("searchPidCategoryByIdCategory" + index + "/"+ id, {}, function(result){
+            $("#selectPidCat").html(result);
+        });
+    });
+</script>
 
 
     <security:authorize access="isAuthenticated() and principal.username=='${user.id}'">

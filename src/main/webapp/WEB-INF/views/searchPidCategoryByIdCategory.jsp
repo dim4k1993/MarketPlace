@@ -18,11 +18,11 @@
 <body>
 <c:choose>
 
-    <c:when test="${indexCategory.equals('pidCategory')}">
+    <c:when test="${index.equals('pidCategory')}">
         <select id="optionPidCategory" name = "CategoryId">
-            <option value="Виберете pidCategory">-Виберете pidCategory-</option>
+            <option value="Виберете підкатегорию">-Виберете підкатегорию-</option>
             <c:forEach var="pidCategoryCategory" items="${pidCategoryCategory}">
-                <option value="${pidCategoryCategory.getId()}">${pidCategoryCategory.getCategoryName}</option>
+                <option value="${pidCategoryCategory.getId()}">${pidCategoryCategory.getName()}</option>
             </c:forEach>
         </select>
     </c:when>
@@ -33,16 +33,16 @@
 
     $("#optionCat").change(function(){
         var id = $("#optionCat").val();
-        indexCategory = "pidCategory";
-        $.get("searchPidCategoryByIdCategory" + indexCategory + "/"+ id, {}, function(result){
+        index = "pidCategory";
+        $.get("searchPidCategoryByIdCategory" + index + "/"+ id, {}, function(result){
             $("#selectPidCategory").html(result);
         });
     });
 
     $("#optionPidCategory").change(function(){
-        indexCategory = "pidCategoryId";
+        index = "pidCategoryId";
         var id = $("#optionPidCategory").val();
-        $.get("searchPidCategoryByIdCategory" + indexCategory + "/"+ id, {}, function(result){
+        $.get("searchPidCategoryByIdCategory" + index + "/"+ id, {}, function(result){
             $("#selectPidCatId").html(result);
         });
     });

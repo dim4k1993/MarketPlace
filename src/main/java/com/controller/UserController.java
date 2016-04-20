@@ -78,7 +78,7 @@ public class UserController {
 //	//удаляє вибраний продукт в User
 @RequestMapping("/userDeleteProduct/{id}")
 public String deleteProductUser (@PathVariable int id){
-	productService.deleteProductUser(id);
+	productService.deleteProduct(id);
 	return "redirect:/userAccount";
 }
 

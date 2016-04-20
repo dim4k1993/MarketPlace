@@ -20,7 +20,7 @@
 
     <c:when test="${index.equals('city')}">
         <select id="optionCity" name = "RegionId">
-            <option value="Виберете city">-Виберете city-</option>
+            <option value="Виберете город">-Виберете город-</option>
             <c:forEach var="cityRegion" items="${cityRegion}">
                 <option value="${cityRegion.getId()}">${cityRegion.getName()}</option>
             </c:forEach>

@@ -3,6 +3,7 @@ import com.servise.CustomValidation.CustomValidationEmailUser;
 import org.hibernate.validator.constraints.Email;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
@@ -13,6 +14,7 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+   // @Size(min = 2, max = 15, message = "введите имя (от 2 до 15 знаков)")
     private String name;
 
     private String price;
