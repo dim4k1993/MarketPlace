@@ -1,0 +1,17 @@
+
+.batton-register {
+    border-color:#5cd07b!important;
+    width: 150px;
+    background-color: #5cd07b!important;
+}
+
+.batton-register:hover {
+    background: #1fc64b!important;
+}
+
+.reg_form {
+
+    color: #5cd07b!important;
+    font-size: 30px;
+    margin-left: 10px;
+}

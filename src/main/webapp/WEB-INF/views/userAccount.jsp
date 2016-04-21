@@ -15,7 +15,6 @@
 
     <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
     <link href="/resources/css/userAccount-style.css" rel="stylesheet">
-    <%--<link href="/resources/css/productFile-style.css" rel="stylesheet">--%>
     <link href="/resources/css/productUser-style.css" rel="stylesheet">
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

@@ -13,21 +13,32 @@
 <!--[if IE 8]> <html class="lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
 <head>
+    <link href="/resources/css/register-style.css" rel="stylesheet">
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+
     <script   src="https://code.jquery.com/jquery-2.2.1.min.js" ></script>
 </head>
 <body>
+
 <c:choose>
-
     <c:when test="${index.equals('city')}">
-        <select id="optionCity" name = "RegionId">
-            <option value="Виберете город">-Виберете город-</option>
-            <c:forEach var="cityRegion" items="${cityRegion}">
-                <option value="${cityRegion.getId()}">${cityRegion.getName()}</option>
-            </c:forEach>
-        </select>
+        <div class="form-group">
+            <label class="col-md-4 control-label">Город:</label>
+                <div class="col-md-4 selectContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+                            <select id="optionCity" name="RegionId" class="form-control selectpicker">
+                                <option value="Виберете город">-Виберете город-</option>
+                                <c:forEach var="cityRegion" items="${cityRegion}">
+                            <option value="${cityRegion.getId()}">${cityRegion.getName()}</option>
+                        </c:forEach>
+                    </select>
+                </div>
+            </div>
+        </div>
     </c:when>
-
 </c:choose>
+
 
 <script>
 

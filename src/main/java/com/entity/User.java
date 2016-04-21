@@ -31,11 +31,11 @@ public class User {
     private  String parol;
 
 
-    @CustomValidationEmailUser(message = "такой user уже зарегистрован")
-    @Email(message = "не верно введен email ")
+    @CustomValidationEmailUser(message = "пользователь с таким email уже зарегистрован")
+    @Email(message = "некоректно введен email")
     private String email;
 
-    @Pattern(regexp = "^[0-9]+$", message = "не коректний ввод")
+    @Pattern(regexp = "^[0-9]+$", message = "некоректно введен телефон")
     private String telephon_namber;
 
     @Size(min = 2, max = 15, message = "введите имя (от 2 до 15 знаков)")

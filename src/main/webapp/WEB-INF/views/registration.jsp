@@ -9,82 +9,114 @@
 <!--[if IE 8]> <html class="lt-ie9" lang="ru"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="ru"> <!--<![endif]-->
 <head>
+	<link href="/resources/css/register-style.css" rel="stylesheet">
+	<link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+
+
 	<script   src="https://code.jquery.com/jquery-2.2.1.min.js" ></script>
-	<style>
-		.errorblock{
-			width: 400px;
-			color:#000;
-			background-color: #b74c4c;
-			border: 2px solid #333;
-			padding: 8px;
-			margin: auto;
-			margin-top: 10px;
-		}
-		.error{
-			color: red;
-			font-size: 20px;
-			text-align: left;
-		}
-	</style>
 </head>
 
 <body>
-	<sf:form method="POST" modelAttribute="user"  action="/registration=user+add?${_csrf.parameterName}=${_csrf.token}">
+<div class="container" style="margin-top: 100px">
+<sf:form method="POST" class="well form-horizontal" id="contact_form" modelAttribute="user"  action="/registration=user+add?${_csrf.parameterName}=${_csrf.token}">
 		<sf:input path="id" id="id" type="hidden"/>
 		<fieldset>
-		<table align="center" style="margin-top: 100px">
-			<sf:errors path="*" element="div" cssClass="errorblock" style="margin-top: 100px"/>
-			<tr>
-				<h2 align="center" style="margin-top: 100px"> Регистрация</h2>
-			</tr>
-			<tr>
-				<th>Имя:</th>
-				<td><sf:input path="name"/></td>
-				<td><sf:errors path="name"/></td>
-			</tr>
-			<tr>
-				<th>Фамилия:</th>
-				<td><sf:input path="lastName"/></td>
-				<td><sf:errors path="lastName"/></td>
-			</tr>
-			<tr>
-				<th>Email-адрес:</th>
-				<td><sf:input path="email"/></td>
-				<td><sf:errors path="email"/></td>
-			</tr>
-			<tr>
-				<th>Пароль:</th>
-				<td><sf:input path="parol" type="password"/></td>
-				<td><sf:errors path="parol"/> </td>
-			</tr>
-			<tr>
-				<th>Номер телефона:</th>
-				<td><sf:input path="telephon_namber"/></td>
-				<td><sf:errors path="telephon_namber"/></td>
-			</tr>
-			<tr>
-				<th>Розташування:</th>
-				<td>
-					<div id="regionDiv">
-						<select id="option" name = "IdRegion">
-							<option value="Виберете Область">-Виберете Область-</option>
-						<c:forEach var="regionModel" items="${regionModel}">
-							<option value="${regionModel.id}">${regionModel.name}</option>
-						</c:forEach>
-						</select>
-						<br>
-						<div id="select"></div>
-						<div id="selectCity"></div>
+			<legend class="reg_form ">Регистрация</legend>
 
+			<!-- Text input-->
+
+			<div class="form-group">
+				<label class="col-md-4 control-label">Имя:</label>
+				<div class="col-md-4 inputGroupContainer">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+						<sf:input path="name" placeholder="Имя " class="form-control" type="text"/>
 					</div>
-				</td>
-			</tr>
-			<tr>
-				<td align="right"><input type="submit" value="Зареєструватися"/></td>
-			</tr>
-		</table>
+					<sf:errors path="name"/>
+				</div>
+			</div>
+
+			<!-- Text input-->
+
+			<div class="form-group">
+				<label class="col-md-4 control-label">Фамилия:</label>
+				<div class="col-md-4 inputGroupContainer">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+						<sf:input path="lastName" placeholder="Фамилия " class="form-control" type="text"/>
+					</div>
+					<sf:errors path="lastName"/>
+				</div>
+			</div>
+
+			<!-- Text input-->
+			<div class="form-group">
+				<label class="col-md-4 control-label">E-Mail:</label>
+				<div class="col-md-4 inputGroupContainer">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+						<sf:input path="email" placeholder="E-Mail адрес" class="form-control" type="text"/>
+					</div>
+					<sf:errors path="email"/>
+				</div>
+			</div>
+
+			<!-- Text input-->
+			<div class="form-group">
+				<label class="col-md-4 control-label">Пароль:</label>
+				<div class="col-md-4 inputGroupContainer">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+						<sf:input path="parol" type="password" placeholder="Пароль" class="form-control"/>
+					</div>
+					<sf:errors path="parol"/>
+				</div>
+			</div>
+
+			<!-- Text input-->
+
+			<div class="form-group">
+				<label class="col-md-4 control-label">Телефон #</label>
+				<div class="col-md-4 inputGroupContainer">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+						<sf:input path="telephon_namber" placeholder="+380(98)53-12-955" class="form-control" type="text"/>
+					</div>
+					<sf:errors path="telephon_namber"/>
+				</div>
+			</div>
+
+			<!-- Select Basic -->
+
+			<div class="form-group">
+				<label class="col-md-4 control-label">Область:</label>
+				<div class="col-md-4 selectContainer">
+					<div id="regionDiv" class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+						<select id="option" name="IdRegion" class="form-control selectpicker">
+							<option value="Виберете Область">-Виберете Область-</option>
+							<c:forEach var="regionModel" items="${regionModel}">
+								<option value="${regionModel.id}">${regionModel.name}</option>
+							</c:forEach>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div id="select"></div>
+			<div id="selectCity"></div>
+
+
+			<!-- Button -->
+			<div class="form-group">
+				<label class="col-md-4 control-label"></label>
+				<div class="col-md-4">
+					<button type="submit" class="btn btn-warning batton-register">Отправить <span class="glyphicon glyphicon-send"></span></button>
+				</div>
+			</div>
 		</fieldset>
-	</sf:form>
+</sf:form>
+</div>
+
 
 <script>
 	$("#option").change(function(){
@@ -97,10 +129,9 @@
 </script>
 
 </body>
+
+<script src="/resources/js/register.js"></script>
 <script src="/resources/js/jquery.js"></script>
 <script src="/resources/js/bootstrap.min.js"></script>
-
-<%--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>--%>
-<%--<script   src="https://code.jquery.com/jquery-2.2.2.min.js"   integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="   crossorigin="anonymous"></script>--%>
 
 </html>
