@@ -46,9 +46,9 @@ public class UserController {
 		if (principal != null){
 			User user = userRepository.findOne(Integer.parseInt(principal.getName()));
 			model.addAttribute("user", user);
-
 			return "redirect:/user_id" + principal.getName();
-		}else {
+		}
+		else {
 			return "redirect:/";
 		}
 	}
