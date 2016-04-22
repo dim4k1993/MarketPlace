@@ -36,9 +36,7 @@
     </ul>
 </nav>
 
-<main>
-
-    <div class="helper">
+<main class="main">
         <security:authorize access="isAuthenticated() and hasRole('ROLE_ADMIN')">
             <h1>Це буде бачити тільки адмін</h1>
             <%--Це буде бачити тільки адмін--%>
@@ -53,17 +51,17 @@
         </security:authorize>
 
         <security:authorize access="isAuthenticated() and principal.username=='${user.id}'">
+            <%--Це буде бачити користувач який є власником сторінки--%>
+            <h1>Це буде бачити користувач який є власником сторінки</h1>
+
             <sf:form action="/userSettings/addPhoto?${_csrf.parameterName}=${_csrf.token}" enctype="multipart/form-data" method="post">
                 <td><label for="image">Виберіть зображення</label></td>
                 <td><input type="file" name="photoAvatar" id="image"></td>
                 <td></td>
                 <td><input type="submit" value="OK"></td>
             </sf:form>
-            <%--Це буде бачити користувач який є власником сторінки--%>
-            <h1>Це буде бачити користувач який є власником сторінки</h1>
-        </security:authorize>
 
-    </div>
+        </security:authorize>
 
 </main>
 
