@@ -32,7 +32,7 @@
 						<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 						<sf:input path="name" placeholder="Имя " class="form-control" type="text"/>
 					</div>
-					<sf:errors path="name"/>
+					<sf:errors path="name" class="errorsValidation"/>
 				</div>
 			</div>
 
@@ -45,7 +45,7 @@
 						<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 						<sf:input path="lastName" placeholder="Фамилия " class="form-control" type="text"/>
 					</div>
-					<sf:errors path="lastName"/>
+					<sf:errors path="lastName" class="errorsValidation"/>
 				</div>
 			</div>
 
@@ -57,7 +57,7 @@
 						<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
 						<sf:input path="email" placeholder="E-Mail адрес" class="form-control" type="text"/>
 					</div>
-					<sf:errors path="email"/>
+					<sf:errors path="email" class="errorsValidation"/>
 				</div>
 			</div>
 
@@ -69,7 +69,7 @@
 						<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
 						<sf:input path="parol" type="password" placeholder="Пароль" class="form-control"/>
 					</div>
-					<sf:errors path="parol"/>
+					<sf:errors path="parol" class="errorsValidation"/>
 				</div>
 			</div>
 
@@ -82,7 +82,7 @@
 						<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
 						<sf:input path="telephon_namber" placeholder="+380(98)53-12-955" class="form-control" type="text"/>
 					</div>
-					<sf:errors path="telephon_namber"/>
+					<sf:errors path="telephon_namber" class="errorsValidation"/>
 				</div>
 			</div>
 

@@ -45,9 +45,11 @@ public class UserController {
 	public String ShowUser1( Model model, Principal principal){
 		if (principal != null){
 			User user = userRepository.findOne(Integer.parseInt(principal.getName()));
+
 			model.addAttribute("user", user);
 			return "redirect:/user_id" + principal.getName();
 		}
+
 		else {
 			return "redirect:/";
 		}
@@ -57,16 +59,20 @@ public class UserController {
 	//виводить продукти які він має
 	//якщо такого іd нема виводить newUser
 	//виводить foto продуктів які він має
+	//якщо user не має продукту то redirect добавить продукт. після того як добавить відкриває userAccount
 	@RequestMapping("/user_id{id}")
 	public String ShowVisitUser1 (Model model,@PathVariable int id) {
 		User owner = userRepository.findOne(id);
-
 		if (owner == null) {
 			return "newUser";
 		}
 		else {
+			if (owner.getProduct().iterator().hasNext() == false) {
+
+				return"redirect:/addProduct";
+			}
 			model.addAttribute("idUser", id);
-			model.addAttribute("products",productService.getAll());
+			model.addAttribute("products", productService.getAll());
 			model.addAttribute("userProducts", productService.findProductByUser(id));
 			model.addAttribute("productPhotos", productPhotoService.findProductPhotosByProduct(id));
 			model.addAttribute("user", owner);
@@ -74,7 +80,15 @@ public class UserController {
 		}
 	}
 
+
+//	if (user.getProduct().iterator().hasNext() == false) {
 //
+//		return"";
+//	}
+
+
+
+
 	//удаляє вибраний продукт в User
 @RequestMapping("/userDeleteProduct/{id}")
 public String deleteProductUser (@PathVariable int id){

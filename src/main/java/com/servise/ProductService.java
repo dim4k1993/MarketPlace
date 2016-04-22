@@ -40,7 +40,7 @@ public class ProductService {
 
 
     //Метод додавання продукту
-    // i додовання фотографій його
+    // i додовання девофрлтної фотографії
     public  void  saveProduct(Product product, ProductPhotos productPhotos, Principal principal){
         product.setUser(userRepository.findOne(Integer.parseInt(principal.getName())));
         if (product.getCity() == null){
