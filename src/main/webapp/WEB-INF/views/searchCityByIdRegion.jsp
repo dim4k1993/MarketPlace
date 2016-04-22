@@ -39,7 +39,6 @@
     </c:when>
 </c:choose>
 
-
 <script>
 
     $("#optionReg").change(function(){

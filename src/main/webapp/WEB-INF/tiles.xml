@@ -24,7 +24,6 @@
     </definition>
 
 
-
     <definition name="marketPlace" extends="base.definition">
         <put-attribute name="body" value="/WEB-INF/views/marketPlace.jsp"></put-attribute>
         <put-attribute name="title" value=""></put-attribute>
@@ -109,12 +108,13 @@
         <put-attribute name="body" value="/WEB-INF/views/userSettings.jsp"></put-attribute>
         <put-attribute name="title" value=""></put-attribute>
 
-    </definition>   <definition name="searchPidCategoryByIdCategory" extends="base.definition">
+    </definition>
+
+    <definition name="searchPidCategoryByIdCategory" extends="outHeaderAndFooter.definition">
         <put-attribute name="body" value="/WEB-INF/views/searchPidCategoryByIdCategory.jsp"></put-attribute>
         <put-attribute name="title" value=""></put-attribute>
     </definition>
-
-
+    
 
 
 </tiles-definitions>

@@ -39,12 +39,8 @@
 <main class="main">
 
         <security:authorize access="isAuthenticated() and principal.username!='${user.id}' and hasRole('ROLE_ADMIN')">
-            <%--Це буде бачити тільки адмін--%>
-            <article>
-                <div class="fancy title">
-                    <span>Мої Оголошення</span>
-                </div>
-            </article>
+                    <!-- Form Name -->
+                    <legend class="title_form ">Мої Оголошення</legend>
             <c:forEach var="product" items="${user.product}">
                 <div class="container-item">
                     <c:forEach var="productPhoto" items="${product.productPhotos.get(0).fotoName}">
@@ -90,6 +86,8 @@
                 </div>
             </c:forEach>
         </security:authorize>
+
+
         <security:authorize access="!isAuthenticated()">
             <%--Це буде бачити користувач який не залогінився--%>
             <h1>Це буде бачити користувач який не залогінився</h1>
@@ -102,12 +100,11 @@
 
         <security:authorize access="isAuthenticated() and principal.username=='${user.id}'">
             <%--Це буде бачити користувач який є власником сторінки--%>
-            <article>
-                <div class="fancy title">
-                    <span>Мої Оголошення</span>
-                </div>
-            </article>
-            <c:forEach var="product" items="${user.product}">
+
+                    <!-- Form Name -->
+                    <legend class="title_form ">Мої Оголошення</legend>
+
+                <c:forEach var="product" items="${user.product}">
             <div class="container-item">
             <c:forEach var="productPhoto" items="${product.productPhotos.get(0).fotoName}">
                 <div class="item">
@@ -150,8 +147,11 @@
                     </ul>
                 </div>
             </div>
-        </c:forEach>
+
+                </c:forEach>
+
         </security:authorize>
+
 
 
 </main>

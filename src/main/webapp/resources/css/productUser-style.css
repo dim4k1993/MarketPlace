@@ -384,5 +384,8 @@ h2 {
 
 }
 
-
-
+.title_form {
+  text-align: center !important;
+  color: #5cd07b!important;
+  font-size: 30px;
+}
