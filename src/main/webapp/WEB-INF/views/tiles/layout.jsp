@@ -14,6 +14,9 @@
     <tiles:insertAttribute name="header"></tiles:insertAttribute>
 </div>
 <div>
+    <tiles:insertAttribute name="categoryMenu"></tiles:insertAttribute>
+</div>
+<div>
     <tiles:insertAttribute name="body"></tiles:insertAttribute>
 </div>
 <div>
