@@ -1,0 +1,80 @@
+.mega-dropdown {
+  position: static !important;
+}
+
+.mega-dropdown-menu {
+ background: #ffffff;
+  padding: 20px 0px;
+  width: 100%;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.mega-dropdown-menu > li > ul > li {
+  list-style: none;
+}
+
+.mega-dropdown-menu > li > ul > li > a {
+    font-family: century gothic;
+  display: block;
+  color: #222;
+  padding: 3px 5px;
+}
+
+.mega-dropdown-menu > li ul > li > a:hover,
+.mega-dropdown-menu > li ul > li > a:focus {
+  text-decoration: none;
+    color: #40c781;
+}
+
+.mega-dropdown-menu .dropdown-header {
+  font-size: 18px;
+  color: #40c781;
+  padding: 5px 60px 5px 5px;
+  line-height: 30px;
+}
+
+.carousel-control {
+  width: 30px;
+  height: 30px;
+  top: -35px;
+}
+
+
+.navigation_menu{
+    text-decoration-color: black!important;
+    font-family: franklin gothic;
+    font-size: 16px;
+    margin-top: 40px;
+    background: rgba(242, 242, 242, 0.44) !important;
+    
+}
+
+.caruselqq {
+    height: 330px!important;
+    width: 480px!important;
+}
+
+.caruselWight {
+    margin-left: 120px;
+}
+
+.colormenu:hover {
+    color: #40c781!important;
+}
+
+.syteLogo {
+    margin-left: 40px;
+    margin-top: 70px;
+    float:left;
+    height: 60px;
+}
+
+.menu-nav {
+    height:130px;
+}
+
+.battonmenu {
+    height: 35px;
+    width: 45px;
+}
