@@ -111,16 +111,14 @@
         <put-attribute name="categoryMenu" value=""></put-attribute>
     </definition>
 
-    <definition name="pidCategory" extends="base.definition">
+    <definition name="pidCategory" extends="plusCategoryMenu.definition">
         <put-attribute name="body" value="/WEB-INF/views/pidCategory.jsp"></put-attribute>
         <put-attribute name="title" value=""></put-attribute>
-        <put-attribute name="categoryMenu" value=""></put-attribute>
     </definition>
 
-    <definition name="allProduct" extends="base.definition">
+    <definition name="allProduct" extends="plusCategoryMenu.definition">
         <put-attribute name="body" value="/WEB-INF/views/allProduct.jsp"></put-attribute>
         <put-attribute name="title" value=""></put-attribute>
-        <put-attribute name="categoryMenu" value=""></put-attribute>
     </definition>
 
     <definition name="userSettings" extends="base.definition">
