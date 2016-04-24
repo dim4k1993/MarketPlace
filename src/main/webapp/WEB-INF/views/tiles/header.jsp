@@ -27,16 +27,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand logo" href="/">MarketPlace</a>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right ">
+            <ul class="nav navbar-nav navbar-left ">
+
                 <security:authorize access="!isAuthenticated()">
                     <%--Це буде бачити користувач який не залогінився--%>
-                <li>
-                    <a href="loginUserPage">Мой Кабинет</a>
-                </li>
+                    <li>
+                        <a href="loginUserPage">Мой Кабинет</a>
+                    </li>
                 </security:authorize>
                 <security:authorize access="isAuthenticated() and hasRole('ROLE_ADMIN')">
                     <%--Це буде бачити тільки адмін--%>
@@ -54,9 +51,9 @@
                     <%--Це буде бачити користувач який залогінився він являється власником сторінки і він не адмін--%>
                     <security:authorize access="!isAuthenticated()">
                         <%--Це буде бачити користувач який не залогінився--%>
-                    <li>
-                        <a href="userAccount">Мой Кабинет</a>
-                    </li>
+                        <li>
+                            <a href="userAccount">Мой Кабинет</a>
+                        </li>
                     </security:authorize>
                     <security:authorize access="isAuthenticated()">
                         <%--Це буде бачити користувач який залогінився--%>
@@ -66,16 +63,22 @@
                     </security:authorize>
 
                 </security:authorize>
-                    <security:authorize access="!isAuthenticated()">
-                <li>
-                    <a href="loginUserPage">Подать Обявление</a>
-                </li>
-                    </security:authorize>
+                <security:authorize access="!isAuthenticated()">
+                    <li>
+                        <a href="loginUserPage">Подать Обявление</a>
+                    </li>
+                </security:authorize>
                 <security:authorize access="isAuthenticated()">
                     <li>
                         <a href="addProduct">Подать Обявление</a>
                     </li>
                 </security:authorize>
+            </ul>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right ">
+
                 <li>
                     <a href="registration">Регистрация</a>
                 </li>
