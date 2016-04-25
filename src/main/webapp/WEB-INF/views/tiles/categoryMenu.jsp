@@ -90,15 +90,15 @@
                                 <div id="womenCollection" class="carousel slide" data-ride="carousel">
                                     <div class="carousel-inner caruselqq hidden-xs">
                                         <div class="item active">
-                                            <a href="#"><img src="https://pp.vk.me/c628731/v628731700/70089/mQ7HxLocaro.jpg" class="img-responsive" alt="product 1"></a>
+                                            <a href="#"><img src="/resources/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu.jpg" class="img-responsive" alt="product 1"></a>
                                         </div>
                                         <!-- End Item -->
                                         <div class="item">
-                                            <a href="#"><img src="https://pp.vk.me/c628731/v628731700/70092/ynn4MQOq0Ok.jpg" class="img-responsive" alt="product 2"></a>
+                                            <a href="#"><img src="/resources/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu1.jpg" class="img-responsive" alt="product 2"></a>
                                         </div>
                                         <!-- End Item -->
                                         <div class="item">
-                                            <a href="#"><img src="https://pp.vk.me/c628731/v628731700/7009b/qQ6wtV1Weyk.jpg" class="img-responsive" alt="product 3"></a>
+                                            <a href="#"><img src="/resources/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu2.jpg" class="img-responsive" alt="product 3"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -153,17 +153,17 @@
                                         <div class="item active">
 
 
-                                            <a href="#"><img src="https://pp.vk.me/c628731/v628731700/70089/mQ7HxLocaro.jpg" class="img-responsive" alt="product 1"></a>
+                                            <a href="#"><img src="/resources/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu.jpg" class="img-responsive" alt="product 1"></a>
                                         </div>
 
                                         <!-- End Item -->
                                         <div class="item">
-                                            <a href="#"><img src="https://pp.vk.me/c628731/v628731700/70092/ynn4MQOq0Ok.jpg" class="img-responsive" alt="product 2"></a>
+                                            <a href="#"><img src="/resources/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu1.jpg" class="img-responsive" alt="product 2"></a>
                                         </div>
 
                                         <!-- End Item -->
                                         <div class="item">
-                                            <a href="#"><img src="https://pp.vk.me/c628731/v628731700/7009b/qQ6wtV1Weyk.jpg" class="img-responsive" alt="product 3"></a>
+                                            <a href="#"><img src="/resources/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu2.jpg" class="img-responsive" alt="product 3"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -211,17 +211,17 @@
                                         <div class="item active">
 
 
-                                            <a href="#"><img src="https://pp.vk.me/c628731/v628731700/70089/mQ7HxLocaro.jpg" class="img-responsive" alt="product 1"></a>
+                                            <a href="#"><img src="/resources/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu.jpg" class="img-responsive" alt="product 1"></a>
                                         </div>
 
                                         <!-- End Item -->
                                         <div class="item">
-                                            <a href="#"><img src="https://pp.vk.me/c628731/v628731700/70092/ynn4MQOq0Ok.jpg" class="img-responsive" alt="product 2"></a>
+                                            <a href="#"><img src="/resources/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu1.jpg" class="img-responsive" alt="product 2"></a>
                                         </div>
 
                                         <!-- End Item -->
                                         <div class="item">
-                                            <a href="#"><img src="https://pp.vk.me/c628731/v628731700/7009b/qQ6wtV1Weyk.jpg" class="img-responsive" alt="product 3"></a>
+                                            <a href="#"><img src="/resources/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu2.jpg" class="img-responsive" alt="product 3"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -274,17 +274,17 @@
                                         <div class="item active">
 
 
-                                            <a href="#"><img src="https://pp.vk.me/c628731/v628731700/70089/mQ7HxLocaro.jpg" class="img-responsive" alt="product 1"></a>
+                                            <a href="#"><img src="/resources/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu.jpg" class="img-responsive" alt="product 1"></a>
                                         </div>
 
                                         <!-- End Item -->
                                         <div class="item">
-                                            <a href="#"><img src="https://pp.vk.me/c628731/v628731700/70092/ynn4MQOq0Ok.jpg" class="img-responsive" alt="product 2"></a>
+                                            <a href="#"><img src="/resources/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu1.jpg" class="img-responsive" alt="product 2"></a>
                                         </div>
 
                                         <!-- End Item -->
                                         <div class="item">
-                                            <a href="#"><img src="https://pp.vk.me/c628731/v628731700/7009b/qQ6wtV1Weyk.jpg" class="img-responsive" alt="product 3"></a>
+                                            <a href="#"><img src="/resources/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu2.jpg" class="img-responsive" alt="product 3"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -337,17 +337,17 @@
                                         <div class="item active">
 
 
-                                            <a href="#"><img src="https://pp.vk.me/c628731/v628731700/70089/mQ7HxLocaro.jpg" class="img-responsive" alt="product 1"></a>
+                                            <a href="#"><img src="/resources/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu.jpg" class="img-responsive" alt="product 1"></a>
                                         </div>
 
                                         <!-- End Item -->
                                         <div class="item">
-                                            <a href="#"><img src="https://pp.vk.me/c628731/v628731700/70092/ynn4MQOq0Ok.jpg" class="img-responsive" alt="product 2"></a>
+                                            <a href="#"><img src="/resources/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu1.jpg" class="img-responsive" alt="product 2"></a>
                                         </div>
 
                                         <!-- End Item -->
                                         <div class="item">
-                                            <a href="#"><img src="https://pp.vk.me/c628731/v628731700/7009b/qQ6wtV1Weyk.jpg" class="img-responsive" alt="product 3"></a>
+                                            <a href="#"><img src="/resources/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu2.jpg" class="img-responsive" alt="product 3"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -395,17 +395,17 @@
                                         <div class="item active">
 
 
-                                            <a href="#"><img src="https://pp.vk.me/c628731/v628731700/70089/mQ7HxLocaro.jpg" class="img-responsive" alt="product 1"></a>
+                                            <a href="#"><img src="/resources/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu.jpg" class="img-responsive" alt="product 1"></a>
                                         </div>
 
                                         <!-- End Item -->
                                         <div class="item">
-                                            <a href="#"><img src="https://pp.vk.me/c628731/v628731700/70092/ynn4MQOq0Ok.jpg" class="img-responsive" alt="product 2"></a>
+                                            <a href="#"><img src="/resources/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu1.jpg" class="img-responsive" alt="product 2"></a>
                                         </div>
 
                                         <!-- End Item -->
                                         <div class="item">
-                                            <a href="#"><img src="https://pp.vk.me/c628731/v628731700/7009b/qQ6wtV1Weyk.jpg" class="img-responsive" alt="product 3"></a>
+                                            <a href="#"><img src="/resources/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu2.jpg" class="img-responsive" alt="product 3"></a>
                                         </div>
                                     </div>
                                 </div>
