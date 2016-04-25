@@ -1,0 +1,89 @@
+
+.carousel {
+  height: 387px !important;
+}
+
+.ramka{
+    border: 5px double #40c781!important;
+}
+
+
+.callToActionThumb {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: black !important;
+}
+
+.callToActionThumb:hover {
+  border: 1px solid #c6000e !important;
+  text-decoration: none !important;
+}
+
+.callToActionThumb img {
+  display: inline-block !important;
+  padding: 25px;
+  height: 126px;
+  width: 126px;
+}
+
+.callToActionHeading {
+  display: inline-block;
+}
+
+.carousel .carousel-control,
+.carousel .carousel-indicators {
+  opacity: 0;
+  transition: opacity .35s ease-in-out;
+  -moz-transition: opacity .35s ease-in-out;
+  -webkit-transition: opacity .35s ease-in-out;
+}
+
+.carousel:hover .carousel-control,
+.carousel:hover .carousel-indicators {
+  opacity: 1;
+}
+
+.carousel-fade .carousel-inner .item {
+    -webkit-transition-property: opacity;
+  transition-property: opacity;
+ 
+}
+
+.carousel-fade .carousel-inner .item,
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  opacity: 0;
+}
+
+.carousel-fade .carousel-inner .active,
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+}
+
+.carousel-fade .carousel-inner .next,
+.carousel-fade .carousel-inner .prev,
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+ -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.carousel-control:hover {
+  border: 0 !important;
+}
+
+.carousel-fade .carousel-control {
+    margin-top: 200px;
+  z-index: 2;
+}
+
+
+.carousel,
+.carousel-inner,
+.carousel-inner .item {
+  height: 100%;
+   
+}
