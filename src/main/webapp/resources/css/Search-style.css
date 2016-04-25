@@ -1,17 +1,8 @@
 
-
-
-
-
-
 section {
   margin-left: 700px;
   width: 40%;
 }
-
-
-
-
 
 form {
   margin-bottom: 40px;
@@ -54,7 +45,7 @@ button {
   background: #40c781;
   border: 1px solid #08ff7f;
   border-left: 0;
-  height: 59px;
+  height: 59.4px;
   display: block;
   border-radius: 0 3px 3px 0;
   cursor: pointer;

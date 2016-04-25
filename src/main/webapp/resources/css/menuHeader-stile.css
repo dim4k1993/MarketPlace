@@ -3,11 +3,15 @@
 }
 
 .mega-dropdown-menu {
- background: #ffffff;
-  padding: 20px 0px;
-  width: 100%;
-  box-shadow: none;
-  -webkit-box-shadow: none;
+    border-radius: 0px 0px 50px 50px !important;
+    -moz-border-radius: 0px 0px 50px 50px!important;
+    -webkit-border-radius: 0px 0px 50px 50px!important;
+    border: 3px double #c1bcbc!important;
+    background: #ffffff;
+    padding: 20px 0px;
+    width: 80%;
+    box-shadow: none;
+    -webkit-box-shadow: none;
 }
 
 .mega-dropdown-menu > li > ul > li {
