@@ -2,6 +2,7 @@ package com.controller;
 
 import com.entity.Product;
 import com.repository.ProductRepository;
+import com.servise.PidCategoryService;
 import com.servise.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +22,10 @@ public class ProductController {
 
     @Autowired
     ProductRepository productRepository;
+
+    @Autowired
+    PidCategoryService pidCategoryService;
+
 
     @Autowired
     ProductService productService;
@@ -53,9 +58,10 @@ public class ProductController {
 
     //пероходить до продукту даної під-категорії
     //виводить продукти які доровнюють під-категорії
-    @RequestMapping ("/allProduct{id}")
-    public String ShowProductFromIdPidCategory(@PathVariable String id,Model model){
-        model.addAttribute("idPidCategory", id);
+    @RequestMapping ("/allProduct{name}")
+    public String ShowProductFromIdPidCategory(@PathVariable String name,Model model){
+        model.addAttribute("namePidCategory", name);
+        String id = Integer.toString(pidCategoryService.findPidCategoryByNamePidCategory(name).getId());
         model.addAttribute("products", productService.findProductByPidCategory(Integer.parseInt(id)));
         return "allProduct";
     }

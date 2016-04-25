@@ -1,5 +1,7 @@
 package com.controller;
 
+import com.entity.Category;
+import com.servise.CategoryService;
 import com.servise.PidCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,33 +21,39 @@ public class AdminChangePidCategoryController {
     @Autowired
     PidCategoryService pidCategoryService;
 
+    @Autowired
+    CategoryService categoryService;
+
     //удаляє вибрану під-категорію в адмінці
-    @RequestMapping ("/adminDeletePidCategory/{id}")
-    public String deletePidCategory(@PathVariable String id){
-        pidCategoryService.deletePidCategory(id);
+    @RequestMapping ("/adminDeletePidCategory/{name}")
+    public String deletePidCategory(@PathVariable String name){
+        pidCategoryService.deletePidCategory(name);
         return "redirect:/adminCategory";
     }
 
     //пероходить до підкатегорії даної категорії
     //виводить під-категорії які доровнюють категорії в админці
-    @RequestMapping ("/adminPidCategory{id}")
-    public String ShowPidCategoryFromIdCategory(@PathVariable String id,Model model){
-        model.addAttribute("id_category", id);
+    @RequestMapping ("/adminPidCategory{name}")
+    public String ShowPidCategoryFromNameCategory(@PathVariable String name,Model model){
+        model.addAttribute("name_category", name);
+        String id = Integer.toString(categoryService.findIdCategoryByNameCategory(name).getId());
         model.addAttribute("pidcategorys", pidCategoryService.findPidCategoryByCategory(Integer.parseInt(id)));
         return "adminPidCategory";
     }
 
 
     //addPidCategory
-    @RequestMapping(value="/adminPidCategory{id}", method = RequestMethod.POST)
-    public String savePidCategory (HttpServletResponse response, @RequestParam String name, @PathVariable("id") int id
+    @RequestMapping(value="/adminPidCategory{nameCategory}", method = RequestMethod.POST)
+    public String savePidCategory (HttpServletResponse response, @RequestParam String name, @PathVariable("nameCategory") String nameCategory
     ) throws IOException {
+        int id;
         if (name.equals("")) {
-            return "redirect:/adminPidCategory{id}";
+            return "redirect:/adminPidCategory{nameCategory}";
         }
         else
+            id = categoryService.findIdCategoryByNameCategory(nameCategory).getId();
             pidCategoryService.addPidCategory(name,id);
-        return "redirect:/adminPidCategory{id}";
+        return "redirect:/adminPidCategory{nameCategory}";
 
     }
 }

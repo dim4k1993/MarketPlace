@@ -62,7 +62,7 @@
 	<table align="center" style="margin-top: 200px">
 		<c:forEach var="category" items="${categorys}">
 			<tr>
-				<td><c:url value="pidCategory${category.id}" var="url"/><a href="${url}"> ${category.getCategoryName()}</a></td>
+				<td><c:url value="pidCategory${category.categoryName}" var="url"/><a href="${url}"> ${category.getCategoryName()}</a></td>
 			</tr>
 		</c:forEach>
 	</table>

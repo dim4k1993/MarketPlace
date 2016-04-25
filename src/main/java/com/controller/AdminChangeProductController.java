@@ -1,6 +1,7 @@
 package com.controller;
 
 import com.entity.Product;
+import com.servise.PidCategoryService;
 import com.servise.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,9 @@ public class AdminChangeProductController {
 
     @Autowired
     ProductService productService;
+
+    @Autowired
+    PidCategoryService pidCategoryService;
 
     // виводить всі продукти в адмінці
     @RequestMapping("/adminProduct")
@@ -32,9 +36,10 @@ public class AdminChangeProductController {
 
     //пероходить до продукту даної під-категорії
     //виводить продукти які доровнюють під-категорії в админці
-    @RequestMapping ("/adminProduct{id}")
-    public String ShowProductFromIdPidCategory(@PathVariable String id,Model model){
-        model.addAttribute("idPidCategory", id);
+    @RequestMapping ("/adminProduct{name}")
+    public String ShowProductFromNamePidCategory(@PathVariable String name,Model model){
+        model.addAttribute("namePidCategory", name);
+        String id = Integer.toString(pidCategoryService.findPidCategoryByNamePidCategory(name).getId());
         model.addAttribute("products", productService.findProductByPidCategory(Integer.parseInt(id)));
         return "adminProduct";
     }

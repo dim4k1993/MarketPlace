@@ -28,7 +28,15 @@ public class CategoryService {
     }
 
 
-    public void deleteCategory(String id){
+
+    //знаходить кетегорію по назві
+    public Category findIdCategoryByNameCategory(String nameCategory){
+        return categoryRepository.findIdCategoryByNameCategory(nameCategory);
+    }
+
+
+    public void deleteCategory(String name){
+        String id = Integer.toString(categoryRepository.findIdCategoryByNameCategory(name).getId());
         categoryRepository.delete(Integer.parseInt(id));
     }
 

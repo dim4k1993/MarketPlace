@@ -26,9 +26,9 @@ public class AdminChangeCategoryController {
     }
 
     //удаляє вибрану категорію в адмінці
-    @RequestMapping ("/adminDeleteCategory/{id}")
-    public String deleteCategory(@PathVariable String id){
-        categoryService.deleteCategory(id);
+    @RequestMapping ("/adminDeleteCategory/{name}")
+    public String deleteCategory(@PathVariable String name){
+        categoryService.deleteCategory(name);
         return "redirect:/adminCategory";
     }
 

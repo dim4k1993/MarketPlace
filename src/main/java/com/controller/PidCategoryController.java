@@ -3,6 +3,7 @@ package com.controller;
 import com.entity.Category;
 import com.entity.PidCategory;
 import com.repository.PidCategoryRepository;
+import com.servise.CategoryService;
 import com.servise.PidCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,10 @@ public class PidCategoryController {
     PidCategoryService pidCategoryService;
 
     @Autowired
+    CategoryService categoryService;
+
+
+    @Autowired
     PidCategoryRepository pidCategoryRepository;
     public PidCategory pidCategoryId;
 
@@ -24,9 +29,10 @@ public class PidCategoryController {
 
     //пероходить до підкатегорії даної категорії
     //виводить під-категорії які доровнюють категорії в админці
-    @RequestMapping("/pidCategory{id}")
-    public String ShowPidCategoryFromIdCategory(@PathVariable String id, Model model){
-        model.addAttribute("idCategory", id);
+    @RequestMapping("/pidCategory{name}")
+    public String ShowPidCategoryFromIdCategory(@PathVariable String name, Model model){
+        model.addAttribute("name_category", name);
+        String id = Integer.toString(categoryService.findIdCategoryByNameCategory(name).getId());
         model.addAttribute("pidcategorys", pidCategoryService.findPidCategoryByCategory(Integer.parseInt(id)));
         return "pidCategory";
     }

@@ -79,9 +79,9 @@
                                 <li class="divider"></li>
                                 <li><a href="#">все категории в разделе</a></li>
                                 <li class="divider"></li>
-                                <%--<c:forEach var="category" items="${categorys}">--%>
-                                <%--<li><a href="${url}"><c:url value="pidCategory${category.id}" var="url"/> ${category.getCategoryName()}</a></li>--%>
-                                <%--</c:forEach>--%>
+                                <c:forEach var="category" items="${categorys}">
+                                <li><a href="${url}"><c:url value="pidCategory${category.id}" var="url"/> ${category.getCategoryName()}</a></li>
+                                </c:forEach>
                             </ul>
                         </li>
                         <li class="col-sm-3 ">

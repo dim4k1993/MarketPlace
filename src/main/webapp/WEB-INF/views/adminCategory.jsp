@@ -34,8 +34,8 @@
     <c:forEach var="category" items="${categorys}"><tr>
         <td>${category.getCategoryName()}</td>
         <td><--</td>
-        <td><c:url value="/adminDeleteCategory/${category.id}" var = "url"/> <a href="${url}">Удалить /</a></td>
-        <td><c:url value="/adminPidCategory${category.id}" var = "url"/> <a href="${url}">проказать пк </a> </td>
+        <td><c:url value="/adminDeleteCategory/${category.categoryName}" var = "url"/> <a href="${url}">Удалить /</a></td>
+        <td><c:url value="/adminPidCategory${category.categoryName}" var = "url"/> <a href="${url}">проказать пк </a> </td>
     </tr></c:forEach>
 </table>
 </body>

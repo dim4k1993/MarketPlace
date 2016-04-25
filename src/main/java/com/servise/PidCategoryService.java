@@ -36,7 +36,8 @@ public class PidCategoryService {
     }
 
     //удаляє вибрану під-катенорію
-    public void deletePidCategory(String id){
+    public void deletePidCategory(String name){
+        String id = Integer.toString(pidCategoryRepository.findIdPidCategoryByNamePidCategory(name).getId());
         pidCategoryRepository.delete(Integer.parseInt(id));
     }
 
@@ -44,6 +45,12 @@ public class PidCategoryService {
     public Iterable<PidCategory> findPidCategoryByCategory(int id){
         return pidCategoryRepository.findPidCategoryFromCategoryId(id);
     }
+
+    //виводть під-категорію по назві катерогії
+    public PidCategory findPidCategoryByNamePidCategory(String namePidCategory){
+        return pidCategoryRepository.findIdPidCategoryByNamePidCategory(namePidCategory);
+    }
+
 
     public Iterable<PidCategory> getPidCategory(int id){
         return pidCategoryRepository.findPidCategoryFromCategoryId(id);

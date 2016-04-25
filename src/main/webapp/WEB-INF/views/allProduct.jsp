@@ -13,7 +13,7 @@
     <title>Insert title here</title>
 </head>
 <body>
-<form method="post" action="/allProduct${idPidCategory}">
+<form method="post" action="/allProduct${namePidCategory}">
 
     <table align="center" style="margin-top: 100px">
         <c:forEach var="product" items="${products}">
