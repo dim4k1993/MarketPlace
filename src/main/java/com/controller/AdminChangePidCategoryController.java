@@ -1,6 +1,8 @@
 package com.controller;
 
 import com.entity.Category;
+import com.entity.PidCategory;
+import com.repository.PidCategoryRepository;
 import com.servise.CategoryService;
 import com.servise.PidCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,10 +26,15 @@ public class AdminChangePidCategoryController {
     @Autowired
     CategoryService categoryService;
 
+    @Autowired
+    PidCategoryRepository pidCategoryRepository;
+
     //удаляє вибрану під-категорію в адмінці
-    @RequestMapping ("/adminDeletePidCategory/{name}")
-    public String deletePidCategory(@PathVariable String name){
-        pidCategoryService.deletePidCategory(name);
+    @RequestMapping ("/adminDeletePidCategory/{id}")
+    public String deletePidCategory(@PathVariable String id){
+        PidCategory pidCategory = pidCategoryRepository.findOne(Integer.parseInt(id));
+        pidCategory.setCategory(null);
+        pidCategoryService.deletePidCategory(id);
         return "redirect:/adminCategory";
     }
 

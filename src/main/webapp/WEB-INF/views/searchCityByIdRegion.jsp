@@ -15,8 +15,7 @@
 <head>
     <link href="/resources/css/register-style.css" rel="stylesheet">
     <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
-
-    <script   src="https://code.jquery.com/jquery-2.2.1.min.js" ></script>
+    <%--<script src="/resources/js/jquery-2.2.3.min.js"></script>--%>
 </head>
 <body>
 
@@ -24,12 +23,12 @@
     <c:when test="${index.equals('city')}">
         <div class="form-group">
             <label class="col-md-4 control-label">Город:</label>
-                <div class="col-md-4 selectContainer">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-                            <select id="optionCity" name="RegionId" class="form-control selectpicker">
-                                <option value="Виберете город">-Виберете город-</option>
-                                <c:forEach var="cityRegion" items="${cityRegion}">
+            <div class="col-md-4 selectContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+                    <select id="optionCity" name="RegionId" class="form-control selectpicker">
+                        <option value="Виберете город">-Виберете город-</option>
+                        <c:forEach var="cityRegion" items="${cityRegion}">
                             <option value="${cityRegion.getId()}">${cityRegion.getName()}</option>
                         </c:forEach>
                     </select>
@@ -40,7 +39,6 @@
 </c:choose>
 
 <script>
-
     $("#optionReg").change(function(){
         var id = $("#optionReg").val();
         index = "city";
@@ -48,7 +46,6 @@
             $("#selectCity").html(result);
         });
     });
-
     $("#optionCity").change(function(){
         index = "cityId";
         var id = $("#optionCity").val();

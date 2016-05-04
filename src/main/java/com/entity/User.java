@@ -27,7 +27,6 @@ public class User {
 
     private String foto;
 
-    @Size(min = 5, max = 20, message = "ненадежный (минимум 5 знаков)")
     private  String parol;
 
 

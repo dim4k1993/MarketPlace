@@ -15,7 +15,7 @@
 <table align="center" style="margin-top: 100px">
     <c:forEach var="pidcategory" items="${pidcategorys}">
         <tr>
-            <td><c:url value="allProduct${pidcategory.name}" var="url"/><a href="${url}"> ${pidcategory.getName()}</a></td>
+            <td><c:url value="allProduct${pidcategory.id}" var="url"/><a href="${url}"> ${pidcategory.getName()}</a></td>
         </tr>
     </c:forEach>
 

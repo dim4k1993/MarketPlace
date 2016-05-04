@@ -9,16 +9,15 @@
 <!--[if IE 8]> <html class="lt-ie9" lang="ru"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="ru"> <!--<![endif]-->
 <head>
+
+	<script src="/resources/js/jquery-2.2.3.min.js"></script>
 	<link href="/resources/css/register-style.css" rel="stylesheet">
 	<link href="/resources/css/bootstrap.min.css" rel="stylesheet">
-
-
-	<script   src="https://code.jquery.com/jquery-2.2.1.min.js" ></script>
 </head>
 
 <body>
 <div class="container" style="margin-top: 100px">
-<sf:form method="POST" class="well form-horizontal" id="contact_form" modelAttribute="user"  action="/registration=user+add?${_csrf.parameterName}=${_csrf.token}">
+	<sf:form method="POST" class="well form-horizontal" id="contact_form" modelAttribute="user"  action="/registration=user+add?${_csrf.parameterName}=${_csrf.token}">
 		<sf:input path="id" id="id" type="hidden"/>
 		<fieldset>
 			<legend class="reg_form ">Регистрация</legend>
@@ -114,7 +113,7 @@
 				</div>
 			</div>
 		</fieldset>
-</sf:form>
+	</sf:form>
 </div>
 
 
@@ -128,10 +127,9 @@
 	});
 </script>
 
-</body>
 
-<script src="/resources/js/register.js"></script>
-<script src="/resources/js/jquery.js"></script>
 <script src="/resources/js/bootstrap.min.js"></script>
+<script src="/resources/js/jquery-2.2.3.min.js"></script>
+</body>
 
 </html>

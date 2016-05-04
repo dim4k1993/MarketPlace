@@ -13,7 +13,7 @@
 <!--[if IE 8]> <html class="lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-    <script   src="https://code.jquery.com/jquery-2.2.1.min.js" ></script>
+    <%--<script src="/resources/js/jquery-2.2.3.min.js"></script>--%>
 </head>
 <body>
 <c:choose>
@@ -30,7 +30,6 @@
 </c:choose>
 
 <script>
-
     $("#optionCat").change(function(){
         var id = $("#optionCat").val();
         index = "pidCategory";
@@ -38,7 +37,6 @@
             $("#selectPidCategory").html(result);
         });
     });
-
     $("#optionPidCategory").change(function(){
         index = "pidCategoryId";
         var id = $("#optionPidCategory").val();

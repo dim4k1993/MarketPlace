@@ -36,8 +36,8 @@ public class PidCategoryService {
     }
 
     //удаляє вибрану під-катенорію
-    public void deletePidCategory(String name){
-        String id = Integer.toString(pidCategoryRepository.findIdPidCategoryByNamePidCategory(name).getId());
+    public void deletePidCategory(String id){
+       // String id = Integer.toString(pidCategoryRepository.findIdPidCategoryByNamePidCategory(name).getId());
         pidCategoryRepository.delete(Integer.parseInt(id));
     }
 

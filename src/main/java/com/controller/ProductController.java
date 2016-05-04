@@ -58,10 +58,10 @@ public class ProductController {
 
     //пероходить до продукту даної під-категорії
     //виводить продукти які доровнюють під-категорії
-    @RequestMapping ("/allProduct{name}")
-    public String ShowProductFromIdPidCategory(@PathVariable String name,Model model){
-        model.addAttribute("namePidCategory", name);
-        String id = Integer.toString(pidCategoryService.findPidCategoryByNamePidCategory(name).getId());
+    @RequestMapping ("/allProduct{id}")
+    public String ShowProductFromIdPidCategory(@PathVariable String id,Model model){
+        model.addAttribute("namePidCategory", id);
+        //String id = Integer.toString(pidCategoryService.findPidCategoryByNamePidCategory(name).getId());
         model.addAttribute("products", productService.findProductByPidCategory(Integer.parseInt(id)));
         return "allProduct";
     }

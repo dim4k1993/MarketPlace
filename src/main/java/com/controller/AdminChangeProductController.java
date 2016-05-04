@@ -36,10 +36,10 @@ public class AdminChangeProductController {
 
     //пероходить до продукту даної під-категорії
     //виводить продукти які доровнюють під-категорії в админці
-    @RequestMapping ("/adminProduct{name}")
-    public String ShowProductFromNamePidCategory(@PathVariable String name,Model model){
-        model.addAttribute("namePidCategory", name);
-        String id = Integer.toString(pidCategoryService.findPidCategoryByNamePidCategory(name).getId());
+    @RequestMapping ("/adminProduct{id}")
+    public String ShowProductFromNamePidCategory(@PathVariable String id,Model model){
+        model.addAttribute("namePidCategory", id);
+       // String id = Integer.toString(pidCategoryService.findPidCategoryByNamePidCategory(name).getId());
         model.addAttribute("products", productService.findProductByPidCategory(Integer.parseInt(id)));
         return "adminProduct";
     }

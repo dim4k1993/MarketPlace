@@ -30,19 +30,19 @@
 		<!-- Wrapper for slides -->
 		<div class="carousel-inner" role="listbox">
 			<div class="item">
-				<img class="img-responsive" src="/resources/img/caruselPhoto/CaruselPhoto5.jpg" alt="John Piper Image">
+				<img class="img-responsive" src="/resources/img/caruselPhoto/CaruselPhoto5.jpg">
 			</div>
 			<div class="item">
-				<img class="img-responsive" src="/resources/img/caruselPhoto/CaruselPhoto2.jpg" alt="John Piper Image">
+				<img class="img-responsive" src="/resources/img/caruselPhoto/CaruselPhoto2.jpg">
 			</div>
 			<div class="item">
-				<img class="img-responsive" src="/resources/img/caruselPhoto/CaruselPhoto1.jpg" alt="John Piper Image">
+				<img class="img-responsive" src="/resources/img/caruselPhoto/CaruselPhoto1.jpg">
 			</div>
 			<div class="item">
 				<img class="img-responsive" src="/resources/img/caruselPhoto/CaruselPhoto4.jpg">
 			</div>
 			<div class="item active">
-				<img class="img-responsive" src="/resources/img/caruselPhoto/CaruselPhoto3.jpg" alt="John Piper Image">
+				<img class="img-responsive" src="/resources/img/caruselPhoto/CaruselPhoto3.jpg">
 			</div>
 		</div>
 
@@ -57,6 +57,7 @@
                   <span class="sr-only">Next</span>
                 </a>
         -->
+
 	</div>
 
 	<table align="center" style="margin-top: 200px">
@@ -66,7 +67,7 @@
 			</tr>
 		</c:forEach>
 	</table>
-
+	</div>
 
 </body>
 
