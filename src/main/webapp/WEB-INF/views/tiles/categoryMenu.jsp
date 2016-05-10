@@ -80,7 +80,7 @@
                                 <li><a href="#">все категории в разделе</a></li>
                                 <li class="divider"></li>
                                 <c:forEach var="category" items="${categorys}">
-                                <li><a href="${url}"><c:url value="pidCategory${category.id}" var="url"/> ${category.getCategoryName()}</a></li>
+                                <li><a href="${url}"><c:url value="pidCategory${category.categoryName}" var="url"/> ${category.getCategoryName()}</a></li>
                                 </c:forEach>
                             </ul>
                         </li>
@@ -148,7 +148,7 @@
                         <li class="col-sm-3 ">
                             <ul>
                                 <li class="dropdown-header caruselWight hidden-xs">Навинки в породаже</li>
-                                <div id="womenCollection" class="carousel slide" data-ride="carousel">
+                                <div class="carousel slide" data-ride="carousel">
                                     <div class="carousel-inner caruselqq hidden-xs">
                                         <div class="item active">
 
@@ -206,7 +206,7 @@
                         <li class="col-sm-3 ">
                             <ul>
                                 <li class="dropdown-header caruselWight hidden-xs">Навинки в породаже</li>
-                                <div id="womenCollection" class="carousel slide" data-ride="carousel">
+                                <div  class="carousel slide" data-ride="carousel">
                                     <div class="carousel-inner caruselqq hidden-xs">
                                         <div class="item active">
 
@@ -269,7 +269,7 @@
                         <li class="col-sm-3 ">
                             <ul>
                                 <li class="dropdown-header caruselWight hidden-xs">Навинки в породаже</li>
-                                <div id="womenCollection" class="carousel slide" data-ride="carousel">
+                                <div  class="carousel slide" data-ride="carousel">
                                     <div class="carousel-inner caruselqq hidden-xs">
                                         <div class="item active">
 
@@ -332,7 +332,7 @@
                         <li class="col-sm-3 ">
                             <ul>
                                 <li class="dropdown-header caruselWight hidden-xs">Навинки в породаже</li>
-                                <div id="womenCollection" class="carousel slide" data-ride="carousel">
+                                <div  class="carousel slide" data-ride="carousel">
                                     <div class="carousel-inner caruselqq hidden-xs">
                                         <div class="item active">
 
@@ -390,7 +390,7 @@
                         <li class="col-sm-3 ">
                             <ul>
                                 <li class="dropdown-header caruselWight hidden-xs">Навинки в породаже</li>
-                                <div id="womenCollection" class="carousel slide" data-ride="carousel">
+                                <div class="carousel slide" data-ride="carousel">
                                     <div class="carousel-inner caruselqq hidden-xs">
                                         <div class="item active">
 

@@ -1210,3 +1210,17 @@ div.loginpanel div.hr div:last-child {
   margin-left: -9px !important;
 }
 
+.hr1{
+  width: 150px;
+  height: 1px;
+  margin-top: 20px;
+  border: 1px solid #898989;
+  margin-right: 7px;
+}
+.hr2{
+  width: 150px;
+  height: 1px;
+  margin-top: 20px;
+  border: 1px solid #898989;
+  margin-left: 8px;
+}

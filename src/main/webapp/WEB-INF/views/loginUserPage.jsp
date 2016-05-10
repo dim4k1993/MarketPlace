@@ -29,9 +29,9 @@
     </span>
 		</div>
 		<div class="hr">
-			<div></div>
-			<div>Вход с Помощью</div>
-			<div></div>
+			<div class="hr1"></div>
+			<h4>Вход с Помощью</h4>
+			<div class="hr2"></div>
 		</div>
 
 		<div class="social">
