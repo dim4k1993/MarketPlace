@@ -15,8 +15,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.io.IOException;
 import java.security.Principal;
 
 
@@ -28,8 +31,8 @@ public class RegistrationProductController {
     @Autowired
     UserService userService;
 
-    @Autowired
-    ProductPhotoService productPhotoService;
+//    @Autowired
+//    ProductPhotoService productPhotoService;
 
     @Autowired
     RegionService regionService;
@@ -40,6 +43,8 @@ public class RegistrationProductController {
     @Autowired
     UserRepository userRepository;
 
+    @Autowired
+    FileSaveService fileSaveService;
 
     //відображення сторінки додавання продукту
     @RequestMapping("/addProduct")
@@ -72,6 +77,23 @@ public class RegistrationProductController {
         productService.saveProduct(product, productPhotos, principal);
         return "redirect:/userAccount";
     }
+
+
+//    //додавання фото продукту
+//    @RequestMapping(value = "/addProduct/addPhotoProduct")
+//    public String addPhotoProduct(@RequestParam (value ="photoProduct")MultipartFile file, HttpServletRequest request, Principal principal ) throws IOException {
+//        if( file.getBytes().length >= 52428800){
+//            return "redirect:/addPhotoProduct";
+//        }else {
+//            String uploadRootPath  = request.getServletContext().getRealPath("resources");
+//            String absolutePath = "C:\\Users\\Dimas\\Desktop\\logos\\MarketPlace\\src\\main\\webapp\\resources";
+//            String fotoPath = fileSaveService.saveFileProductPhoto(principal.getName(), file, absolutePath);
+//            String fotoPath1 = fileSaveService.saveFileProductPhoto(principal.getName(), file, uploadRootPath );
+//            System.out.println(fotoPath);
+//            System.out.println(fotoPath1);
+//        }
+//        return "redirect:/addProduct";
+//    }
 
 }
 

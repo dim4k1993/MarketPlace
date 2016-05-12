@@ -18,6 +18,9 @@ public class CityController {
     CityRepository cityRepository;
     public City cityId;
 
+
+    //для регистрації
+
     @RequestMapping("/searchCityByIdRegion{index}/{id}")
     public String controlUrlRegion(Model model,@PathVariable String id,@PathVariable String index){
         model.addAttribute("index",index);
@@ -33,6 +36,7 @@ public class CityController {
         return"searchCityByIdRegion";
     }
 
+
     public void searchCityByRegion(Model model, int id){
         model.addAttribute("cityRegion", cityService.getCity(id));
         System.out.println(id);
@@ -43,6 +47,9 @@ public class CityController {
         cityId = cityRepository.findOne(intId);
         System.out.println(id);
     }
+
+
+
 
 
 }

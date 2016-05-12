@@ -61,6 +61,14 @@
                 <td><input type="submit" value="OK"></td>
             </sf:form>
 
+
+            <%--<sf:form action="/addProduct/addPhotoProduct?${_csrf.parameterName}=${_csrf.token}" enctype="multipart/form-data" method="post">--%>
+                <%--<td><label for="photo">Виберіть зображення</label></td>--%>
+                <%--<td><input type="file" name="photoProduct" id="photo"></td>--%>
+                <%--<td></td>--%>
+                <%--<td><input type="submit" value="OK"></td>--%>
+            <%--</sf:form>--%>
+
         </security:authorize>
 
 </main>

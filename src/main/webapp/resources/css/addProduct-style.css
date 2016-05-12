@@ -1,0 +1,111 @@
+
+.batton-register {
+    border-color:#5cd07b!important;
+    width: 150px;
+    background-color: #5cd07b!important;
+}
+
+.batton-register:hover {
+    background: #1fc64b!important;
+}
+
+.reg_form {
+
+    text-align: center !important;
+    color: #5cd07b!important;
+    font-size: 30px;
+    margin-left: 100px;
+}
+
+
+
+.coloraaa {
+    background: #f2f2f2
+}
+
+.errors {
+    color: red;
+}
+
+
+.width-zagolovok{
+    width: 400px;
+    border-radius: 10px!important;
+}
+.radius {
+    border-radius: 10px;
+}
+
+.priceWigh {
+    width: 100px!important;
+    border-radius: 10px!important;
+}
+
+.price-style{
+    margin-top: -3px!important;
+    margin-left: 500px!important;
+    font-family:Verdana!important;
+}
+
+.checkbox-style{
+    margin-top: -30px;
+    margin-left: 60px;
+}
+
+
+section {
+    width: 100px!important;
+    margin: 0 auto;
+}
+
+#img {
+    max-height: 100px;
+    max-width: 100px;
+}
+
+
+
+.addFoto {
+    background-color: #5cd07b;
+    display: block!important;
+    color: #fff;
+    font: 8px Helvetica!important;
+    text-decoration: none;
+    text-align: center;
+}
+
+
+.deledeFoto {
+    background-color: rgb(248, 62, 62);
+    display: block!important;
+    color: #fff;
+    font: 8px Helvetica !important;
+    text-decoration: none;
+    text-align: center;
+}
+
+.addPhotoFromProdct{
+    float: left;
+    margin-left: 27px;
+}
+
+#file {
+    display: none;
+}
+
+
+.marginTopp{
+    margin-top: 50px;
+}
+.plus {
+    font-size: 30px !important;
+    margin: 35px;
+}
+
+.heightTextraa{
+    height: 300px!important;
+}
+
+.pricemargin {
+    margin-left: 10px!important;
+}

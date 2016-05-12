@@ -38,6 +38,14 @@
     <h1>Це буде бачити користувач який є власником сторінки</h1>
 </security:authorize>
 
+
+
+
+
+
+
+
+
 </body>
 <script src="/resources/js/jquery.js"></script>
 <script src="/resources/js/bootstrap.min.js"></script>

@@ -19,15 +19,23 @@
 <c:choose>
 
     <c:when test="${index.equals('pidCategory')}">
-        <select id="optionPidCategory" name = "CategoryId">
-            <option value="Виберете підкатегорию">-Виберете підкатегорию-</option>
+<div class="form-group">
+    <label class="col-md-4 control-label">Под-категория*</label>
+    <div class="col-md-4 selectContainer">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-chevron-right"></i></span>
+        <select id="optionPidCategory" name = "CategoryId" class="form-control selectpicker">
+            <option value="Виберете под-категорию">-Виберете под-категорию-</option>
             <c:forEach var="pidCategoryCategory" items="${pidCategoryCategory}">
                 <option value="${pidCategoryCategory.getId()}">${pidCategoryCategory.getName()}</option>
             </c:forEach>
         </select>
+        </div>
+    </div>
+</div>
     </c:when>
-
 </c:choose>
+
 
 <script>
     $("#optionCat").change(function(){

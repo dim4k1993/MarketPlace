@@ -84,6 +84,8 @@ public class ProductService {
         return "redirect:/";
     }
 
-
+//    public String getNameProduct(int id) {
+//        return null;
+//    }
 
 }

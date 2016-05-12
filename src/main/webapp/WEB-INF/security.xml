@@ -20,6 +20,7 @@
     <intercept-url pattern = "/adminProduct{id}/**" access="hasRole('ADMIN')"/>
     <intercept-url pattern = "/userSettings/**" access="hasAnyRole('USER','ADMIN')" />
     <intercept-url pattern = "/allProduct/**" access="hasAnyRole('USER','ADMIN')" />
+    <intercept-url pattern = "/addProduct/**" access="hasAnyRole('USER','ADMIN')" />
     <form-login
             login-page="/login"
             authentication-success-handler-ref="authenticationSuccessHandler"

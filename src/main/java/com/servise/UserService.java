@@ -58,6 +58,7 @@ public class UserService {
 	public  void  savePhotoAvatarUser(User user, String photo){
 		user.setFoto(photo);
 		userRepository.save(user);
+
 	}
 
 	//метод зміни статусу юзера
