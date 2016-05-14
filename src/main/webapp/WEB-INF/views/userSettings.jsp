@@ -13,8 +13,8 @@
 <!--[if IE 8]> <html class="lt-ie9" lang="uk"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="uk9=5211"> <!--<![endif]-->
 <head>
-    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/resources/css/userAccount-style.css" rel="stylesheet">
+    <link href="/resources/fileForMySyte/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/resources/fileForMySyte/css/userAccount-style.css" rel="stylesheet">
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Insert title here</title>
@@ -62,12 +62,7 @@
             </sf:form>
 
 
-            <%--<sf:form action="/addProduct/addPhotoProduct?${_csrf.parameterName}=${_csrf.token}" enctype="multipart/form-data" method="post">--%>
-                <%--<td><label for="photo">Виберіть зображення</label></td>--%>
-                <%--<td><input type="file" name="photoProduct" id="photo"></td>--%>
-                <%--<td></td>--%>
-                <%--<td><input type="submit" value="OK"></td>--%>
-            <%--</sf:form>--%>
+
 
         </security:authorize>
 
@@ -79,7 +74,7 @@
 
 
 </body>
-<script src="/resources/js/jquery.js"></script>
-<script src="/resources/js/bootstrap.min.js"></script>
+<script src="/resources/fileForMySyte/js/jquery.js"></script>
+<script src="/resources/fileForMySyte/js/bootstrap.min.js"></script>
 
 </html>

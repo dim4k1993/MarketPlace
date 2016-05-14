@@ -10,8 +10,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<link href="/resources/css/bootstrap.min.css" rel="stylesheet">
-<link href="/resources/css/carusel.marketPlace-style.css" rel="stylesheet">
+<link href="/resources/fileForMySyte/css/bootstrap.min.css" rel="stylesheet">
+<link href="/resources/fileForMySyte/css/carusel.marketPlace-style.css" rel="stylesheet">
 <body>
 <div class="container">
 	<div class="row">
@@ -30,19 +30,19 @@
 		<!-- Wrapper for slides -->
 		<div class="carousel-inner" role="listbox">
 			<div class="item">
-				<img class="img-responsive" src="/resources/img/caruselPhoto/CaruselPhoto5.jpg">
+				<img class="img-responsive" src="/resources/fileForMySyte/img/caruselPhoto/CaruselPhoto5.jpg">
 			</div>
 			<div class="item">
-				<img class="img-responsive" src="/resources/img/caruselPhoto/CaruselPhoto2.jpg">
+				<img class="img-responsive" src="/resources/fileForMySyte/img/caruselPhoto/CaruselPhoto2.jpg">
 			</div>
 			<div class="item">
-				<img class="img-responsive" src="/resources/img/caruselPhoto/CaruselPhoto1.jpg">
+				<img class="img-responsive" src="/resources/fileForMySyte/img/caruselPhoto/CaruselPhoto1.jpg">
 			</div>
 			<div class="item">
-				<img class="img-responsive" src="/resources/img/caruselPhoto/CaruselPhoto4.jpg">
+				<img class="img-responsive" src="/resources/fileForMySyte/img/caruselPhoto/CaruselPhoto4.jpg">
 			</div>
 			<div class="item active">
-				<img class="img-responsive" src="/resources/img/caruselPhoto/CaruselPhoto3.jpg">
+				<img class="img-responsive" src="/resources/fileForMySyte/img/caruselPhoto/CaruselPhoto3.jpg">
 			</div>
 		</div>
 
@@ -71,8 +71,8 @@
 
 </body>
 
-<script src="/resources/js/jquery.js"></script>
-<script src="/resources/js/bootstrap.min.js"></script>
-<script src="/resources/js/Carusel.js"></script>
+<script src="/resources/fileForMySyte/js/jquery.js"></script>
+<script src="/resources/fileForMySyte/js/bootstrap.min.js"></script>
+<script src="/resources/fileForMySyte/js/Carusel.js"></script>
 
 </html>

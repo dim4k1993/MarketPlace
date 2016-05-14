@@ -48,7 +48,7 @@ public class UserService {
 		user.setRole(Role.ROLE_USER);
 		user.setParol(bCryptPasswordEncoder.encode(user.getParol()));
 		user.setCity(cityController.cityId);
-		user.setFoto("/resources/default/defaultFoto.png");
+		user.setFoto("/resources/fileForMySyte/default/defaultFoto.png");
 		if (user.getCity() == null){
 			System.out.println("error");
 		}

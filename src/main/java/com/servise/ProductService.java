@@ -49,8 +49,9 @@ public class ProductService {
         product.setPidCategory(pidCategoryController.pidCategoryId);
         product.setCity(cityController.cityId);
         productRepository.save(product);
+        
         if(product.getProductPhotos() == null) {
-            productPhotos.setFotoName("/resources/default/no-image.png");
+            productPhotos.setFotoName("/resources/fileForMySyte/default/no-image.png");
             productPhotos.setProduct(product);
             productPhotosRepository.save(productPhotos);
         }
@@ -65,6 +66,10 @@ public class ProductService {
     //виводть ПРОДУКТ по id під-катерогії
     public Iterable<Product> findProductByPidCategory(int id){
         return productRepository.findProductFromPidCategoryId(id);
+    }
+
+    public Product getProductById(int id){
+        return productRepository.findOne(id);
     }
 
     //виводть продукт по id user
@@ -83,6 +88,9 @@ public class ProductService {
         productRepository.delete(product.getId());
         return "redirect:/";
     }
+
+
+
 
 //    public String getNameProduct(int id) {
 //        return null;

@@ -8,9 +8,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Insert title here</title>
-    <script src="/resources/js/jquery-2.2.3.min.js"></script>
-    <link href="/resources/css/addProduct-style.css" rel="stylesheet">
-    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/resources/fileForMySyte/js/jquery-2.2.3.min.js"></script>
+    <link href="/resources/fileForMySyte/css/addProduct-style.css" rel="stylesheet">
+    <link href="/resources/fileForMySyte/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 <div class="container" style="margin-top: 100px">
@@ -106,42 +106,42 @@
         <div class="form-group addFotoGroup">
             <label class="col-md-2 control-label"></label>
             <section class="addPhotoFromProdct">
-                <img src="/resources/img/productPhotoDefoult/no-image-blog-one.png" id="img">
+                <img src="/resources/fileForMySyte/img/productPhotoDefoult/no-image-blog-one.png" id="img">
                 <a id="addphoto" href="#" class="btn addFoto">+ Добавить фото</a>
                 <a id="removephoto" href="#" class="btn deledeFoto">x Удалить фото</a>
                 <input type="file" name="file" id="file" accept="image/*;capture=camera" capture="camera"/>
             </section>
 
             <section class="addPhotoFromProdct">
-                <img src="/resources/img/productPhotoDefoult/no-image-blog-one.png"   id="img">
+                <img src="/resources/fileForMySyte/img/productPhotoDefoult/no-image-blog-one.png"   id="img">
                 <a id="addphoto" href="#" class="btn addFoto">+ Добавить фото</a>
                 <a id="removephoto" href="#" class="btn deledeFoto">x Удалить фото</a>
                 <input type="file" name="file" id="file" accept="image/*;capture=camera1" capture="camera" />
             </section>
 
             <section class="addPhotoFromProdct">
-                <img src="/resources/img/productPhotoDefoult/no-image-blog-one.png"   id="img">
+                <img src="/resources/fileForMySyte/img/productPhotoDefoult/no-image-blog-one.png"   id="img">
                 <a id="addphoto" href="#" class="btn addFoto">+ Добавить фото</a>
                 <a id="removephoto" href="#" class="btn deledeFoto">x Удалить фото</a>
                 <input type="file" name="file" id="file" accept="image/*;capture=camera" capture="camera" />
             </section>
 
             <section class="addPhotoFromProdct">
-                <img src="/resources/img/productPhotoDefoult/no-image-blog-one.png"   id="img">
+                <img src="/resources/fileForMySyte/img/productPhotoDefoult/no-image-blog-one.png"   id="img">
                 <a id="addphoto" href="#" class="btn addFoto">+ Добавить фото</a>
                 <a id="removephoto" href="#" class="btn deledeFoto">x Удалить фото</a>
                 <input type="file" name="file" id="file" accept="image/*;capture=camera" capture="camera" />
             </section>
 
             <section class="addPhotoFromProdct">
-                <img src="/resources/img/productPhotoDefoult/no-image-blog-one.png"    id="img">
+                <img src="/resources/fileForMySyte/img/productPhotoDefoult/no-image-blog-one.png"    id="img">
                 <a id="addphoto" href="#" class="btn addFoto">+ Добавить фото</a>
                 <a id="removephoto" href="#" class="btn deledeFoto">x Удалить фото</a>
                 <input type="file" name="file" id="file" accept="image/*;capture=camera" capture="camera" />
             </section>
 
             <section class="addPhotoFromProdct">
-                <img src="/resources/img/productPhotoDefoult/no-image-blog-one.png"    id="img">
+                <img src="/resources/fileForMySyte/img/productPhotoDefoult/no-image-blog-one.png"    id="img">
                 <a id="addphoto" href="#" class="btn addFoto">+ Добавить фото</a>
                 <a id="removephoto" href="#" class="btn deledeFoto">x Удалить фото</a>
                 <input type="file" name="file" id="file" accept="image/*;capture=camera" capture="camera" />
@@ -155,42 +155,42 @@
         <div class="form-group addFotoGroup">
             <label class="col-md-2 control-label"></label>
             <section class="addPhotoFromProdct">
-                <img src="/resources/img/productPhotoDefoult/no-image-blog-one.png"    id="img">
+                <img src="/resources/fileForMySyte/img/productPhotoDefoult/no-image-blog-one.png"    id="img">
                 <a id="addphoto" href="#" class="btn addFoto">+ Добавить фото</a>
                 <a id="removephoto" href="#" class="btn deledeFoto">x Удалить фото</a>
                 <input type="file" name="file" id="file" accept="image/*;capture=camera" capture="camera" />
             </section>
 
             <section class="addPhotoFromProdct">
-                <img src="/resources/img/productPhotoDefoult/no-image-blog-one.png"   id="img">
+                <img src="/resources/fileForMySyte/img/productPhotoDefoult/no-image-blog-one.png"   id="img">
                 <a id="addphoto" href="#" class="btn addFoto">+ Добавить фото</a>
                 <a id="removephoto" href="#" class="btn deledeFoto">x Удалить фото</a>
                 <input type="file" name="file" id="file" accept="image/*;capture=camera1" capture="camera1" />
             </section>
 
             <section class="addPhotoFromProdct">
-                <img src="/resources/img/productPhotoDefoult/no-image-blog-one.png"   id="img">
+                <img src="/resources/fileForMySyte/img/productPhotoDefoult/no-image-blog-one.png"   id="img">
                 <a id="addphoto" href="#" class="btn addFoto">+ Добавить фото</a>
                 <a id="removephoto" href="#" class="btn deledeFoto">x Удалить фото</a>
                 <input type="file" name="file" id="file" accept="image/*;capture=camera" capture="camera" />
             </section>
 
             <section class="addPhotoFromProdct">
-                <img src="/resources/img/productPhotoDefoult/no-image-blog-one.png"    id="img">
+                <img src="/resources/fileForMySyte/img/productPhotoDefoult/no-image-blog-one.png"    id="img">
                 <a id="addphoto" href="#" class="btn addFoto">+ Добавить фото</a>
                 <a id="removephoto" href="#" class="btn deledeFoto">x Удалить фото</a>
                 <input type="file" name="file" id="file" accept="image/*;capture=camera" capture="camera" />
             </section>
 
             <section class="addPhotoFromProdct">
-                <img src="/resources/img/productPhotoDefoult/no-image-blog-one.png"   id="img">
+                <img src="/resources/fileForMySyte/img/productPhotoDefoult/no-image-blog-one.png"   id="img">
                 <a id="addphoto" href="#" class="btn addFoto">+ Добавить фото</a>
                 <a id="removephoto" href="#" class="btn deledeFoto">x Удалить фото</a>
                 <input type="file" name="file" id="file" accept="image/*;capture=camera" capture="camera" />
             </section>
 
             <section class="addPhotoFromProdct">
-                <img src="/resources/img/productPhotoDefoult/no-image-blog-one.png"   id="img">
+                <img src="/resources/fileForMySyte/img/productPhotoDefoult/no-image-blog-one.png"   id="img">
                 <a id="addphoto" href="#" class="btn addFoto">+ Добавить фото</a>
                 <a id="removephoto" href="#" class="btn deledeFoto">x Удалить фото</a>
                 <input type="file" name="file" id="file" accept="image/*;capture=camera" capture="camera" />
@@ -276,7 +276,6 @@
         <div id="selectCit"></div>
         <div id="selectCity"></div>
 
-
         <!-- Button -->
         <div class="form-group">
             <label class="col-md-4 control-label"></label>
@@ -285,6 +284,9 @@
             </div>
         </div>
     </fieldset>
+
+
+
 
 </sf:form>
 </div>
@@ -419,8 +421,8 @@
 
 </body>
 
-<script src="/resources/js/jquery.js"></script>
-<script src="/resources/js/bootstrap.min.js"></script>
-<script src="/resources/js/addProduct.js"></script>
+<script src="/resources/fileForMySyte/js/jquery.js"></script>
+<script src="/resources/fileForMySyte/js/bootstrap.min.js"></script>
+<script src="/resources/fileForMySyte/js/addProduct.js"></script>
 
 </html>

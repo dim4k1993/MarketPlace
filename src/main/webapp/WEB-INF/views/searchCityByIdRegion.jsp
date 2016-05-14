@@ -13,9 +13,9 @@
 <!--[if IE 8]> <html class="lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-    <link href="/resources/css/register-style.css" rel="stylesheet">
-    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
-    <%--<script src="/resources/js/jquery-2.2.3.min.js"></script>--%>
+    <link href="/resources/fileForMySyte/css/register-style.css" rel="stylesheet">
+    <link href="/resources/fileForMySyte/css/bootstrap.min.css" rel="stylesheet">
+    <%--<script src="/resources/fileForMySyte/js/jquery-2.2.3.min.js"></script>--%>
 </head>
 <body>
 

@@ -1,13 +1,16 @@
 package com.controller;
 
 import com.entity.Product;
+import com.entity.ProductPhotos;
 import com.entity.Role;
 import com.entity.User;
+import com.repository.ProductPhotosRepository;
 import com.repository.ProductRepository;
 import com.repository.UserRepository;
 import com.servise.ProductPhotoService;
 import com.servise.ProductService;
 import com.servise.UserService;
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
@@ -42,10 +45,10 @@ public class UserController {
 
 
 	@RequestMapping("/userAccount")
+	@Transactional
 	public String ShowUser1( Model model, Principal principal){
 		if (principal != null){
 			User user = userRepository.findOne(Integer.parseInt(principal.getName()));
-
 			model.addAttribute("user", user);
 			return "redirect:/user_id" + principal.getName();
 		}
@@ -61,7 +64,9 @@ public class UserController {
 	//виводить foto продуктів які він має
 	//якщо user не має продукту то redirect добавить продукт. після того як добавить відкриває userAccount
 	@RequestMapping("/user_id{id}")
+	@Transactional
 	public String ShowVisitUser1 (Model model,@PathVariable int id) {
+
 		User owner = userRepository.findOne(id);
 		if (owner == null) {
 			return "newUser";
@@ -81,10 +86,7 @@ public class UserController {
 	}
 
 
-//	if (user.getProduct().iterator().hasNext() == false) {
-//
-//		return"";
-//	}
+
 
 
 

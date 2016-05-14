@@ -13,7 +13,7 @@
 <!--[if IE 8]> <html class="lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-    <%--<script src="/resources/js/jquery-2.2.3.min.js"></script>--%>
+    <%--<script src="/resources/fileForMySyte/js/jquery-2.2.3.min.js"></script>--%>
 </head>
 <body>
 <c:choose>

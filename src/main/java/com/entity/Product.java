@@ -1,4 +1,5 @@
 package com.entity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.servise.CustomValidation.CustomValidationEmailUser;
 import org.hibernate.validator.constraints.Email;
 
@@ -38,6 +39,7 @@ public class Product {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "productReceivedMessenger")
     private List<Messenger> productReceivedMessages;
 
+    @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "product")
     private List<ProductPhotos>productPhotos;
 

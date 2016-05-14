@@ -23,7 +23,7 @@
 
 </body>
 
-<script src="/resources/js/jquery.js"></script>
-<script src="/resources/js/bootstrap.min.js"></script>
+<script src="/resources/fileForMySyte/js/jquery.js"></script>
+<script src="/resources/fileForMySyte/js/bootstrap.min.js"></script>
 
 </html>

@@ -3,6 +3,7 @@ package com.entity;
 import com.entity.City;
 import com.entity.Messenger;
 import com.entity.Product;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.servise.CustomValidation.CustomValidationEmailUser;
 import org.hibernate.validator.constraints.Email;
 import org.springframework.beans.factory.annotation.Required;
@@ -64,7 +65,8 @@ public class User {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "userReceivedMessenger")
     private List<Messenger> receivedMessages;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "user")
+    @JsonIgnore
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
     private List<Product>product;
     //вказує, що поле нижче є відображенням зв`зку багато до одного
     @ManyToOne

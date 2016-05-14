@@ -10,8 +10,8 @@
 
     <title>Footer</title>
 
-    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/resources/css/footer-style.css" rel="stylesheet">
+    <link href="/resources/fileForMySyte/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/resources/fileForMySyte/css/footer-style.css" rel="stylesheet">
 
 </head>
 

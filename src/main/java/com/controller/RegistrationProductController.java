@@ -31,8 +31,8 @@ public class RegistrationProductController {
     @Autowired
     UserService userService;
 
-//    @Autowired
-//    ProductPhotoService productPhotoService;
+    @Autowired
+    ProductPhotoService productPhotoService;
 
     @Autowired
     RegionService regionService;
@@ -73,27 +73,29 @@ public class RegistrationProductController {
             model.addAttribute("categoryModel",categoryService.getAll());
             return "addProduct";
         }
-
         productService.saveProduct(product, productPhotos, principal);
         return "redirect:/userAccount";
     }
 
 
+//
 //    //додавання фото продукту
 //    @RequestMapping(value = "/addProduct/addPhotoProduct")
-//    public String addPhotoProduct(@RequestParam (value ="photoProduct")MultipartFile file, HttpServletRequest request, Principal principal ) throws IOException {
+//    public String addPhotoProduct(@RequestParam(value ="photoProduct")MultipartFile file, HttpServletRequest request, Principal principal ) throws IOException {
 //        if( file.getBytes().length >= 52428800){
 //            return "redirect:/addPhotoProduct";
 //        }else {
 //            String uploadRootPath  = request.getServletContext().getRealPath("resources");
 //            String absolutePath = "C:\\Users\\Dimas\\Desktop\\logos\\MarketPlace\\src\\main\\webapp\\resources";
-//            String fotoPath = fileSaveService.saveFileProductPhoto(principal.getName(), file, absolutePath);
-//            String fotoPath1 = fileSaveService.saveFileProductPhoto(principal.getName(), file, uploadRootPath );
+//            String fotoPath = fileSaveService.saveFileAvatarUser(principal.getName(), file, absolutePath,"productPhoto");
+//            String fotoPath1 = fileSaveService.saveFileAvatarUser(principal.getName(), file, uploadRootPath,"productPhoto" );
+//            productPhotoService.saveProductPhotoFromProduct(fotoPath.substring(56),productId);
 //            System.out.println(fotoPath);
 //            System.out.println(fotoPath1);
 //        }
 //        return "redirect:/addProduct";
 //    }
+
 
 }
 

@@ -47,8 +47,8 @@ public class UserSettingsController {
         }else {
             String uploadRootPath  = request.getServletContext().getRealPath("resources");
             String absolutePath = "C:\\Users\\Dimas\\Desktop\\logos\\MarketPlace\\src\\main\\webapp\\resources";
-            String fotoPath = fileSaveService.saveFileAvatarUser(principal.getName(), file, absolutePath);
-            String fotoPath1 = fileSaveService.saveFileAvatarUser(principal.getName(), file, uploadRootPath );
+            String fotoPath = fileSaveService.saveFileAvatarUser(principal.getName(), file, absolutePath,"avatarUser");
+            String fotoPath1 = fileSaveService.saveFileAvatarUser(principal.getName(), file, uploadRootPath,"avatarUser" );
             userService.savePhotoAvatarUser(userRepository.findOne(Integer.parseInt(principal.getName())), fotoPath.substring(56));
             System.out.println(fotoPath);
             System.out.println(fotoPath1);

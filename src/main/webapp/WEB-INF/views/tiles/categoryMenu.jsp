@@ -10,15 +10,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/resources/css/menuHeader-stile.css" rel="stylesheet">
-    <link href="/resources/css/Search-style.css" rel="stylesheet">
+    <link href="/resources/fileForMySyte/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/resources/fileForMySyte/css/menuHeader-stile.css" rel="stylesheet">
+    <link href="/resources/fileForMySyte/css/Search-style.css" rel="stylesheet">
 </head>
 
 <body>
 <div class="container menu-nav">
     <form class="syteLogo">
-        <a href="/"><img src="/resources/img/syteLogo/SyteLogo.png" height="90px" width=""></a>
+        <a href="/"><img src="/resources/fileForMySyte/img/syteLogo/SyteLogo.png" height="90px" width=""></a>
     </form>
     <section class="marginOfHeader  hidden-sm hidden-xs">
 
@@ -90,15 +90,15 @@
                                 <div id="womenCollection" class="carousel slide" data-ride="carousel">
                                     <div class="carousel-inner caruselqq hidden-xs">
                                         <div class="item active">
-                                            <a href="#"><img src="/resources/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu.jpg" class="img-responsive" alt="product 1"></a>
+                                            <a href="#"><img src="/resources/fileForMySyte/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu.jpg" class="img-responsive" alt="product 1"></a>
                                         </div>
                                         <!-- End Item -->
                                         <div class="item">
-                                            <a href="#"><img src="/resources/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu1.jpg" class="img-responsive" alt="product 2"></a>
+                                            <a href="#"><img src="/resources/fileForMySyte/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu1.jpg" class="img-responsive" alt="product 2"></a>
                                         </div>
                                         <!-- End Item -->
                                         <div class="item">
-                                            <a href="#"><img src="/resources/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu2.jpg" class="img-responsive" alt="product 3"></a>
+                                            <a href="#"><img src="/resources/fileForMySyte/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu2.jpg" class="img-responsive" alt="product 3"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -153,17 +153,17 @@
                                         <div class="item active">
 
 
-                                            <a href="#"><img src="/resources/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu.jpg" class="img-responsive" alt="product 1"></a>
+                                            <a href="#"><img src="/resources/fileForMySyte/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu.jpg" class="img-responsive" alt="product 1"></a>
                                         </div>
 
                                         <!-- End Item -->
                                         <div class="item">
-                                            <a href="#"><img src="/resources/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu1.jpg" class="img-responsive" alt="product 2"></a>
+                                            <a href="#"><img src="/resources/fileForMySyte/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu1.jpg" class="img-responsive" alt="product 2"></a>
                                         </div>
 
                                         <!-- End Item -->
                                         <div class="item">
-                                            <a href="#"><img src="/resources/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu2.jpg" class="img-responsive" alt="product 3"></a>
+                                            <a href="#"><img src="/resources/fileForMySyte/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu2.jpg" class="img-responsive" alt="product 3"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -211,17 +211,17 @@
                                         <div class="item active">
 
 
-                                            <a href="#"><img src="/resources/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu.jpg" class="img-responsive" alt="product 1"></a>
+                                            <a href="#"><img src="/resources/fileForMySyte/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu.jpg" class="img-responsive" alt="product 1"></a>
                                         </div>
 
                                         <!-- End Item -->
                                         <div class="item">
-                                            <a href="#"><img src="/resources/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu1.jpg" class="img-responsive" alt="product 2"></a>
+                                            <a href="#"><img src="/resources/fileForMySyte/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu1.jpg" class="img-responsive" alt="product 2"></a>
                                         </div>
 
                                         <!-- End Item -->
                                         <div class="item">
-                                            <a href="#"><img src="/resources/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu2.jpg" class="img-responsive" alt="product 3"></a>
+                                            <a href="#"><img src="/resources/fileForMySyte/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu2.jpg" class="img-responsive" alt="product 3"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -274,17 +274,17 @@
                                         <div class="item active">
 
 
-                                            <a href="#"><img src="/resources/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu.jpg" class="img-responsive" alt="product 1"></a>
+                                            <a href="#"><img src="/resources/fileForMySyte/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu.jpg" class="img-responsive" alt="product 1"></a>
                                         </div>
 
                                         <!-- End Item -->
                                         <div class="item">
-                                            <a href="#"><img src="/resources/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu1.jpg" class="img-responsive" alt="product 2"></a>
+                                            <a href="#"><img src="/resources/fileForMySyte/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu1.jpg" class="img-responsive" alt="product 2"></a>
                                         </div>
 
                                         <!-- End Item -->
                                         <div class="item">
-                                            <a href="#"><img src="/resources/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu2.jpg" class="img-responsive" alt="product 3"></a>
+                                            <a href="#"><img src="/resources/fileForMySyte/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu2.jpg" class="img-responsive" alt="product 3"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -337,17 +337,17 @@
                                         <div class="item active">
 
 
-                                            <a href="#"><img src="/resources/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu.jpg" class="img-responsive" alt="product 1"></a>
+                                            <a href="#"><img src="/resources/fileForMySyte/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu.jpg" class="img-responsive" alt="product 1"></a>
                                         </div>
 
                                         <!-- End Item -->
                                         <div class="item">
-                                            <a href="#"><img src="/resources/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu1.jpg" class="img-responsive" alt="product 2"></a>
+                                            <a href="#"><img src="/resources/fileForMySyte/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu1.jpg" class="img-responsive" alt="product 2"></a>
                                         </div>
 
                                         <!-- End Item -->
                                         <div class="item">
-                                            <a href="#"><img src="/resources/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu2.jpg" class="img-responsive" alt="product 3"></a>
+                                            <a href="#"><img src="/resources/fileForMySyte/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu2.jpg" class="img-responsive" alt="product 3"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -395,17 +395,17 @@
                                         <div class="item active">
 
 
-                                            <a href="#"><img src="/resources/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu.jpg" class="img-responsive" alt="product 1"></a>
+                                            <a href="#"><img src="/resources/fileForMySyte/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu.jpg" class="img-responsive" alt="product 1"></a>
                                         </div>
 
                                         <!-- End Item -->
                                         <div class="item">
-                                            <a href="#"><img src="/resources/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu1.jpg" class="img-responsive" alt="product 2"></a>
+                                            <a href="#"><img src="/resources/fileForMySyte/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu1.jpg" class="img-responsive" alt="product 2"></a>
                                         </div>
 
                                         <!-- End Item -->
                                         <div class="item">
-                                            <a href="#"><img src="/resources/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu2.jpg" class="img-responsive" alt="product 3"></a>
+                                            <a href="#"><img src="/resources/fileForMySyte/img/carucelPhotoHeaderMenu/carucelPhotoHeaderMenu2.jpg" class="img-responsive" alt="product 3"></a>
                                         </div>
                                     </div>
                                 </div>
