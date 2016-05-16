@@ -94,7 +94,7 @@ public class ProductController {
             System.out.println(fotoPath);
             System.out.println(fotoPath1);
         }
-        return "redirect:/productPage";
+        return "redirect:/product_id" + productId;
     }
 
 

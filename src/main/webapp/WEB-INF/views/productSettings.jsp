@@ -34,7 +34,7 @@
 <security:authorize access="isAuthenticated() and principal.username=='${user.id}'">
     <%--Це буде бачити користувач який є власником сторінки--%>
     <h1>Це буде бачити користувач який є власником сторінки</h1>
-<sf:form action="/addProduct/addPhotoProduct?${_csrf.parameterName}=${_csrf.token}" enctype="multipart/form-data" method="post">
+<sf:form action="/productSettings/addPhotoProduct?${_csrf.parameterName}=${_csrf.token}" enctype="multipart/form-data" method="post">
     <td><label for="photo">Виберіть зображення</label></td>
     <td><input type="file" name="photoProduct" id="photo"></td>
     <td></td>
