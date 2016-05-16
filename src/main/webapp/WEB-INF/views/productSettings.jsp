@@ -43,6 +43,11 @@
 
 </security:authorize>
 
+    <security:authorize access="isAuthenticated() and hasRole('ROLE_ADMIN')">
+        <h1>Це буде бачити тільки адмін</h1>
+        <%--Це буде бачити тільки адмін--%>
+    </security:authorize>
+
 </main>
 </body>
 <script src="/resources/fileForMySyte/js/jquery.js"></script>

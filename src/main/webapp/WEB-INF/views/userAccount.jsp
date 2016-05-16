@@ -79,7 +79,7 @@
                         </div>
                         <div class="item-menu popout-menu">
                             <ul>
-                                <li class="color-blue"><a href="productSettings" class="popout-menu-item glyphicon glyphicon-cog"> </a></li>
+                                <li class="color-blue"><a href="productSettings_id${product.id}" class="popout-menu-item glyphicon glyphicon-cog"> </a></li>
                                 <li class="color-red"><a href="/userDeleteProduct/${product.id}" class="popout-menu-item glyphicon glyphicon-trash"></a></li>
                             </ul>
                         </div>
