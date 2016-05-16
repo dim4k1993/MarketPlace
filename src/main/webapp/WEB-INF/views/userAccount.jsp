@@ -22,23 +22,25 @@
 </head>
 <body>
 
-<nav class="menu" tabindex="0">
-    <div class="smartphone-menu-trigger"></div>
-    <header class="avatar">
-        <img src="${user.foto}"/>
-        <h3>${user.name} ${user.lastName}</h3>
-    </header>
-    <ul>
-        <li tabindex="0" class="icon-dashboard g"><a href="addProduct"><span>Подати Оголошення</span></a></li>
-        <li tabindex="0" class="icon-customers "><a href="userAccount"><span>Мої Оголошення</span></a></li>
-        <li tabindex="0" class="icon-users "><a href="#"><span>Повідомлення</span></a></li>
-        <li tabindex="0" class="icon-settings "><a href="userSettings"><span>Налаштування</span></a></li>
-    </ul>
-</nav>
 
 <main class="main">
 
         <security:authorize access="isAuthenticated() and principal.username!='${user.id}' and hasRole('ROLE_ADMIN')">
+            <nav class="menu" tabindex="0">
+                <div class="smartphone-menu-trigger"></div>
+                <header class="avatar">
+                    <img src="${user.foto}"/>
+                    <h3>${user.name} ${user.lastName}</h3>
+                </header>
+                <ul>
+                    <li tabindex="0" class="icon-dashboard g"><a href="addProduct"><span>Подати Оголошення</span></a></li>
+                    <li tabindex="0" class="icon-customers "><a href="userAccount"><span>Мої Оголошення</span></a></li>
+                    <li tabindex="0" class="icon-users "><a href="#"><span>Повідомлення</span></a></li>
+                    <li tabindex="0" class="icon-settings "><a href="userSettings"><span>Налаштування</span></a></li>
+                </ul>
+            </nav>
+
+
                     <!-- Form Name -->
                     <legend class="title_form ">Мої Оголошення</legend>
             <c:forEach var="product" items="${user.product}">
@@ -92,14 +94,45 @@
             <%--Це буде бачити користувач який не залогінився--%>
             <h1>Це буде бачити користувач який не залогінився</h1>
         </security:authorize>
+
         <security:authorize access="isAuthenticated() and principal.username!='${user.id}' and !hasRole('ROLE_ADMIN')">
             <%--Це буде бачити користувач який залогінився він не являється власником сторінки і він не адмін--%>
             <h1>Це буде бачити користувач який залогінився він не являється власником сторінки і він не адмін</h1>
+            <nav class="menu" tabindex="0">
+                <div class="smartphone-menu-trigger"></div>
+                <header class="avatar">
+                    <img src="${user.foto}"/>
+                    <h3>${user.name} ${user.lastName}</h3>
+                </header>
+                <ul>
+                    <li tabindex="0" class="icon-dashboard g"><a href="addProduct"><span>Оголошення</span></a></li>
+                    <li tabindex="0" class="icon-users "><a href="#"><span>Написать Сообщение</span></a></li>
+
+                </ul>
+            </nav>
+
+            <!-- Form Name -->
+            <legend class="title_form ">Оголошення ${user.name} ${user.lastName}</legend>
+
         </security:authorize>
 
 
         <security:authorize access="isAuthenticated() and principal.username=='${user.id}'">
             <%--Це буде бачити користувач який є власником сторінки--%>
+            <nav class="menu" tabindex="0">
+                <div class="smartphone-menu-trigger"></div>
+                <header class="avatar">
+                    <img src="${user.foto}"/>
+                    <h3>${user.name} ${user.lastName}</h3>
+                </header>
+                <ul>
+                    <li tabindex="0" class="icon-dashboard g"><a href="addProduct"><span>Подати Оголошення</span></a></li>
+                    <li tabindex="0" class="icon-customers "><a href="userAccount"><span>Мої Оголошення</span></a></li>
+                    <li tabindex="0" class="icon-users "><a href="#"><span>Повідомлення</span></a></li>
+                    <li tabindex="0" class="icon-settings "><a href="userSettings"><span>Налаштування</span></a></li>
+                </ul>
+            </nav>
+
 
                     <!-- Form Name -->
                     <legend class="title_form ">Мої Оголошення</legend>
@@ -147,7 +180,6 @@
                     </ul>
                 </div>
             </div>
-
                 </c:forEach>
 
         </security:authorize>
@@ -160,10 +192,6 @@
 </body>
 <script src="/resources/fileForMySyte/js/jquery.js"></script>
 <script src="/resources/fileForMySyte/js/bootstrap.min.js"></script>
-
-
-<%--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>--%>
-<%--<script   src="https://code.jquery.com/jquery-2.2.2.min.js"   integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="   crossorigin="anonymous"></script>--%>
 
 
 </html>
