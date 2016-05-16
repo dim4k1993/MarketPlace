@@ -58,6 +58,7 @@ public class UserController {
 		}
 	}
 
+
 	//присвоює id юзерові на сторінці
 	//виводить продукти які він має
 	//якщо такого іd нема виводить newUser
@@ -72,9 +73,10 @@ public class UserController {
 			return "newUser";
 		}
 		else {
+
 			if (owner.getProduct().iterator().hasNext() == false) {
 
-				return"redirect:/addProduct";
+				return"redirect:/userAccountNoProduct";
 			}
 			model.addAttribute("idUser", id);
 			model.addAttribute("products", productService.getAll());

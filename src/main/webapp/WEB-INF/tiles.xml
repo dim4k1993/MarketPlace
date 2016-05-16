@@ -62,6 +62,13 @@
         <put-attribute name="categoryMenu" value=""></put-attribute>
     </definition>
 
+    <definition name="userAccountNoProduct" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/views/userAccountNoProduct.jsp"></put-attribute>
+        <put-attribute name="title" value=""></put-attribute>
+        <put-attribute name="categoryMenu" value=""></put-attribute>
+    </definition>
+
+
     <definition name="searchCityByIdRegion" extends="outHeaderAndFooter.definition">
         <put-attribute name="body" value="/WEB-INF/views/searchCityByIdRegion.jsp"></put-attribute>
         <put-attribute name="title" value=""></put-attribute>
