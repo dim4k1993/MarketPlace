@@ -15,12 +15,25 @@
 
     <link href="/resources/fileForMySyte/css/bootstrap.min.css" rel="stylesheet">
     <link href="/resources/fileForMySyte/css/userAccount-style.css" rel="stylesheet">
-    <link href="/resources/fileForMySyte/css/productUser-style.css" rel="stylesheet">
+    <link href="/resources/fileForMySyte/css/noProductAccount-style.css" rel="stylesheet">
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Insert title here</title>
 </head>
 <body>
+
+<div class="row">
+    <div class=" noProduct" >
+        <img src="/resources/fileForMySyte/img/noProductPhoto/NoProductImg.jpg" width="100%">
+        <div class="col-xs-6 col-md-3"></div>
+        <div class="col-xs-6 col-md-3"></div>
+        <div class="col-xs-6 col-md-4 col-xs-12">
+            <div class="batton_noProduct">
+                <a href="addProduct" class="action-button animate blue"><h6><p class="glyphicon glyphicon-plus"></p> Добавить Обьявление</h6></a>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
