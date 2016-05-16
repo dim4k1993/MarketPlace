@@ -13,26 +13,8 @@ import java.io.IOException;
 import java.security.Principal;
 
 @Service
-public class FileSaveService{
+public interface FileSaveService{
 
-        public String saveFileAvatarUser (String userId, MultipartFile file, String uploadRootPath, String nameDiraction ) throws IOException {
-        File uploadRootDir = new File(uploadRootPath+File.separator+"uplodateFile"+File.separator+userId+File.separator+nameDiraction);
-        String originalName = "";
-        if (!uploadRootDir.exists()){
-            uploadRootDir.mkdirs();
-        }
-        if (file.getOriginalFilename().endsWith(".jpg")){
-            originalName = file.getOriginalFilename().replaceAll(".jpg","user");
-        }
-        if (file.getOriginalFilename().endsWith(".png")){
-            originalName = file.getOriginalFilename().replaceAll(".png","user");
-        }
-        BufferedImage bi =  ImageIO.read(new ByteArrayInputStream(file.getBytes()));
-        File path = new File(uploadRootDir+File.separator+originalName+String.valueOf(userId)+".jpg");
-        ImageIO.write(bi,"jpg",path);
-        return String.valueOf(path.getPath());
-        }
-
-
+        String saveFileAvatarUser (String userId, MultipartFile file, String uploadRootPath, String nameDiraction ) throws IOException ;
 
 }

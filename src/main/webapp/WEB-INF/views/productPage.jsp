@@ -13,12 +13,6 @@
     <title>Insert title here</title>
 </head>
 <body>
-<c:url value="/" var="logout"/>
-<form method="post" action="${logout}">
-    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-    <input  type="submit" value="Вихід"/>
-</form>
-
 <security:authorize
         access="isAuthenticated() and hasRole('ROLE_ADMIN')">
     <h1>Це буде бачити тільки адмін</h1>
@@ -38,21 +32,9 @@
 
 <security:authorize
         access="isAuthenticated() and principal.username=='${product.user.id}'">
-
-
-    <sf:form action="/addProduct/addPhotoProduct?${_csrf.parameterName}=${_csrf.token}" enctype="multipart/form-data" method="post">
-        <td><label for="photo">Виберіть зображення</label></td>
-        <td><input type="file" name="photoProduct" id="photo"></td>
-        <td></td>
-        <td><input type="submit" value="OK"></td>
-    </sf:form>
-
     <%--Це буде бачити користувач який є власником сторінки--%>
     <h1>Це буде бачити користувач який є власником сторінки</h1>
 </security:authorize>
-
-
-
 
 
 

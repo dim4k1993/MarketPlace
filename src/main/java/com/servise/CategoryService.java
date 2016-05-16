@@ -2,43 +2,18 @@ package com.servise;
 
 
 import com.entity.Category;
-import com.entity.PidCategory;
-import com.repository.CategoryRepository;
-import com.repository.PidCategoryRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-@Service
-public class CategoryService {
-
-    @Autowired
-    CategoryRepository categoryRepository;
 
 
+public interface CategoryService {
 
-    public void addCategory(String categoryName ){
-        Category category = new Category();
-        category.setCategoryName(categoryName);
-        categoryRepository.save(category);
-    }
+    void addCategory(String categoryName );
 
-    // дістає всі категорії
-    public Iterable<Category> getAll(){
-        return categoryRepository.findAll();
+    Iterable<Category> getAll();
+
+    Category findIdCategoryByNameCategory(String nameCategory);
+
+    void deleteCategory(String name);
     }
 
 
 
-    //знаходить кетегорію по назві
-    public Category findIdCategoryByNameCategory(String nameCategory){
-        return categoryRepository.findIdCategoryByNameCategory(nameCategory);
-    }
-
-
-    public void deleteCategory(String name){
-        String id = Integer.toString(categoryRepository.findIdCategoryByNameCategory(name).getId());
-        categoryRepository.delete(Integer.parseInt(id));
-    }
-
-
-}

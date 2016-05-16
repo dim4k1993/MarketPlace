@@ -45,10 +45,9 @@
         <put-attribute name="categoryMenu" value=""></put-attribute>
     </definition>
 
-    <definition name="productPage" extends="base.definition">
+    <definition name="productPage" extends="plusCategoryMenu.definition">
         <put-attribute name="body" value="/WEB-INF/views/productPage.jsp"></put-attribute>
         <put-attribute name="title" value=""></put-attribute>
-        <put-attribute name="categoryMenu" value=""></put-attribute>
     </definition>
 
     <definition name="registration" extends="base.definition">
@@ -125,11 +124,16 @@
         <put-attribute name="body" value="/WEB-INF/views/userSettings.jsp"></put-attribute>
         <put-attribute name="title" value=""></put-attribute>
         <put-attribute name="categoryMenu" value=""></put-attribute>
-
     </definition>
 
     <definition name="searchPidCategoryByIdCategory" extends="outHeaderAndFooter.definition">
         <put-attribute name="body" value="/WEB-INF/views/searchPidCategoryByIdCategory.jsp"></put-attribute>
+        <put-attribute name="title" value=""></put-attribute>
+        <put-attribute name="categoryMenu" value=""></put-attribute>
+    </definition>
+
+    <definition name="productSettings" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/views/productSettings.jsp"></put-attribute>
         <put-attribute name="title" value=""></put-attribute>
         <put-attribute name="categoryMenu" value=""></put-attribute>
     </definition>

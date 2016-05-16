@@ -30,9 +30,11 @@ public class UserSettingsController {
     @Autowired
     UserService userService;
 
-    // відображення сторінки settings + model
+
+
+    // відображення сторінки UserSettings + model
     @RequestMapping("/userSettings")
-    public String ShowSettingsPage(Model model, Principal principal) {
+    public String ShowSettingsPageUser(Model model, Principal principal) {
         User user = userRepository.findOne(Integer.parseInt(principal.getName()));
         model.addAttribute("user", user);
         return "userSettings";
