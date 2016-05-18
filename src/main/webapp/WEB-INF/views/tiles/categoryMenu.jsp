@@ -23,11 +23,9 @@
     <section class="marginOfHeader  hidden-sm hidden-xs">
 
         <form method="get" action="?">
-            <input type="text" placeholder="
-а чого шукаєш ти?
-" />
+            <input type="text" placeholder="а чого шукаєш ти?" />
             <ul class="suggestions"></ul>
-            <button type="submit">
+            <button class="buttonSkrech" type="submit">
                 <i class="glyphicon glyphicon-search"></i>
             </button>
         </form>

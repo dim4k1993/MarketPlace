@@ -1,8 +1,8 @@
 
-section {
-  margin-left: 700px;
-  width: 40%;
-}
+/*section {*/
+  /*margin-left: 700px;*/
+  /*width: 40%;*/
+/*}*/
 
 form {
   margin-bottom: 40px;
@@ -37,7 +37,7 @@ input:focus {
   transition: border .3s ease-in;
 }
 
-button {
+.buttonSkrech {
   float: left;
   border: 0;
   width: 60px;
@@ -55,7 +55,7 @@ button {
   transition: background .2s ease-out;
 }
 
-button:hover {
+.buttonSkrech:hover {
   background: #08b25a;
   transition: background 1.3s ease-in;
   border-color: #2c2c2c;
