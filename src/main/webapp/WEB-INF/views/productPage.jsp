@@ -419,50 +419,196 @@
                             <div class="product-images">
                                 <!-- Begin Product Images Slider -->
                                 <div class="main-img-slider photo-barder">
-                                    <c:forEach var="productPhoto" items="${product.productPhotos}">
+                                    <c:forEach var="productPhoto" varStatus="vs" items="${product.productPhotos}">
+                                        <c:if test="${vs.index == 0}">
                                     <figure>
-                                        <a href="${product.productPhotos.get(1).fotoName}" data-size="1400x1000">
-                                            <img src="${product.productPhotos.get(1).fotoName}"/>
-                                        </a>
+                                            <a href="${product.productPhotos.get(0).fotoName}" data-size="1400x1000">
+                                                <img src="${product.productPhotos.get(0).fotoName}"/>
+                                            </a>
                                     </figure>
+                                        </c:if>
+
+                                        <c:if test="${vs.index == 1}">
+                                            <figure>
+                                                <a href="${product.productPhotos.get(1).fotoName}" data-size="1400x1000">
+                                                    <img src="${product.productPhotos.get(1).fotoName}"/>
+                                                </a>
+                                            </figure>
+                                        </c:if>
+
+                                        <c:if test="${vs.index == 2}">
+                                            <figure>
+                                                <a href="${product.productPhotos.get(2).fotoName}" data-size="1400x1000">
+                                                    <img src="${product.productPhotos.get(2).fotoName}"/>
+                                                </a>
+                                            </figure>
+                                        </c:if>
+
+                                        <c:if test="${vs.index == 3}">
+                                            <figure>
+                                                <a href="${product.productPhotos.get(3).fotoName}" data-size="1400x1000">
+                                                    <img src="${product.productPhotos.get(3).fotoName}"/>
+                                                </a>
+                                            </figure>
+                                        </c:if>
+
+                                        <c:if test="${vs.index == 4}">
+                                            <figure>
+                                                <a href="${product.productPhotos.get(4).fotoName}" data-size="1400x1000">
+                                                    <img src="${product.productPhotos.get(4).fotoName}"/>
+                                                </a>
+                                            </figure>
+                                        </c:if>
+
+                                        <c:if test="${vs.index == 5}">
+                                            <figure>
+                                                <a href="${product.productPhotos.get(5).fotoName}" data-size="1400x1000">
+                                                    <img src="${product.productPhotos.get(5).fotoName}"/>
+                                                </a>
+                                            </figure>
+                                        </c:if>
+
+                                        <c:if test="${vs.index == 6}">
+                                            <figure>
+                                                <a href="${product.productPhotos.get(6).fotoName}" data-size="1400x1000">
+                                                    <img src="${product.productPhotos.get(6).fotoName}"/>
+                                                </a>
+                                            </figure>
+                                        </c:if>
+
+                                        <c:if test="${vs.index == 7}">
+                                            <figure>
+                                                <a href="${product.productPhotos.get(7).fotoName}" data-size="1400x1000">
+                                                    <img src="${product.productPhotos.get(7).fotoName}"/>
+                                                </a>
+                                            </figure>
+                                        </c:if>
+
+                                        <c:if test="${vs.index == 8}">
+                                            <figure>
+                                                <a href="${product.productPhotos.get(8).fotoName}" data-size="1400x1000">
+                                                    <img src="${product.productPhotos.get(8).fotoName}"/>
+                                                </a>
+                                            </figure>
+                                        </c:if>
+
+                                        <c:if test="${vs.index == 9}">
+                                            <figure>
+                                                <a href="${product.productPhotos.get(9).fotoName}" data-size="1400x1000">
+                                                    <img src="${product.productPhotos.get(9).fotoName}"/>
+                                                </a>
+                                            </figure>
+                                        </c:if>
+
+                                        <c:if test="${vs.index == 10}">
+                                            <figure>
+                                                <a href="${product.productPhotos.get(10).fotoName}" data-size="1400x1000">
+                                                    <img src="${product.productPhotos.get(10).fotoName}"/>
+                                                </a>
+                                            </figure>
+                                        </c:if>
+
+                                        <c:if test="${vs.index == 11}">
+                                            <figure>
+                                                <a href="${product.productPhotos.get(11).fotoName}" data-size="1400x1000">
+                                                    <img src="${product.productPhotos.get(11).fotoName}"/>
+                                                </a>
+                                            </figure>
+                                        </c:if>
+
+                                        <c:if test="${vs.index == 12}">
+                                            <figure>
+                                                <a href="${product.productPhotos.get(12).fotoName}" data-size="1400x1000">
+                                                    <img src="${product.productPhotos.get(12).fotoName}"/>
+                                                </a>
+                                            </figure>
+                                        </c:if>
+
+                                        <c:if test="${vs.index == 13}">
+                                            <figure>
+                                                <a href="${product.productPhotos.get(13).fotoName}" data-size="1400x1000">
+                                                    <img src="${product.productPhotos.get(13).fotoName}"/>
+                                                </a>
+                                            </figure>
+                                        </c:if>
+
+                                        <c:if test="${vs.index == 14}">
+                                            <figure>
+                                                <a href="${product.productPhotos.get(14).fotoName}" data-size="1400x1000">
+                                                    <img src="${product.productPhotos.get(14).fotoName}"/>
+                                                </a>
+                                            </figure>
+                                        </c:if>
+
+                                        <c:if test="${vs.index == 15}">
+                                            <figure>
+                                                <a href="${product.productPhotos.get(15).fotoName}" data-size="1400x1000">
+                                                    <img src="${product.productPhotos.get(15).fotoName}"/>
+                                                </a>
+                                            </figure>
+                                        </c:if>
                                     </c:forEach>
-                                    <%--${product.productPhotos.get(index).fotoName}--%>
-                                    <%--<c:forEach var="productPhoto" items="${product.productPhotos.get(0).fotoName}">--%>
-                                    <%--</c:forEach>--%>
-                                    <%--<figure>--%>
-                                        <%--<a href="http://img17.olx.ua/images_slandocomua/292183600_1_261x203_prodam-iphone-5s-ideal-cherkassy.jpg" data-size="1400x1000">--%>
-                                            <%--<img src="http://img17.olx.ua/images_slandocomua/292183600_1_261x203_prodam-iphone-5s-ideal-cherkassy.jpg"/>--%>
-                                        <%--</a>--%>
-                                    <%--</figure>--%>
-                                    <%--<figure>--%>
-                                        <%--<a href="http://tech-touch.ru/wp-content/uploads/2016/01/reselleryi-snizhayut-tsenu-na-iphone-5s-pered-vyihodom-iphone-5e.jpg" data-size="1400x1000">--%>
-                                            <%--<img src="http://tech-touch.ru/wp-content/uploads/2016/01/reselleryi-snizhayut-tsenu-na-iphone-5s-pered-vyihodom-iphone-5e.jpg" />--%>
-                                        <%--</a>--%>
-                                    <%--</figure>--%>
-                                    <%--<figure>--%>
-                                        <%--<a href="http://www.mobile-review.com/articles/2016/image/facts-iphone-5s-refurb/6.jpg" data-size="1400x1000">--%>
-                                            <%--<img src="http://www.mobile-review.com/articles/2016/image/facts-iphone-5s-refurb/6.jpg" />--%>
-                                        <%--</a>--%>
-                                    <%--</figure>--%>
                                     <%--<figure>--%>
                                         <%--<a href="http://i.applemix.ru/2016/03/dizajn-iphone-5se-budet-takim-zhe-kak-u-iphone-5s.jpg" data-size="1400x1000">--%>
                                             <%--<img src="http://i.applemix.ru/2016/03/dizajn-iphone-5se-budet-takim-zhe-kak-u-iphone-5s.jpg" />--%>
                                         <%--</a>--%>
                                     <%--</figure>--%>
                                 </div>
-                                <!-- End Product Images Slider -->
-
-                                <!-- Begin product thumb nav -->
                                 <ul class="thumb-nav ">
-                                    <li><img src="https://cnet3.cbsistatic.com/hub/i/r/2013/09/12/ffddb58f-84ca-11e3-beb9-14feb5ca9861/resize/620x/130216604cb44544b61c546d797b0ae0/Septimius_Cronus03.jpg" /></li>
-                                    <li><img src="http://img17.olx.ua/images_slandocomua/292183600_1_261x203_prodam-iphone-5s-ideal-cherkassy.jpg" /></li>
-                                    <li><img src="http://tech-touch.ru/wp-content/uploads/2016/01/reselleryi-snizhayut-tsenu-na-iphone-5s-pered-vyihodom-iphone-5e.jpg" /></li>
-                                    <li><img src="http://www.mobile-review.com/articles/2016/image/facts-iphone-5s-refurb/6.jpg" /></li>
-                                    <li><img src="http://i.applemix.ru/2016/03/dizajn-iphone-5se-budet-takim-zhe-kak-u-iphone-5s.jpg" /></li>
+                                <c:forEach var="productPhoto" varStatus="vsPid" items="${product.productPhotos}">
+
+                                    <c:if test="${vsPid.index == 0}">
+                                        <li><img src="${product.productPhotos.get(0).fotoName}" /></li>
+                                    </c:if>
+                                    <c:if test="${vsPid.index == 1}">
+                                        <li><img src="${product.productPhotos.get(1).fotoName}" /></li>
+                                    </c:if>
+                                    <c:if test="${vsPid.index == 2}">
+                                        <li><img src="${product.productPhotos.get(2).fotoName}" /></li>
+                                    </c:if>
+                                    <c:if test="${vsPid.index == 3}">
+                                        <li><img src="${product.productPhotos.get(3).fotoName}" /></li>
+                                    </c:if>
+                                    <c:if test="${vsPid.index == 4}">
+                                        <li><img src="${product.productPhotos.get(4).fotoName}" /></li>
+                                    </c:if>
+                                    <c:if test="${vsPid.index == 5}">
+                                        <li><img src="${product.productPhotos.get(5).fotoName}" /></li>
+                                    </c:if>
+                                    <c:if test="${vsPid.index == 6}">
+                                        <li><img src="${product.productPhotos.get(6).fotoName}" /></li>
+                                    </c:if>
+                                    <c:if test="${vsPid.index == 7}">
+                                        <li><img src="${product.productPhotos.get(7).fotoName}" /></li>
+                                    </c:if>
+                                    <c:if test="${vsPid.index == 8}">
+                                        <li><img src="${product.productPhotos.get(8).fotoName}" /></li>
+                                    </c:if>
+                                    <c:if test="${vsPid.index == 9}">
+                                        <li><img src="${product.productPhotos.get(9).fotoName}" /></li>
+                                    </c:if>
+                                    <c:if test="${vsPid.index == 10}">
+                                        <li><img src="${product.productPhotos.get(10).fotoName}" /></li>
+                                    </c:if>
+                                    <c:if test="${vsPid.index == 11}">
+                                        <li><img src="${product.productPhotos.get(11).fotoName}" /></li>
+                                    </c:if>
+                                    <c:if test="${vsPid.index == 12}">
+                                        <li><img src="${product.productPhotos.get(12).fotoName}" /></li>
+                                    </c:if>
+                                    <c:if test="${vsPid.index == 13}">
+                                        <li><img src="${product.productPhotos.get(13).fotoName}" /></li>
+                                    </c:if>
+                                    <c:if test="${vsPid.index == 14}">
+                                        <li><img src="${product.productPhotos.get(14).fotoName}" /></li>
+                                    </c:if>
+                                    <c:if test="${vsPid.index == 15}">
+                                        <li><img src="${product.productPhotos.get(15).fotoName}" /></li>
+                                    </c:if>
+
+                            </c:forEach>
                                 </ul>
-                                <!-- End product thumb nav -->
                             </div>
-                            <!-- End Product Images & Alternates -->
 
 
                             <!-- Begin Product Image Zoom -->
@@ -702,6 +848,7 @@
         </div>
     </div>
 </section>
+
 
 
 

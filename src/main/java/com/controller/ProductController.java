@@ -49,9 +49,8 @@ public class ProductController {
     @RequestMapping("/productPage")
     public String ShowProductPage(Model model, Principal principal) {
     if (principal != null){
-        Product product = productRepository.findOne(Integer.parseInt(principal.getName()));
-        model.addAttribute("product", product);
-        model.addAttribute("productPhotos", productPhotoService.findProductPhotosByProduct(Integer.parseInt(principal.getName())));
+//        Product product = productRepository.findOne(Integer.parseInt(principal.getName()));
+//        model.addAttribute("product", product);
         return "redirect:/product_id" + principal.getName();
     }else {
         return "redirect:/";
