@@ -7,6 +7,7 @@ import com.entity.ProductPhotos;
 import com.repository.ProductPhotosRepository;
 import com.repository.ProductRepository;
 import com.repository.UserRepository;
+import com.servise.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,6 +31,7 @@ public class ProductServiceImpl implements com.servise.ProductService{
 
     @Autowired
     private UserRepository userRepository;
+
 
 
     //Метод додавання продукту
@@ -74,6 +76,7 @@ public class ProductServiceImpl implements com.servise.ProductService{
     //удаляє вибраний продукт
     public String deleteProduct(int id){
         Product product = productRepository.findOne(id);
+
         product.setCity(null);
         product.setPidCategory(null);
         product.setUser(null);
@@ -84,9 +87,5 @@ public class ProductServiceImpl implements com.servise.ProductService{
 
 
 
-
-//    public String getNameProduct(int id) {
-//        return null;
-//    }
 
 }
