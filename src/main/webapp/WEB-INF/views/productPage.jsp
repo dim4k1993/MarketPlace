@@ -419,33 +419,36 @@
                             <div class="product-images">
                                 <!-- Begin Product Images Slider -->
                                 <div class="main-img-slider photo-barder">
+                                    <c:forEach var="productPhoto" items="${product.productPhotos}">
                                     <figure>
-                                        <a href="https://cnet3.cbsistatic.com/hub/i/r/2013/09/12/ffddb58f-84ca-11e3-beb9-14feb5ca9861/resize/620x/130216604cb44544b61c546d797b0ae0/Septimius_Cronus03.jpg" data-size="1400x1000">
-                                            <img src="https://cnet3.cbsistatic.com/hub/i/r/2013/09/12/ffddb58f-84ca-11e3-beb9-14feb5ca9861/resize/620x/130216604cb44544b61c546d797b0ae0/Septimius_Cronus03.jpg"/>
+                                        <a href="${product.productPhotos.get(1).fotoName}" data-size="1400x1000">
+                                            <img src="${product.productPhotos.get(1).fotoName}"/>
                                         </a>
                                     </figure>
-
-
-                                    <figure>
-                                        <a href="http://img17.olx.ua/images_slandocomua/292183600_1_261x203_prodam-iphone-5s-ideal-cherkassy.jpg" data-size="1400x1000">
-                                            <img src="http://img17.olx.ua/images_slandocomua/292183600_1_261x203_prodam-iphone-5s-ideal-cherkassy.jpg"/>
-                                        </a>
-                                    </figure>
-                                    <figure>
-                                        <a href="http://tech-touch.ru/wp-content/uploads/2016/01/reselleryi-snizhayut-tsenu-na-iphone-5s-pered-vyihodom-iphone-5e.jpg" data-size="1400x1000">
-                                            <img src="http://tech-touch.ru/wp-content/uploads/2016/01/reselleryi-snizhayut-tsenu-na-iphone-5s-pered-vyihodom-iphone-5e.jpg" />
-                                        </a>
-                                    </figure>
-                                    <figure>
-                                        <a href="http://www.mobile-review.com/articles/2016/image/facts-iphone-5s-refurb/6.jpg" data-size="1400x1000">
-                                            <img src="http://www.mobile-review.com/articles/2016/image/facts-iphone-5s-refurb/6.jpg" />
-                                        </a>
-                                    </figure>
-                                    <figure>
-                                        <a href="http://i.applemix.ru/2016/03/dizajn-iphone-5se-budet-takim-zhe-kak-u-iphone-5s.jpg" data-size="1400x1000">
-                                            <img src="http://i.applemix.ru/2016/03/dizajn-iphone-5se-budet-takim-zhe-kak-u-iphone-5s.jpg" />
-                                        </a>
-                                    </figure>
+                                    </c:forEach>
+                                    <%--${product.productPhotos.get(index).fotoName}--%>
+                                    <%--<c:forEach var="productPhoto" items="${product.productPhotos.get(0).fotoName}">--%>
+                                    <%--</c:forEach>--%>
+                                    <%--<figure>--%>
+                                        <%--<a href="http://img17.olx.ua/images_slandocomua/292183600_1_261x203_prodam-iphone-5s-ideal-cherkassy.jpg" data-size="1400x1000">--%>
+                                            <%--<img src="http://img17.olx.ua/images_slandocomua/292183600_1_261x203_prodam-iphone-5s-ideal-cherkassy.jpg"/>--%>
+                                        <%--</a>--%>
+                                    <%--</figure>--%>
+                                    <%--<figure>--%>
+                                        <%--<a href="http://tech-touch.ru/wp-content/uploads/2016/01/reselleryi-snizhayut-tsenu-na-iphone-5s-pered-vyihodom-iphone-5e.jpg" data-size="1400x1000">--%>
+                                            <%--<img src="http://tech-touch.ru/wp-content/uploads/2016/01/reselleryi-snizhayut-tsenu-na-iphone-5s-pered-vyihodom-iphone-5e.jpg" />--%>
+                                        <%--</a>--%>
+                                    <%--</figure>--%>
+                                    <%--<figure>--%>
+                                        <%--<a href="http://www.mobile-review.com/articles/2016/image/facts-iphone-5s-refurb/6.jpg" data-size="1400x1000">--%>
+                                            <%--<img src="http://www.mobile-review.com/articles/2016/image/facts-iphone-5s-refurb/6.jpg" />--%>
+                                        <%--</a>--%>
+                                    <%--</figure>--%>
+                                    <%--<figure>--%>
+                                        <%--<a href="http://i.applemix.ru/2016/03/dizajn-iphone-5se-budet-takim-zhe-kak-u-iphone-5s.jpg" data-size="1400x1000">--%>
+                                            <%--<img src="http://i.applemix.ru/2016/03/dizajn-iphone-5se-budet-takim-zhe-kak-u-iphone-5s.jpg" />--%>
+                                        <%--</a>--%>
+                                    <%--</figure>--%>
                                 </div>
                                 <!-- End Product Images Slider -->
 
@@ -538,20 +541,21 @@
                     </div>
                     <div class="col-sm-7">
                         <div class="product-information"><!--/product-information-->
-                            <h2>Назва Продукту</h2>
-                            <p>Web ID: 999999</p>
+                            <h2>${product.name} </h2>
+                            <p>Web ID: ${product.id}</p>
 								<span>
-									<span class="priceColor">999 ГРН</span>
+									<span class="priceColor">${product.price} ГРН</span>
 									<button type="button" class="btn btn-fefault cart writeColor">
 								    <i class="glyphicon glyphicon-pencil"></i> Написать автору
 									</button>
 								</span>
-                            <p><b>Тип товару:</b> Телефони</p>
-                            <p><b>Стан:</b> New</p>
+                            <p><b>Тип товару:</b> ${product.pidCategory.category.categoryName} ${product.pidCategory.name}</p>
+                            <p><b>Стан:</b> ${product.stanProducta}</p>
                             <hr>
-                            <p><i class="glyphicon glyphicon-user"></i><b> Автор:</b> Дмитро</p>
-                            <p><i class="glyphicon glyphicon-earphone"></i><b> Телефон:</b> 0985312955</p>
-                            <p><b> Skype:</b> dimadima4446</p>
+                            <p><i class="glyphicon glyphicon-user"></i><b> Автор:</b>${product.user.name} </p>
+                            <p><i class="glyphicon glyphicon-globe"></i><b> Местоположение:</b>${product.city.name}</p>
+                            <p><i class="glyphicon glyphicon-earphone"></i><b> Телефон:</b> ${product.telephonNamber}</p>
+                            <p><b> Skype:</b> ${product.skype}</p>
 
 
 
@@ -570,7 +574,7 @@
                         <div class="tab-pane fade active in" id="details" >
                             <div class="col-sm-12">
 
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                <p>${product.text}</p>
 
                             </div>
 

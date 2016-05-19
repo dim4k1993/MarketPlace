@@ -1,6 +1,8 @@
 package com.controller;
 
 import com.entity.Product;
+import com.entity.ProductPhotos;
+import com.repository.ProductPhotosRepository;
 import com.repository.ProductRepository;
 import com.servise.FileSaveService;
 import com.servise.PidCategoryService;
@@ -49,6 +51,7 @@ public class ProductController {
     if (principal != null){
         Product product = productRepository.findOne(Integer.parseInt(principal.getName()));
         model.addAttribute("product", product);
+        model.addAttribute("productPhotos", productPhotoService.findProductPhotosByProduct(Integer.parseInt(principal.getName())));
         return "redirect:/product_id" + principal.getName();
     }else {
         return "redirect:/";
