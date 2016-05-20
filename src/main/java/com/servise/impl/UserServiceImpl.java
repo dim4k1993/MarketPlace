@@ -7,9 +7,17 @@ import com.entity.User;
 import com.repository.CityRepository;
 import com.repository.ProductRepository;
 import com.repository.UserRepository;
+import com.servise.FileSaveService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
+import java.security.Principal;
 
 
 @Service
@@ -33,6 +41,9 @@ public class UserServiceImpl implements com.servise.UserService{
 
 	@Autowired
 	BCryptPasswordEncoder bCryptPasswordEncoder;
+
+	@Autowired
+	FileSaveService fileSaveService;
 
 
 	//	//Метод додавання юзерів
@@ -62,6 +73,27 @@ public class UserServiceImpl implements com.servise.UserService{
 	}
 
 
+
+	//додає аватарку юзеру або замінює
+	public int addPhotoAvatar(MultipartFile file, HttpServletRequest request, Principal principal ) throws IOException {
+		if( file.getBytes().length >= 52428800){
+			return 1;
+		}else {
+			String uploadRootPath  = request.getServletContext().getRealPath("resources");
+			String absolutePath = "C:\\Users\\Dimas\\Desktop\\logos\\MarketPlace\\src\\main\\webapp\\resources";
+			String fotoPath = fileSaveService.saveFile("avatarUser",principal.getName(), file, absolutePath,"avatarUser");
+			String fotoPath1 = fileSaveService.saveFile("avatarUser",principal.getName(), file, uploadRootPath,"avatarUser" );
+			savePhotoAvatarUser(userRepository.findOne(Integer.parseInt(principal.getName())), fotoPath.substring(56));
+			System.out.println(fotoPath);
+			System.out.println(fotoPath1);
+
+		}
+		return 0;
+	}
+
+
+
+
 	// виводить всіх юзерів
 		public Iterable<User> getAll(){
 		return userRepository.findAll();
@@ -71,5 +103,8 @@ public class UserServiceImpl implements com.servise.UserService{
 	public void deleteUser(String id){
 		userRepository.delete(Integer.parseInt(id));
 	}
+
+
+
 
 }

@@ -1,5 +1,10 @@
 package com.servise;
 import com.entity.User;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
+import java.security.Principal;
 
 public interface UserService {
 
@@ -13,4 +18,5 @@ public interface UserService {
 
 	  void deleteUser(String id);
 
+	  int addPhotoAvatar(MultipartFile file, HttpServletRequest request, Principal principal ) throws IOException;
 }

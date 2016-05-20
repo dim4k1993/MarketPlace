@@ -7,9 +7,9 @@
 
 .slick-slider .slick-prev, .slick-slider .slick-next {
   z-index: 100;
-  font-size: 2.5em;
-  height: 30px;
-  width: 30px;
+  font-size: 3.5em;
+  height: 70px;
+  width: 50px;
   margin-top: -20px;
   color: #B7B7B7;
   position: absolute;
@@ -60,7 +60,6 @@
 }
 .product-images .main-img-slider figure {
   margin: 0 auto;
-  padding:  2em;
 }
 .product-images .main-img-slider figure a {
     
@@ -76,7 +75,6 @@
 }
 
 .product-images .main-img-slider figure a img {
-   border: 4px double black;
   width: 100%;
   margin: 0 auto;
 }

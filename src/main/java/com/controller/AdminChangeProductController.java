@@ -9,6 +9,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.io.IOException;
+import java.security.Principal;
+
 //контроллер роботи адміністротора
 @Controller
 public class AdminChangeProductController {
@@ -28,8 +31,8 @@ public class AdminChangeProductController {
 
     //удаляє вибраний продукт в адмінці
     @RequestMapping("/adminDeleteProduct/{id}")
-    public String deleteProductAdmin (@PathVariable int id){
-        productService.deleteProduct(id);
+    public String deleteProductAdmin (@PathVariable int id, Principal principal) throws IOException {
+        productService.deleteProduct(id,principal);
         return "redirect:/adminProduct";
     }
 

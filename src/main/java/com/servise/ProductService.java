@@ -1,6 +1,8 @@
 package com.servise;
         import com.entity.Product;
         import com.entity.ProductPhotos;
+
+        import java.io.IOException;
         import java.security.Principal;
 
 
@@ -16,7 +18,7 @@ public interface ProductService {
 
      Iterable<Product> findProductByUser(int id);
 
-     String deleteProduct(int id);
+     String deleteProduct(int id ,Principal principal)  throws IOException;
 
 
 }

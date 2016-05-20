@@ -82,23 +82,16 @@ public class ProductController {
         return "allProduct";
     }
 
-    //додавання фото продукту
-    @RequestMapping(value = "/addProduct/addPhotoProduct")
-    public String addPhotoProduct(@RequestParam(value ="photoProduct")MultipartFile file, HttpServletRequest request, Principal principal ) throws IOException {
-        if( file.getBytes().length >= 52428800){
-            return "redirect:/addPhotoProduct";
-        }else {
-            String uploadRootPath  = request.getServletContext().getRealPath("resources");
-            String absolutePath = "C:\\Users\\Dimas\\Desktop\\logos\\MarketPlace\\src\\main\\webapp\\resources";
-            String fotoPath = fileSaveService.saveFileAvatarUser(principal.getName(), file, absolutePath,"productPhoto");
-            String fotoPath1 = fileSaveService.saveFileAvatarUser(principal.getName(), file, uploadRootPath,"productPhoto" );
-            productPhotoService.saveProductPhotoFromProduct(fotoPath.substring(56),productId);
-            System.out.println(fotoPath);
-            System.out.println(fotoPath1);
-        }
-        return "redirect:/product_id" + productId;
-    }
 
+
+//    @RequestMapping(value = "/addProduct/addPhotoProduct")
+//    public String addPhotoProduct(@RequestParam(value = "photoProduct") MultipartFile file, HttpServletRequest request, Principal principal) throws IOException {
+//        int rez = productPhotoService.addPhotoProduct(file,request,principal);
+//        if (rez == 1){
+//            return "Завеликий файл";
+//        }
+//        return "redirect:/productSettings_id" + productId;
+//    }
 
 
 

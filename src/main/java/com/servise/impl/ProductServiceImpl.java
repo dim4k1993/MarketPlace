@@ -7,10 +7,10 @@ import com.entity.ProductPhotos;
 import com.repository.ProductPhotosRepository;
 import com.repository.ProductRepository;
 import com.repository.UserRepository;
-import com.servise.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.security.Principal;
 
 @Service
@@ -27,11 +27,13 @@ public class ProductServiceImpl implements com.servise.ProductService{
 
 
     @Autowired
-    private ProductPhotosRepository productPhotosRepository;
+    ProductPhotosRepository productPhotosRepository;
 
     @Autowired
-    private UserRepository userRepository;
+    UserRepository userRepository;
 
+    @Autowired
+    FileDeleteServiceImpl fileDeleteServiceImpl;
 
 
     //Метод додавання продукту
@@ -73,10 +75,11 @@ public class ProductServiceImpl implements com.servise.ProductService{
     }
 
 
-    //удаляє вибраний продукт
-    public String deleteProduct(int id){
+    //удаляє вибраний продукт по id
+    public String deleteProduct(int id,Principal principal) throws IOException {
         Product product = productRepository.findOne(id);
-
+//        fileDeleteServiceImpl.deleteFile("C:\\Users\\Dimas\\Desktop\\logos\\MarketPlace\\src\\main\\webapp\\resources\\uplodateFile\\" + principal.getName() + "\\productPhoto"+product.getName());
+//        System.out.println(("C:\\Users\\Dimas\\Desktop\\logos\\MarketPlace\\src\\main\\webapp\\resources\\uplodateFile\\" + principal.getName() + "\\productPhoto"+product.getName()));
         product.setCity(null);
         product.setPidCategory(null);
         product.setUser(null);

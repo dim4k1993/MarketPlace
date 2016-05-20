@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.io.IOException;
 import java.security.Principal;
 
 import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
@@ -95,8 +96,8 @@ public class UserController {
 
 	//удаляє вибраний продукт в User
 @RequestMapping("/userDeleteProduct/{id}")
-public String deleteProductUser (@PathVariable int id){
-	productService.deleteProduct(id);
+public String deleteProductUser (@PathVariable int id,Principal principal)throws IOException {
+	productService.deleteProduct(id, principal );
 	return "redirect:/userAccount";
 }
 
