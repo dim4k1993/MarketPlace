@@ -6,6 +6,7 @@ import com.repository.ProductRepository;
 import com.repository.UserRepository;
 import com.servise.FileSaveService;
 import com.servise.ProductPhotoService;
+import com.servise.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,6 +35,11 @@ public class ProductSettingsController {
 
     @Autowired
     ProductRepository productRepository;
+
+    @Autowired
+    ProductService productService;
+
+
 
     int productId;
 
@@ -67,30 +73,16 @@ public class ProductSettingsController {
         }
     }
 
-//    //додавання фото продукту productSettings
-    @RequestMapping(value = "/productSettings/addPhotoProduct")
-    public String addPhotoProductFromProductSettings(@RequestParam(value ="photoProduct")MultipartFile file, HttpServletRequest request, Principal principal ) throws IOException {
-        if( file.getBytes().length >= 52428800){
-            return "redirect:/addPhotoProductFromProductSettings";
-        }else {
-            String uploadRootPath  = request.getServletContext().getRealPath("resources");
-            String absolutePath = "C:\\Users\\Dimas\\Desktop\\logos\\MarketPlace\\src\\main\\webapp\\resources";
-            String fotoPath = fileSaveService.saveFile("productPhoto",principal.getName(), file, absolutePath,"productPhoto");
-            fileSaveService.saveFile("productPhoto",principal.getName(), file, uploadRootPath,"productPhoto" );
-            productPhotoService.saveProductPhotoFromProduct(fotoPath.substring(56),productId);
+////    //додавання фото продукту productSettings
 
+    @RequestMapping(value = "/productSettings/addPhotoProduct")
+    public String addPhotoProduct(@RequestParam(value = "photoProduct") MultipartFile file, HttpServletRequest request, Principal principal) throws IOException {
+        int rez = productPhotoService.addPhotoProduct(file,request,principal,productId);
+        if (rez == 1){
+            return "Завеликий файл";
         }
         return "redirect:/productSettings_id" + productId;
     }
-
-//    @RequestMapping(value = "/productSettings/addPhotoProduct")
-//    public String addPhotoProduct(@RequestParam(value = "photoProduct") MultipartFile file, HttpServletRequest request, Principal principal) throws IOException {
-//        int rez = productPhotoService.addPhotoProduct(file,request,principal);
-//        if (rez == 1){
-//            return "Завеликий файл";
-//        }
-//        return "redirect:/productSettings_id" + productId;
-//    }
 
 
 }

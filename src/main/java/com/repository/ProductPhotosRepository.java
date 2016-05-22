@@ -11,7 +11,8 @@ public interface ProductPhotosRepository extends CrudRepository<ProductPhotos, I
     @Query(value = "select a from ProductPhotos a where (a.product LIKE  concat(:productPhoto))")
     Iterable<ProductPhotos> getAllProductPhotoFromProduct(@Param("productPhoto") int productPhoto);
 
+
 //    @Query(value = "select a from ProductPhotos a where (a.fotoName like concat(:fotoName)) and (a.product_id like concat(:productPhoto))")
-//    ProductPhotos getDefaultFoto (@Param("fotoName") String photoName, @Param("productPhoto") int productPhoto);
+//    ProductPhotos getDefaultProductFoto (@Param("fotoName") String photoName, @Param("productPhoto") int productPhoto);
 
 }

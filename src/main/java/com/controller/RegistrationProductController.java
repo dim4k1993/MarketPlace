@@ -98,13 +98,15 @@ public class RegistrationProductController {
 
 
     //    @RequestMapping(value = "/addProduct/addPhotoProduct")
+//    @RequestMapping(value = "/productSettings/addPhotoProduct")
 //    public String addPhotoProduct(@RequestParam(value = "photoProduct") MultipartFile file, HttpServletRequest request, Principal principal) throws IOException {
-//        int rez = productPhotoService.addPhotoProduct(file,request,principal);
+//        int rez = productPhotoService.addPhotoProduct(file,request,principal,productId);
 //        if (rez == 1){
 //            return "Завеликий файл";
 //        }
 //        return "redirect:/productSettings_id" + productId;
 //    }
+
 
 }
 

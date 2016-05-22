@@ -16,5 +16,5 @@ public interface ProductPhotoService {
 
      Iterable<ProductPhotos> getAll ();
 
-   // int addPhotoProduct(@RequestParam(value ="photoProduct")MultipartFile file, HttpServletRequest request, Principal principal ) throws IOException;
+    int addPhotoProduct(@RequestParam(value ="photoProduct")MultipartFile file, HttpServletRequest request, Principal principal, int productId ) throws IOException;
 }

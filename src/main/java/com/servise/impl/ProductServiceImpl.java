@@ -69,6 +69,10 @@ public class ProductServiceImpl implements com.servise.ProductService{
         return productRepository.findOne(id);
     }
 
+    public String getNameProduct(int id){
+        return productRepository.findOne(id).getName();
+    }
+
     //виводть продукт по id user
     public Iterable<Product> findProductByUser(int id){
         return productRepository.findProductByUserId(id);

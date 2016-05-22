@@ -20,5 +20,6 @@ public interface ProductService {
 
      String deleteProduct(int id ,Principal principal)  throws IOException;
 
+     String getNameProduct(int id);
 
 }

@@ -41,26 +41,16 @@ public class UserSettingsController {
     }
 
 
-    //додає аватарку юзеру або замінює
-    @RequestMapping(value = "/userSettings/addPhoto")
-    public String addPhotoAvatar(@RequestParam (value ="photoAvatar")MultipartFile file,HttpServletRequest request,Principal principal ) throws IOException {
-        if( file.getBytes().length >= 52428800){
-            return "redirect:/addPhoto";
-        }else {
-            String uploadRootPath  = request.getServletContext().getRealPath("resources");
-            String absolutePath = "C:\\Users\\Dimas\\Desktop\\logos\\MarketPlace\\src\\main\\webapp\\resources";
-            String fotoPath = fileSaveService.saveFileAvatarUser(principal.getName(), file, absolutePath,"avatarUser");
-            String fotoPath1 = fileSaveService.saveFileAvatarUser(principal.getName(), file, uploadRootPath,"avatarUser" );
-            userService.savePhotoAvatarUser(userRepository.findOne(Integer.parseInt(principal.getName())), fotoPath.substring(56));
-            System.out.println(fotoPath);
-            System.out.println(fotoPath1);
 
+
+    @RequestMapping(value = "/userSettings/addPhoto")
+    public String addPhotoAvatar(@RequestParam(value = "photoAvatar") MultipartFile file, HttpServletRequest request, Principal principal) throws IOException {
+        int rez = userService.addPhotoAvatar(file,request,principal);
+        if (rez == 1){
+            return "Завеликий файл";
         }
         return "redirect:/userSettings";
     }
-
-
-
 
 
 }
