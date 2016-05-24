@@ -32,7 +32,7 @@
 
 .wrapper {
   max-width: 430px;
-  width: 90%;
+    width: 89%;
   margin: 0 auto;
  
 }
@@ -62,7 +62,9 @@
   margin: 0 auto;
 }
 .product-images .main-img-slider figure a {
-    
+    display: table-cell;
+    vertical-align: middle;
+    height: 300px;
   cursor: pointer;
   cursor: -webkit-zoom-in;
   cursor: -moz-zoom-in;
@@ -71,7 +73,8 @@
 
 .photo-barder{
     background: rgba(255, 255, 255, 0.26);
-   border: 4px double black;
+    border: 4px solid #dddddd;
+    border-radius: 15px;
 }
 
 .product-images .main-img-slider figure a img {

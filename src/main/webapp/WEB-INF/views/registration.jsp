@@ -130,6 +130,9 @@
 
 <script src="/resources/fileForMySyte/js/bootstrap.min.js"></script>
 <script src="/resources/fileForMySyte/js/jquery-2.2.3.min.js"></script>
+<script src="/resources/fileForMySyte/js/register.js"></script>
+<script src="/resources/fileForMySyte/js/register.js"></script>
+
 </body>
 
 </html>
