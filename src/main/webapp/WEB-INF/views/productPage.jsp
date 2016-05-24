@@ -20,6 +20,10 @@
     <link href="/resources/fileForMySyte/css/cssProduct/main.css" rel="stylesheet">
     <link href="/resources/fileForMySyte/css/cssProduct/responsive.css" rel="stylesheet">
 
+    <script src="/resources/fileForMySyte/js/jsProduct/jquery.js"></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+
 </head>
 <body>
 <%--<security:authorize--%>
@@ -421,13 +425,12 @@
                                 <div class="main-img-slider photo-barder">
                                     <c:forEach var="productPhoto" varStatus="vs" items="${product.productPhotos}">
                                     <figure>
-                                            <a href="${product.productPhotos.get(vs.index).fotoName}" data-size="1400x1000">
-                                                <img src="${product.productPhotos.get(vs.index).fotoName}"/>
+                                            <a href="${product.productPhotos.get(vs.index).fotoName}" class="testA " data-size="">
+                                                <img class="testImg" id="imgId" src="${product.productPhotos.get(vs.index).fotoName}"/>
                                             </a>
                                     </figure>
                                     </c:forEach>
                                 </div>
-
 
                                 <ul class="thumb-nav ">
                                 <c:forEach var="productPhoto" varStatus="vsPid" items="${product.productPhotos}">
@@ -682,14 +685,23 @@
 
 </body>
 
+<%--<script>--%>
+    <%--$(document).ready(function () {--%>
+        <%--$('.testImg').click(function () {--%>
+            <%--var img = document.getElementById('imgId').getAttribute('src');--%>
+            <%--var imgO = new Image();--%>
+            <%--imgO.src = "http://localhost:8080/resources/fileForMySyte/default/no-image.png";--%>
+            <%--var size = imgO.width+"x"+imgO.height;--%>
+            <%--alert(size);--%>
+            <%--$('.testA').attr('data-size',size);--%>
+        <%--})--%>
+    <%--});--%>
+<%--</script>--%>
 
 
-<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='http://kenwheeler.github.io/slick/slick/slick.js'></script>
 
-
 <script src="/resources/fileForMySyte/js/jsProduct/index.js"></script>
-<script src="/resources/fileForMySyte/js/jsProduct/jquery.js"></script>
 <script src="/resources/fileForMySyte/js/jsProduct/bootstrap.min.js"></script>
 <script src="/resources/fileForMySyte/js/jsProduct/price-range.js"></script>
 <script src="/resources/fileForMySyte/js/jsProduct/jquery.prettyPhoto.js"></script>

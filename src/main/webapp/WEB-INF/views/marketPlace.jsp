@@ -12,6 +12,9 @@
 </head>
 <link href="/resources/fileForMySyte/css/bootstrap.min.css" rel="stylesheet">
 <link href="/resources/fileForMySyte/css/carusel.marketPlace-style.css" rel="stylesheet">
+
+<script src="/resources/fileForMySyte/js/jquery.js"></script>
+
 <body>
 <div class="container">
 	<div class="row">
@@ -71,7 +74,6 @@
 
 </body>
 
-<script src="/resources/fileForMySyte/js/jquery.js"></script>
 <script src="/resources/fileForMySyte/js/bootstrap.min.js"></script>
 <script src="/resources/fileForMySyte/js/Carusel.js"></script>
 

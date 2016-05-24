@@ -17,6 +17,9 @@
     <link href="/resources/fileForMySyte/css/userAccount-style.css" rel="stylesheet">
     <link href="/resources/fileForMySyte/css/productUser-style.css" rel="stylesheet">
 
+    <script src="/resources/fileForMySyte/js/jquery.js"></script>
+
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Insert title here</title>
 </head>
@@ -190,7 +193,6 @@
 
 
 </body>
-<script src="/resources/fileForMySyte/js/jquery.js"></script>
 <script src="/resources/fileForMySyte/js/bootstrap.min.js"></script>
 
 

@@ -11,6 +11,9 @@
     </style>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Insert title here</title>
+
+    <script src="/resources/fileForMySyte/js/jquery.js"></script>
+
 </head>
 <body>
 <form method="post" action="/allProduct${namePidCategory}">
@@ -25,7 +28,6 @@
 
 </form>
 </body>
-<script src="/resources/fileForMySyte/js/jquery.js"></script>
 <script src="/resources/fileForMySyte/js/bootstrap.min.js"></script>
 
 

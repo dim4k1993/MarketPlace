@@ -11,6 +11,9 @@
     <script src="/resources/fileForMySyte/js/jquery-2.2.3.min.js"></script>
     <link href="/resources/fileForMySyte/css/addProduct-style.css" rel="stylesheet">
     <link href="/resources/fileForMySyte/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="/resources/fileForMySyte/js/jquery.js"></script>
+
 </head>
 <body>
 <div class="container" style="margin-top: 100px">
@@ -421,7 +424,6 @@
 
 </body>
 
-<script src="/resources/fileForMySyte/js/jquery.js"></script>
 <script src="/resources/fileForMySyte/js/bootstrap.min.js"></script>
 <script src="/resources/fileForMySyte/js/addProduct.js"></script>
 
