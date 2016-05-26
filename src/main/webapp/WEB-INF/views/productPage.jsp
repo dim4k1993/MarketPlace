@@ -425,7 +425,7 @@
                                 <div class="main-img-slider photo-barder">
                                     <c:forEach var="productPhoto" varStatus="vs" items="${product.productPhotos}">
                                     <figure>
-                                            <a href="${product.productPhotos.get(vs.index).fotoName}" class="testA " data-size="">
+                                            <a href="${product.productPhotos.get(vs.index).fotoName}" class="testA " data-size="1200x600">
                                                 <img class="testImg" id="imgId" src="${product.productPhotos.get(vs.index).fotoName}"/>
                                             </a>
                                     </figure>
