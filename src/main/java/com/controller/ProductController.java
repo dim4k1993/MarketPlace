@@ -84,17 +84,6 @@ public class ProductController {
 
 
 
-//    @RequestMapping(value = "/addProduct/addPhotoProduct")
-//    public String addPhotoProduct(@RequestParam(value = "photoProduct") MultipartFile file, HttpServletRequest request, Principal principal) throws IOException {
-//        int rez = productPhotoService.addPhotoProduct(file,request,principal);
-//        if (rez == 1){
-//            return "Завеликий файл";
-//        }
-//        return "redirect:/productSettings_id" + productId;
-//    }
-
-
-
 
 
 }

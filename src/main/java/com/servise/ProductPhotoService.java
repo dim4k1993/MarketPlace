@@ -10,11 +10,12 @@ import java.security.Principal;
 
 public interface ProductPhotoService {
 
-      void  saveProductPhotoFromProduct(String productPhotosFoto, int id);
+//      void  saveProductPhotoFromProduct(String productPhotosFoto, int id);
 
+    void  saveProductPhotoFromProduct(String productPhotos, String ProductName, Principal principal);
      Iterable<ProductPhotos> findProductPhotosByProduct(int id);
 
      Iterable<ProductPhotos> getAll ();
 
-    int addPhotoProduct(@RequestParam(value ="photoProduct")MultipartFile file, HttpServletRequest request, Principal principal, int productId ) throws IOException;
+     int addPhotoProduct(MultipartFile file, HttpServletRequest request, Principal principal, int id) throws IOException;
 }
