@@ -30,16 +30,6 @@ public class ProductPhotoServiceImpl implements com.servise.ProductPhotoService{
     @Autowired
     FileSaveService fileSaveService;
 
-    //Метод додавання  фото до продукту
-//    public  void  saveProductPhotoFromProduct(String productPhotosFoto, int id){
-//
-//        ProductPhotos productPhotos = new ProductPhotos();
-//        Product p = productService.getProductById(id);
-//        productPhotos.setFotoName(productPhotosFoto);
-//        productPhotos.setProduct(p);
-//        productPhotosRepository.save(productPhotos);
-//    }
-//
 
     //Метод додавання  фото до продукту
     public  void  saveProductPhotoFromProduct(String productPhotos, String ProductName, Principal principal){
