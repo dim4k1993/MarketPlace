@@ -7,6 +7,7 @@ import com.entity.ProductPhotos;
 import com.repository.ProductPhotosRepository;
 import com.repository.ProductRepository;
 import com.repository.UserRepository;
+import com.servise.FileDeleteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,7 +34,7 @@ public class ProductServiceImpl implements com.servise.ProductService{
     UserRepository userRepository;
 
     @Autowired
-    FileDeleteServiceImpl fileDeleteServiceImpl;
+    FileDeleteService fileDeleteService;
 
 
     //Метод додавання продукту
@@ -80,16 +81,16 @@ public class ProductServiceImpl implements com.servise.ProductService{
 
 
     //удаляє вибраний продукт по id
-    public String deleteProduct(int id,Principal principal) throws IOException {
+    public void deleteProduct(int id,Principal principal) throws IOException {
         Product product = productRepository.findOne(id);
-//        fileDeleteServiceImpl.deleteFile("C:\\Users\\Dimas\\Desktop\\logos\\MarketPlace\\src\\main\\webapp\\resources\\uplodateFile\\" + principal.getName() + "\\productPhoto"+product.getName());
-//        System.out.println(("C:\\Users\\Dimas\\Desktop\\logos\\MarketPlace\\src\\main\\webapp\\resources\\uplodateFile\\" + principal.getName() + "\\productPhoto"+product.getName()));
+        fileDeleteService.deleteFile("C:\\Users\\Dimas\\Desktop\\logos\\MarketPlace\\src\\main\\webapp\\resources\\uplodateFile\\" + principal.getName() + "\\productPhoto");
+        fileDeleteService.deleteFile("C:\\Program Files\\apache-tomcat-8.0.33\\webapps\\ROOT\\resources\\uplodateFile\\" + principal.getName() + "\\productPhoto");
+        fileDeleteService.deleteFile("  C:\\Users\\Dimas\\Desktop\\logos\\MarketPlace\\target\\projektMVC-0.0.1-SNAPSHOT\\resources\\uplodateFile\\" + principal.getName() + "\\productPhoto");
         product.setCity(null);
         product.setPidCategory(null);
         product.setUser(null);
         productRepository.delete(product);
         productRepository.delete(product.getId());
-        return "redirect:/";
     }
 
 

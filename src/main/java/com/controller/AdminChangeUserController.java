@@ -7,6 +7,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.io.IOException;
+import java.security.Principal;
+
 //контроллер роботи адміністротора
 @Controller
 public class AdminChangeUserController {
@@ -21,7 +24,7 @@ public class AdminChangeUserController {
     }
     // удаляє вибраного юзера в адмінці
     @RequestMapping("/adminDeleteUser/{id}")
-    public String deleteUserPage (@PathVariable String id){
+    public String deleteUserPage (@PathVariable int id) throws IOException {
         userService.deleteUser(id);
         return "redirect:/adminUser";
     }
