@@ -19,9 +19,10 @@
     <link href="/resources/fileForMySyte/css/cssProduct/animate.css" rel="stylesheet">
     <link href="/resources/fileForMySyte/css/cssProduct/main.css" rel="stylesheet">
     <link href="/resources/fileForMySyte/css/cssProduct/responsive.css" rel="stylesheet">
+    <link href="/resources/fileForMySyte/css/cssProduct/comments.css" rel="stylesheet">
 
     <script src="/resources/fileForMySyte/js/jsProduct/jquery.js"></script>
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
 
 
 </head>
@@ -552,30 +553,73 @@
                                 <p>${product.text}</p>
 
                             </div>
-
                         </div>
-
-
                         <div class="tab-pane fade " id="reviews" >
                             <div class="col-sm-12">
-                                <ul>
-                                    <li><a href=""><i class="glyphicon glyphicon-user colorimage"></i>Дмитро</a></li>
-                                    <li><a href=""><i class="glyphicon glyphicon-time colorimage"></i>12:41 PM</a></li>
-                                    <li><a href=""><i class="glyphicon glyphicon-calendar colorimage"></i>31 DEC 2014</a></li>
-                                </ul>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                <p><b>Write Your Review</b></p>
+                        <div class="comments-app" ng-app="commentsApp" ng-controller="CommentsController as cmntCtrl">
+                            <!-- From -->
+                            <div class="comment-form">
 
-                                <form action="#">
-										<span>
-											<input type="text" placeholder="Your Name"/>
-											<input type="email" placeholder="Email Address"/>
-										</span>
-                                    <textarea name="" ></textarea>
-                                    <button type="button" class="btn btn-default pull-right">
-                                        Отправить
-                                    </button>
+                                <form class="form" name="form" ng-submit="form.$valid && cmntCtrl.addComment()" novalidate>
+                                    <div class="form-row">
+                                        <textarea class="input-Comments"
+                                            ng-model="cmntCtrl.comment.text"
+                                            placeholder="Добавить коментарий..."
+                                            required>
+                                        </textarea>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <input
+                                                class="input-Comments"
+                                                ng-class="{ disabled: cmntCtrl.comment.anonymous }"
+                                                ng-disabled="cmntCtrl.comment.anonymous"
+                                                ng-model="cmntCtrl.comment.author"
+                                                ng-required="!cmntCtrl.comment.anonymous"
+                                                placeholder="Введите Email"
+                                                type="email">
+                                    </div>
+
+                                    <div class="form-row text-right">
+                                        <input
+                                                id="comment-anonymous"
+                                                ng-change="cmntCtrl.anonymousChanged()"
+                                                ng-model="cmntCtrl.comment.anonymous"
+                                                type="checkbox">
+                                        <label for="comment-anonymous">Аноним</label>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <input class="addcomments" type="submit" value="Добавить">
+                                    </div>
                                 </form>
+                            </div>
+
+                            <!-- Comments List -->
+                            <div class="comments">
+                                <!-- Comment -->
+                                <div class="comment" ng-repeat="comment in cmntCtrl.comments | orderBy: '-date'">
+                                    <!-- Comment Avatar -->
+                                    <div class="comment-avatar">
+                                        <img ng-src="{{ comment.avatarSrc }}">
+                                    </div>
+
+                                    <!-- Comment Box -->
+                                    <div class="comment-box">
+                                        <div class="comment-text">{{ comment.text }}</div>
+                                        <div class="comment-footer">
+                                            <div class="comment-info">
+            <span class="comment-author">
+              <em ng-if="comment.anonymous">Аноним</em>
+              <a ng-if="!comment.anonymous" href="{{ comment.author }}">{{ comment.author }}</a>
+            </span>
+                                                <span class="comment-date">{{ comment.date | date: 'medium' }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                             </div>
                         </div>
 
@@ -700,12 +744,14 @@
 
 
 <script src='http://kenwheeler.github.io/slick/slick/slick.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js'></script>
 
 <script src="/resources/fileForMySyte/js/jsProduct/index.js"></script>
 <script src="/resources/fileForMySyte/js/jsProduct/bootstrap.min.js"></script>
 <script src="/resources/fileForMySyte/js/jsProduct/price-range.js"></script>
 <script src="/resources/fileForMySyte/js/jsProduct/jquery.prettyPhoto.js"></script>
 <script src="/resources/fileForMySyte/js/jsProduct/main.js"></script>
+<script src="/resources/fileForMySyte/js/jsProduct/comments.js"></script>
 
 
 </html>

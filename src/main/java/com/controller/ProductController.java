@@ -2,8 +2,10 @@ package com.controller;
 
 import com.entity.Product;
 import com.entity.ProductPhotos;
+import com.entity.User;
 import com.repository.ProductPhotosRepository;
 import com.repository.ProductRepository;
+import com.repository.UserRepository;
 import com.servise.FileSaveService;
 import com.servise.PidCategoryService;
 import com.servise.ProductPhotoService;
@@ -32,6 +34,9 @@ public class ProductController {
     ProductRepository productRepository;
 
     @Autowired
+    UserRepository userRepository;
+
+    @Autowired
     PidCategoryService pidCategoryService;
 
     @Autowired
@@ -49,8 +54,7 @@ public class ProductController {
     @RequestMapping("/productPage")
     public String ShowProductPage(Model model, Principal principal) {
     if (principal != null){
-//        Product product = productRepository.findOne(Integer.parseInt(principal.getName()));
-//        model.addAttribute("product", product);
+
         return "redirect:/product_id" + principal.getName();
     }else {
         return "redirect:/";
@@ -77,7 +81,6 @@ public class ProductController {
     @RequestMapping ("/allProduct{id}")
     public String ShowProductFromIdPidCategory(@PathVariable String id,Model model){
         model.addAttribute("namePidCategory", id);
-        //String id = Integer.toString(pidCategoryService.findPidCategoryByNamePidCategory(name).getId());
         model.addAttribute("products", productService.findProductByPidCategory(Integer.parseInt(id)));
         return "allProduct";
     }

@@ -15,7 +15,7 @@ form:after {
   clear: both;
 }
 
-input {
+.Search {
   height: 60px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.50rem;
@@ -31,7 +31,7 @@ input {
   transition: border .2s ease-out;
 }
 
-input:focus {
+.Search:focus {
   border-color: #40c781;
   outline: 0;
   transition: border .3s ease-in;

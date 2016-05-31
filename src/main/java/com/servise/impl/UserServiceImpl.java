@@ -108,7 +108,6 @@ public class UserServiceImpl implements com.servise.UserService{
 
 	// удаляє вибраного юзера
 	public void deleteUser(int id)throws IOException{
-
 		fileDeleteService.deleteFile("C:\\Users\\Dimas\\Desktop\\logos\\MarketPlace\\src\\main\\webapp\\resources\\uplodateFile\\" + id);
 		fileDeleteService.deleteFile("C:\\Program Files\\apache-tomcat-8.0.33\\webapps\\ROOT\\resources\\uplodateFile\\" + id);
 		fileDeleteService.deleteFile("  C:\\Users\\Dimas\\Desktop\\logos\\MarketPlace\\target\\projektMVC-0.0.1-SNAPSHOT\\resources\\uplodateFile\\" + id);
