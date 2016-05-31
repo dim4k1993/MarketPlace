@@ -316,10 +316,6 @@
 </script>
 
 
-
-
-
-
 <%--<security:authorize access="isAuthenticated() and principal.username=='${user.id}'">--%>
     <%--&lt;%&ndash;Це буде бачити користувач який є власником сторінки&ndash;%&gt;--%>
 <%--</security:authorize>--%>

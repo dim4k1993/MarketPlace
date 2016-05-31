@@ -79,6 +79,7 @@ public class UserController {
 
 				return"redirect:/userAccountNoProduct";
 			}
+
 			model.addAttribute("idUser", id);
 			model.addAttribute("products", productService.getAll());
 			model.addAttribute("userProducts", productService.findProductByUser(id));

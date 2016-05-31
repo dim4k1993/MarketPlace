@@ -73,7 +73,7 @@ public class ProductSettingsController {
         }
     }
 
-////    //додавання фото продукту productSettings
+   //додавання фото продукту productSettings
 
     @RequestMapping(value = "/productSettings/addPhotoProduct")
     public String addPhotoProduct(@RequestParam(value = "photoProduct") MultipartFile file, HttpServletRequest request, Principal principal) throws IOException {
