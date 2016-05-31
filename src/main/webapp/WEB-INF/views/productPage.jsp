@@ -594,7 +594,6 @@
                                     </div>
                                 </form>
                             </div>
-
                             <!-- Comments List -->
                             <div class="comments">
                                 <!-- Comment -->
