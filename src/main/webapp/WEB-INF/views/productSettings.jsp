@@ -44,6 +44,10 @@
     <td><input type="submit" value="OK"></td>
 </sf:form>
 
+
+
+
+
 </security:authorize>
 
     <security:authorize access="isAuthenticated() and hasRole('ROLE_ADMIN')">

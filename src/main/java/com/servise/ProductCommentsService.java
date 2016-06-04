@@ -1,10 +1,12 @@
-//package com.servise;
-//
-//
-//import java.security.Principal;
-//
-//public interface ProductCommentsService {
-//
-//    void  addCommentsFromProduct(String Comments, String EmailUser, String ProductName, Principal principal);
-//
-//}
+package com.servise;
+
+
+import com.entity.Messenger;
+
+import java.security.Principal;
+
+public interface ProductCommentsService {
+
+    void addCommentsFromProduct(Messenger messenger, int idProduct, Principal principal);
+
+}

@@ -26,4 +26,5 @@ public interface ProductRepository extends CrudRepository<Product, Integer> {
     @Query(value = "select a from Product a where (a.name LIKE concat(:name)) and (a.user like concat(:userId))")
     Product findProductByProductNameAndPrincipal(@Param("name") String name,@Param("userId") int userId);
 
+
 }

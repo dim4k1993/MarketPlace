@@ -49,6 +49,9 @@
 <%--</security:authorize>--%>
 
 
+
+
+
 <hr>
 
 <section>
@@ -535,10 +538,15 @@
 
 
 
+
+
+
+
+
+
                         </div><!--/product-information-->
                     </div>
                 </div><!--/product-details-->
-
                 <div class="category-tab shop-details-tab "><!--category-tab-->
                     <div class="col-sm-12">
                         <ul class="nav nav-tabs ">
@@ -559,25 +567,21 @@
                         <div class="comments-app" ng-app="commentsApp" ng-controller="CommentsController as cmntCtrl">
                             <!-- From -->
                             <div class="comment-form">
-
+                                <sf:form method="POST" class="form" id="contact_form" modelAttribute="messenger"  action="/addComments=comment+add?${_csrf.parameterName}=${_csrf.token}">
+                                    <sf:input path="id" id="id" type="hidden"/>
                                 <form class="form" name="form" ng-submit="form.$valid && cmntCtrl.addComment()" novalidate>
                                     <div class="form-row">
-                                        <textarea class="input-Comments"
-                                            ng-model="cmntCtrl.comment.text"
-                                            placeholder="Добавить коментарий..."
-                                            required>
-                                        </textarea>
+                                        <sf:textarea path="Messenger" class="input-Comments" ng-model="cmntCtrl.comment.text" placeholder="Добавить коментарий..."/>
+                                        <sf:errors path="Messenger"/>
                                     </div>
 
                                     <div class="form-row">
-                                        <input
-                                                class="input-Comments"
-                                                ng-class="{ disabled: cmntCtrl.comment.anonymous }"
-                                                ng-disabled="cmntCtrl.comment.anonymous"
-                                                ng-model="cmntCtrl.comment.author"
-                                                ng-required="!cmntCtrl.comment.anonymous"
-                                                placeholder="Введите Email"
-                                                type="email">
+                                        <sf:input path="UserEmailSendCommentsForProduct" class="input-Comments"
+                                                  ng-class="{ disabled: cmntCtrl.comment.anonymous }"
+                                                  ng-disabled="cmntCtrl.comment.anonymous"
+                                                  ng-model="cmntCtrl.comment.author"
+                                                  ng-required="!cmntCtrl.comment.anonymous"
+                                                  placeholder="Введите Email" type="email"/>
                                     </div>
 
                                     <div class="form-row text-right">
@@ -593,7 +597,9 @@
                                         <input class="addcomments" type="submit" value="Добавить">
                                     </div>
                                 </form>
+                                </sf:form>
                             </div>
+
                             <!-- Comments List -->
                             <div class="comments">
                                 <!-- Comment -->
@@ -720,6 +726,18 @@
         </div>
     </div>
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
