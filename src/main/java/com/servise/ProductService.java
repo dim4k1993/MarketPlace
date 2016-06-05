@@ -18,7 +18,7 @@ public interface ProductService {
 
      Iterable<Product> findProductByUser(int id);
 
-     String deleteProduct(int id ,Principal principal)  throws IOException;
+     void deleteProduct(int id ,Principal principal)  throws IOException;
 
      String getNameProduct(int id);
 

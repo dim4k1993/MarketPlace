@@ -842,17 +842,18 @@ h2.title {
 }
 
 #reviews textarea {
-  background: #F0F0E9;
+  margin-left: -120px;
+  background: #F4F4F4;
   border: medium none;
   color: #A6A6A1;
   height: 195px;
   margin-bottom: 25px;
-  margin-top: 15px;
+  margin-top: -45px;
   outline: medium none;
   padding-left: 10px;
   padding-top: 15px;
   resize: none;
-  width: 99.5%;
+  width: 130%;
 }
 
 #reviews button {

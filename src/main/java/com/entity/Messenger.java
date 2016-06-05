@@ -9,6 +9,7 @@ public class Messenger {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String Messenger;
+    private  String UserEmailSendCommentsForProduct;
 
     @ManyToOne
     @JoinColumn
@@ -18,29 +19,29 @@ public class Messenger {
     @JoinColumn
     private User userReceivedMessenger;
 
-    @ManyToOne
-    @JoinColumn
-    private Product productSentMessenger;
 
     @ManyToOne
     @JoinColumn
-    private Product productReceivedMessenger;
+    private Product productReceivedComments;
 
-    public Product getProductSentMessenger() {
-        return productSentMessenger;
+
+    public Product getProductReceivedComments() {
+        return productReceivedComments;
     }
 
-    public void setProductSentMessenger(Product productSentMessenger) {
-        this.productSentMessenger = productSentMessenger;
+    public void setProductReceivedComments(Product productReceivedComments) {
+        this.productReceivedComments = productReceivedComments;
     }
 
-    public Product getProductReceivedMessenger() {
-        return productReceivedMessenger;
+
+    public String getUserEmailSendCommentsForProduct() {
+        return UserEmailSendCommentsForProduct;
     }
 
-    public void setProductReceivedMessenger(Product productReceivedMessenger) {
-        this.productReceivedMessenger = productReceivedMessenger;
+    public void setUserEmailSendCommentsForProduct(String userEmailSendCommentsForProduct) {
+        UserEmailSendCommentsForProduct = userEmailSendCommentsForProduct;
     }
+
 
     public int getId() {
         return id;
@@ -73,4 +74,5 @@ public class Messenger {
     public void setUserReceivedMessenger(User userReceivedMessenger) {
         this.userReceivedMessenger = userReceivedMessenger;
     }
+
 }

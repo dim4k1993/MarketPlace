@@ -7,6 +7,7 @@ import com.entity.User;
 import com.repository.CityRepository;
 import com.repository.ProductRepository;
 import com.repository.UserRepository;
+import com.servise.FileDeleteService;
 import com.servise.FileSaveService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -18,6 +19,8 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.security.Principal;
+
+import static java.lang.Integer.parseInt;
 
 
 @Service
@@ -44,6 +47,10 @@ public class UserServiceImpl implements com.servise.UserService{
 
 	@Autowired
 	FileSaveService fileSaveService;
+
+	@Autowired
+	FileDeleteService fileDeleteService;
+
 
 
 	//	//Метод додавання юзерів
@@ -83,7 +90,7 @@ public class UserServiceImpl implements com.servise.UserService{
 			String absolutePath = "C:\\Users\\Dimas\\Desktop\\logos\\MarketPlace\\src\\main\\webapp\\resources";
 			String fotoPath = fileSaveService.saveFile("avatarUser",principal.getName(), file, absolutePath,"avatarUser");
 			String fotoPath1 = fileSaveService.saveFile("avatarUser",principal.getName(), file, uploadRootPath,"avatarUser" );
-			savePhotoAvatarUser(userRepository.findOne(Integer.parseInt(principal.getName())), fotoPath.substring(56));
+			savePhotoAvatarUser(userRepository.findOne(parseInt(principal.getName())), fotoPath.substring(56));
 			System.out.println(fotoPath);
 			System.out.println(fotoPath1);
 
@@ -100,8 +107,11 @@ public class UserServiceImpl implements com.servise.UserService{
 	}
 
 	// удаляє вибраного юзера
-	public void deleteUser(String id){
-		userRepository.delete(Integer.parseInt(id));
+	public void deleteUser(int id)throws IOException{
+		fileDeleteService.deleteFile("C:\\Users\\Dimas\\Desktop\\logos\\MarketPlace\\src\\main\\webapp\\resources\\uplodateFile\\" + id);
+		fileDeleteService.deleteFile("C:\\Program Files\\apache-tomcat-8.0.33\\webapps\\ROOT\\resources\\uplodateFile\\" + id);
+		fileDeleteService.deleteFile("  C:\\Users\\Dimas\\Desktop\\logos\\MarketPlace\\target\\projektMVC-0.0.1-SNAPSHOT\\resources\\uplodateFile\\" + id);
+		userRepository.delete(id);
 	}
 
 

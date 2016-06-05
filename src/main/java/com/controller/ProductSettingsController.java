@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -44,7 +45,7 @@ public class ProductSettingsController {
     int productId;
 
     //відображення сторінки продукта
-    @RequestMapping("/productSettings")
+    @RequestMapping(value = "/productSettings")
     public String ShowSettingsPageProduct(Model model, Principal principal) {
         if (principal != null){
             User user = userRepository.findOne(Integer.parseInt(principal.getName()));
@@ -58,7 +59,7 @@ public class ProductSettingsController {
     }
 
 
-    @RequestMapping("/productSettings_id{id}")
+    @RequestMapping(value = "/productSettings_id{id}")
     public String ShowVisitProduct1 (Model model,Principal principal,@PathVariable int id) {
         Product product = productRepository.findOne(id);
         User user = userRepository.findOne(Integer.parseInt(principal.getName()));
@@ -73,7 +74,7 @@ public class ProductSettingsController {
         }
     }
 
-////    //додавання фото продукту productSettings
+   //додавання фото продукту productSettings
 
     @RequestMapping(value = "/productSettings/addPhotoProduct")
     public String addPhotoProduct(@RequestParam(value = "photoProduct") MultipartFile file, HttpServletRequest request, Principal principal) throws IOException {

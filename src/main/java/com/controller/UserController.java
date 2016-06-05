@@ -1,30 +1,22 @@
 package com.controller;
 
-import com.entity.Product;
-import com.entity.ProductPhotos;
-import com.entity.Role;
 import com.entity.User;
-import com.repository.ProductPhotosRepository;
 import com.repository.ProductRepository;
 import com.repository.UserRepository;
 import com.servise.ProductPhotoService;
 import com.servise.ProductService;
 import com.servise.UserService;
-import org.hibernate.Hibernate;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.io.IOException;
 import java.security.Principal;
 
-import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 @Controller
 public class UserController {
@@ -79,6 +71,7 @@ public class UserController {
 
 				return"redirect:/userAccountNoProduct";
 			}
+
 			model.addAttribute("idUser", id);
 			model.addAttribute("products", productService.getAll());
 			model.addAttribute("userProducts", productService.findProductByUser(id));

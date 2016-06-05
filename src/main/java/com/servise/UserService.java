@@ -16,7 +16,7 @@ public interface UserService {
 
 	  Iterable<User> getAll();
 
-	  void deleteUser(String id);
+	  void deleteUser(int id) throws IOException;
 
 	  int addPhotoAvatar(MultipartFile file, HttpServletRequest request, Principal principal ) throws IOException;
 }

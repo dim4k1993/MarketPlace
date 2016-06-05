@@ -22,20 +22,33 @@ public class ProductPhotoServiceImpl implements com.servise.ProductPhotoService{
     ProductPhotosRepository productPhotosRepository;
 
     @Autowired
+    ProductRepository productRepository;
+
+    @Autowired
     ProductServiceImpl productService;
 
     @Autowired
     FileSaveService fileSaveService;
 
-    //Метод додавання  фото до продукту
-    public  void  saveProductPhotoFromProduct(String productPhotosFoto, int id){
 
-        ProductPhotos productPhotos = new ProductPhotos();
-        Product p = productService.getProductById(id);
-        productPhotos.setFotoName(productPhotosFoto);
-        productPhotos.setProduct(p);
-        productPhotosRepository.save(productPhotos);
+    //Метод додавання  фото до продукту
+    public  void  saveProductPhotoFromProduct(String productPhotos, String ProductName, Principal principal){
+        Product product = productRepository.findProductByProductNameAndPrincipal(ProductName,Integer.parseInt(principal.getName()));
+        if(productPhotosRepository.getDefaultProductFoto("/resources/fileForMySyte/default/no-image.png",product.getId())!=null){
+            ProductPhotos pf = product.getProductPhotos().iterator().next();
+            pf.setProduct(product);
+            pf.setFotoName(productPhotos);
+            productPhotosRepository.save(pf);
+        }else {
+            ProductPhotos pf = new ProductPhotos();
+            pf.setProduct(product);
+            pf.setFotoName(productPhotos);
+            productPhotosRepository.save(pf);
+        }
+
     }
+
+
 
     //виводть foto по id Producta
     public Iterable<ProductPhotos> findProductPhotosByProduct(int id){
@@ -46,15 +59,16 @@ public class ProductPhotoServiceImpl implements com.servise.ProductPhotoService{
 
 
     //додавання фото продукту productSettings
-    public int addPhotoProduct(@RequestParam(value ="photoProduct")MultipartFile file, HttpServletRequest request, Principal principal,int productId ) throws IOException {
+    public int addPhotoProduct(@RequestParam(value ="photoProduct")MultipartFile file, HttpServletRequest request, Principal principal,int id ) throws IOException {
         if( file.getBytes().length >= 52428800){
             return 1;
         }else {
             String uploadRootPath  = request.getServletContext().getRealPath("resources");
             String absolutePath = "C:\\Users\\Dimas\\Desktop\\logos\\MarketPlace\\src\\main\\webapp\\resources";
+            String ProductName = productService.getNameProduct(id);
             String fotoPath = fileSaveService.saveFile("productPhoto",principal.getName(), file, absolutePath,"productPhoto");
             fileSaveService.saveFile("productPhoto",principal.getName(), file, uploadRootPath,"productPhoto" );
-            saveProductPhotoFromProduct(fotoPath.substring(56),productId);
+            saveProductPhotoFromProduct(fotoPath.substring(56),ProductName,principal);
 
         }
         return 0;

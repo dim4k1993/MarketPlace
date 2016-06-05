@@ -33,11 +33,9 @@ public class Product {
     private  String skype;
 
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "productSentMessenger")
-    private List<Messenger> productSentMessages;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "productReceivedMessenger")
-    private List<Messenger> productReceivedMessages;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "productReceivedComments")
+    private List<Messenger> productReceivedComments;
 
     @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "product")
@@ -160,19 +158,11 @@ public class Product {
         this.skype = skype;
     }
 
-    public List<Messenger> getProductSentMessages() {
-        return productSentMessages;
-    }
-
-    public void setProductSentMessages(List<Messenger> productSentMessages) {
-        this.productSentMessages = productSentMessages;
-    }
-
-    public List<Messenger> getProductReceivedMessages() {
-        return productReceivedMessages;
+    public List<Messenger> getProductReceivedComments() {
+        return productReceivedComments;
     }
 
     public void setProductReceivedMessages(List<Messenger> productReceivedMessages) {
-        this.productReceivedMessages = productReceivedMessages;
+        this.productReceivedComments = productReceivedMessages;
     }
 }

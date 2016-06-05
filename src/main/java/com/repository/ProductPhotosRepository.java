@@ -12,7 +12,7 @@ public interface ProductPhotosRepository extends CrudRepository<ProductPhotos, I
     Iterable<ProductPhotos> getAllProductPhotoFromProduct(@Param("productPhoto") int productPhoto);
 
 
-//    @Query(value = "select a from ProductPhotos a where (a.fotoName like concat(:fotoName)) and (a.product_id like concat(:productPhoto))")
-//    ProductPhotos getDefaultProductFoto (@Param("fotoName") String photoName, @Param("productPhoto") int productPhoto);
+    @Query(value = "select a from ProductPhotos a where (a.fotoName like concat(:fotoName)) and (a.product like concat(:productPhoto))")
+    ProductPhotos getDefaultProductFoto (@Param("fotoName") String fotoName, @Param("productPhoto") int productPhoto);
 
 }
