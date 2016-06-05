@@ -4,6 +4,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -65,7 +66,7 @@
                             <div class="panel-heading">
                                 <h4 class="panel-title">
                                     <a data-toggle="collapse" data-parent="#accordian" href="#phone">
-                                        <!--											<span class="badge pull-right"><i class="glyphicon glyphicon-plus"></i></span>-->
+                                        <!--<span class="badge pull-right"><i class="glyphicon glyphicon-plus"></i></span>-->
                                         Телефоны/смартфоны</a>
                                 </h4>
                             </div>
@@ -427,18 +428,18 @@
                             <div class="product-images">
                                 <!-- Begin Product Images Slider -->
                                 <div class="main-img-slider photo-barder">
-                                    <c:forEach var="productPhoto" varStatus="vs" items="${product.productPhotos}">
+                                    <c:forEach var="productPhoto"  items="${product.productPhotos}">
                                     <figure>
-                                            <a href="${product.productPhotos.get(vs.index).fotoName}" class="testA " data-size="1000x800">
-                                                <img class="testImg" id="imgId" src="${product.productPhotos.get(vs.index).fotoName}"/>
+                                            <a href="${productPhoto.fotoName}" class="testA " data-size="1000x800">
+                                                <img class="testImg" id="imgId" src="${productPhoto.fotoName}"/>
                                             </a>
                                     </figure>
                                     </c:forEach>
                                 </div>
 
                                 <ul class="thumb-nav ">
-                                <c:forEach var="productPhoto" varStatus="vsPid" items="${product.productPhotos}">
-                                        <li><img src="${product.productPhotos.get(vsPid.index).fotoName}" /></li>
+                                <c:forEach var="productPhoto" items="${product.productPhotos}">
+                                        <li><img src="${productPhoto.fotoName}" /></li>
                                 </c:forEach>
                                 </ul>
                             </div>
@@ -583,7 +584,6 @@
                                                   ng-required="!cmntCtrl.comment.anonymous"
                                                   placeholder="Введите Email" type="email"/>
                                     </div>
-
                                     <div class="form-row text-right">
                                         <input
                                                 id="comment-anonymous"
@@ -592,7 +592,6 @@
                                                 type="checkbox">
                                         <label for="comment-anonymous">Аноним</label>
                                     </div>
-
                                     <div class="form-row">
                                         <input class="addcomments" type="submit" value="Добавить">
                                     </div>
@@ -601,29 +600,35 @@
                             </div>
 
                             <!-- Comments List -->
-                            <div class="comments">
-                                <!-- Comment -->
-                                <div class="comment" ng-repeat="comment in cmntCtrl.comments | orderBy: '-date'">
-                                    <!-- Comment Avatar -->
-                                    <div class="comment-avatar">
-                                        <img ng-src="{{ comment.avatarSrc }}">
-                                    </div>
 
-                                    <!-- Comment Box -->
-                                    <div class="comment-box">
-                                        <div class="comment-text">{{ comment.text }}</div>
-                                        <div class="comment-footer">
-                                            <div class="comment-info">
-            <span class="comment-author">
-              <em ng-if="comment.anonymous">Аноним</em>
-              <a ng-if="!comment.anonymous" href="{{ comment.author }}">{{ comment.author }}</a>
-            </span>
-                                                <span class="comment-date">{{ comment.date | date: 'medium' }}</span>
-                                            </div>
+                            <c:forEach var="productComments" varStatus="vsComments" items="${product.productReceivedComments}">
+                            <!-- Comment - Dummy -->
+                            <div class="comment">
+
+                                <!-- Comment Box -->
+                                <div class="comment-box">
+                                    <div class="comment-text">${productComments.messenger}</div>
+                                    <div class="comment-footer">
+                                        <div class="comment-info">
+                                            <span class="comment-author">
+                                                <c:if test="${productComments.userEmailSendCommentsForProduct == null}">
+                                                    <a href="#">Аноним</a>
+                                                </c:if>
+                                              <a href="#">${productComments.userEmailSendCommentsForProduct}</a>
+                                            </span>
+
+                                            <span class="comment-date"><%= new java.util.Date()%></span>
+                                        </div>
+                                        <div class="comment-actions">
+                                            <a href="#">Удалить</a>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                                </div>
+
+                            </c:forEach>
+
+
                         </div>
                             </div>
                         </div>

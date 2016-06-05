@@ -33,8 +33,8 @@ public class Product {
     private  String skype;
 
 
-
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "productReceivedComments")
+    @JsonIgnore
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "productReceivedComments")
     private List<Messenger> productReceivedComments;
 
     @JsonIgnore

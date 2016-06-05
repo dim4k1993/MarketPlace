@@ -4,6 +4,7 @@ import com.entity.Messenger;
 import com.entity.Product;
 import com.entity.ProductPhotos;
 import com.entity.User;
+import com.repository.MessengerRepository;
 import com.repository.ProductPhotosRepository;
 import com.repository.ProductRepository;
 import com.repository.UserRepository;
@@ -31,6 +32,9 @@ public class ProductController {
     ProductRepository productRepository;
 
     @Autowired
+    MessengerRepository messengerRepository;
+
+    @Autowired
     UserRepository userRepository;
 
     @Autowired
@@ -53,6 +57,7 @@ public class ProductController {
 
     //відображення сторінки продукта
     @RequestMapping(value= "/productPage")
+
     public String ShowProductPage(Model model, Principal principal) {
     if (principal != null){
 
@@ -63,7 +68,8 @@ public class ProductController {
 }
 
     //присвоює id продукту на сторінці
-@RequestMapping(value = "/product_id{id}", method = RequestMethod.GET)
+@RequestMapping(value = "/product_id{id}")
+@Transactional
     public String ShowVisitProduct1 (Model model,@PathVariable int id) {
         Product product = productRepository.findOne(id);
         if (product == null) {
