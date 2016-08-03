@@ -5,6 +5,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+	<script src="/resources/fileForMySyte/js/jquery-2.2.3.min.js"></script>
 	<link href="/resources/fileForMySyte/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/resources/fileForMySyte/css/loginPage-style.css" rel="stylesheet">
 </head>
@@ -46,6 +47,8 @@
 
 
 <script src="/resources/fileForMySyte/js/bootstrap.min.js"></script>
+
+
 
 
 </html>

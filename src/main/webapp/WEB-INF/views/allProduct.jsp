@@ -22,8 +22,8 @@
         <c:forEach var="product" items="${products}">
             <tr>
                 <td><c:url value="/product_id${product.id}" var="url"/><a href="${url}"> ${product.getName()}</a></td>
-
-        </tr></c:forEach>
+            </tr>
+        </c:forEach>
     </table>
 
 </form>

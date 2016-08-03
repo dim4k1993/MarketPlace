@@ -78,6 +78,7 @@ public class ProductController {
         else {
             productId = id;
             model.addAttribute("product", product);
+
             return "productPage";
         }
     }

@@ -14,7 +14,6 @@
 	<link href="/resources/fileForMySyte/css/register-style.css" rel="stylesheet">
 	<link href="/resources/fileForMySyte/css/bootstrap.min.css" rel="stylesheet">
 
-	<script src="/resources/fileForMySyte/js/jquery-2.2.3.min.js"></script>
 
 </head>
 

@@ -33,10 +33,9 @@
         <put-attribute name="title" value=""></put-attribute>
     </definition>
 
-    <definition name="loginUserPage" extends="base.definition">
+    <definition name="loginUserPage" extends="plusCategoryMenu.definition">
         <put-attribute name="body" value="/WEB-INF/views/loginUserPage.jsp"></put-attribute>
         <put-attribute name="title" value=""></put-attribute>
-        <put-attribute name="categoryMenu" value=""></put-attribute>
     </definition>
 
     <definition name="adminAccount" extends="base.definition">
@@ -50,10 +49,9 @@
         <put-attribute name="title" value=""></put-attribute>
     </definition>
 
-    <definition name="registration" extends="base.definition">
+    <definition name="registration" extends="plusCategoryMenu.definition">
         <put-attribute name="body" value="/WEB-INF/views/registration.jsp"></put-attribute>
         <put-attribute name="title" value=""></put-attribute>
-        <put-attribute name="categoryMenu" value=""></put-attribute>
     </definition>
 
     <definition name="userAccount" extends="base.definition">
